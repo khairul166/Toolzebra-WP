@@ -1,5 +1,5 @@
 /**
- * ToolNest - Image Resizer with Editable Social & Portal Presets
+ * ToolZebra - Image Resizer with Editable Social & Portal Presets
  * (/assets/js/tools/image-resizer.js)
  * 100% Client-Side Image Resizer using HTML5 Canvas
  */
@@ -54,7 +54,7 @@
     ctx.fillStyle = '#FFFFFF';
     ctx.font = 'bold 48px Inter, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('ToolNest Social Media Resizer', 640, 490);
+    ctx.fillText('ToolZebra Social Media Resizer', 640, 490);
     ctx.font = '28px Inter, sans-serif';
     ctx.fillText('Original Sample: 1280 x 853 px', 640, 545);
 
@@ -97,7 +97,7 @@
             '<button type="button" class="btn tn-btn--outline btn-sm" data-preset-id="' +
             p.id +
             '">' +
-            window.ToolNest.escapeHtml(p.name) +
+            window.ToolZebra.escapeHtml(p.name) +
             ' (' +
             p.width +
             '&times;' +
@@ -203,10 +203,10 @@
       renderCanvas();
     }
 
-    window.ToolNest.setupDropzone(dropzone, fileInput, function (files) {
+    window.ToolZebra.setupDropzone(dropzone, fileInput, function (files) {
       const file = files[0];
       if (!file || !file.type.startsWith('image/')) {
-        window.ToolNest.showToast('Please select a valid image file.', 'danger');
+        window.ToolZebra.showToast('Please select a valid image file.', 'danger');
         return;
       }
       const url = URL.createObjectURL(file);
@@ -214,7 +214,7 @@
       img.onload = function () {
         URL.revokeObjectURL(url);
         loadSourceImage(img, file.name);
-        window.ToolNest.showToast('Image loaded and resized!', 'success');
+        window.ToolZebra.showToast('Image loaded and resized!', 'success');
       };
       img.src = url;
     });
@@ -228,8 +228,8 @@
           function (blob) {
             if (blob) {
               const outName = sourceName + '-' + previewCanvas.width + 'x' + previewCanvas.height + ext;
-              window.ToolNest.downloadBlob(blob, outName);
-              window.ToolNest.showToast('Resized image downloaded!', 'success');
+              window.ToolZebra.downloadBlob(blob, outName);
+              window.ToolZebra.showToast('Resized image downloaded!', 'success');
             }
           },
           mime,
@@ -243,7 +243,7 @@
         const sample = generateSampleCanvasImage();
         sample.onload = function () {
           loadSourceImage(sample, 'toolnest-social-banner');
-          window.ToolNest.showToast('Sample graphic loaded!', 'success');
+          window.ToolZebra.showToast('Sample graphic loaded!', 'success');
         };
       });
     }

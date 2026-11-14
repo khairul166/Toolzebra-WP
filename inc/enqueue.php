@@ -62,7 +62,7 @@ function toolnest_enqueue_assets()
     $all_tools_url = $all_tools_page ? get_permalink($all_tools_page) : home_url('/all-tools/');
     wp_add_inline_script(
         'toolnest-main',
-        'window.toolnestToolsUrl = ' . wp_json_encode($all_tools_url) . ';',
+        'window.toolnestToolsUrl = ' . wp_json_encode($all_tools_url) . '; window.toolnestAjaxUrl = ' . wp_json_encode(admin_url('admin-ajax.php')) . ';',
         'before'
     );
 

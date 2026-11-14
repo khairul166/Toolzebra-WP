@@ -1,5 +1,5 @@
 /**
- * ToolNest - Color Picker, Image Eyedropper & Palette Generator (/assets/js/tools/color-picker.js)
+ * ToolZebra - Color Picker, Image Eyedropper & Palette Generator (/assets/js/tools/color-picker.js)
  * 100% Client-Side Color Picker from Image (with Pixel Magnifier Loupe & Dominant Palette),
  * HEX / RGB / HSL / HSV / CMYK Converter, Tints & Shades, Color Harmonies, and WCAG Contrast Checker.
  */
@@ -7,7 +7,7 @@
   'use strict';
 
   // Current active color in RGB { r, g, b }
-  let currentRgb = { r: 37, g: 99, b: 235 }; // #2563EB (ToolNest Primary Blue)
+  let currentRgb = { r: 37, g: 99, b: 235 }; // #2563EB (ToolZebra Primary Blue)
   let savedHistory = ['#2563EB', '#F59E0B', '#16A34A', '#DC2626', '#0F172A', '#7C3AED'];
   let loadedImage = null;
 
@@ -360,7 +360,7 @@
           const rgb = hexToRgb(hex);
           if (rgb) {
             setColorFromRgb(rgb.r, rgb.g, rgb.b, false);
-            window.ToolNest.copyToClipboard(hex);
+            window.ToolZebra.copyToClipboard(hex);
           }
         });
       });
@@ -515,7 +515,7 @@
         const targetId = btn.getAttribute('data-copy-target');
         const el = document.getElementById(targetId);
         if (el && el.value) {
-          window.ToolNest.copyToClipboard(el.value, btn);
+          window.ToolZebra.copyToClipboard(el.value, btn);
         }
       });
     });
@@ -533,7 +533,7 @@
       btnSaveColor.addEventListener('click', function () {
         const hex = rgbToHex(currentRgb.r, currentRgb.g, currentRgb.b);
         addColorToHistory(hex);
-        window.ToolNest.showToast('Saved ' + hex + ' to your palette!', 'success');
+        window.ToolZebra.showToast('Saved ' + hex + ' to your palette!', 'success');
       });
     }
 
@@ -557,7 +557,7 @@
                 if (rgb) {
                   setColorFromRgb(rgb.r, rgb.g, rgb.b, false);
                   addColorToHistory(result.sRGBHex);
-                  window.ToolNest.copyToClipboard(result.sRGBHex);
+                  window.ToolZebra.copyToClipboard(result.sRGBHex);
                 }
               }
             })
@@ -567,7 +567,7 @@
         });
       } else {
         btnScreenEyedropper.addEventListener('click', function () {
-          window.ToolNest.showToast('Use the Image Eyedropper canvas below to pick any pixel color!', 'warning');
+          window.ToolZebra.showToast('Use the Image Eyedropper canvas below to pick any pixel color!', 'warning');
         });
       }
     }
@@ -637,15 +637,15 @@
         const px = getCanvasPixelColor(e);
         setColorFromRgb(px.r, px.g, px.b, false);
         addColorToHistory(px.hex);
-        window.ToolNest.copyToClipboard(px.hex);
+        window.ToolZebra.copyToClipboard(px.hex);
       });
     }
 
     if (dropzone && fileInput) {
-      window.ToolNest.setupDropzone(dropzone, fileInput, function (files) {
+      window.ToolZebra.setupDropzone(dropzone, fileInput, function (files) {
         const file = files[0];
         if (!file || !file.type.startsWith('image/')) {
-          window.ToolNest.showToast('Please select a valid image file (JPG, PNG, WebP, SVG).', 'danger');
+          window.ToolZebra.showToast('Please select a valid image file (JPG, PNG, WebP, SVG).', 'danger');
           return;
         }
         const url = URL.createObjectURL(file);
@@ -653,7 +653,7 @@
         img.onload = function () {
           URL.revokeObjectURL(url);
           renderImageToCanvas(img);
-          window.ToolNest.showToast('Image loaded! Click anywhere on the image to pick a pixel color.', 'success');
+          window.ToolZebra.showToast('Image loaded! Click anywhere on the image to pick a pixel color.', 'success');
         };
         img.src = url;
       });
@@ -663,7 +663,7 @@
       btnSampleImg.addEventListener('click', function () {
         createSampleArtworkImage().then(function (img) {
           renderImageToCanvas(img);
-          window.ToolNest.showToast('Sample artwork loaded! Click any color on the canvas.', 'success');
+          window.ToolZebra.showToast('Sample artwork loaded! Click any color on the canvas.', 'success');
         });
       });
     }

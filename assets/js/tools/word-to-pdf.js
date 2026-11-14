@@ -1,5 +1,5 @@
 /**
- * ToolNest - MS Word (.DOCX / .DOC / .TXT) to PDF Converter (/assets/js/tools/word-to-pdf.js)
+ * ToolZebra - MS Word (.DOCX / .DOC / .TXT) to PDF Converter (/assets/js/tools/word-to-pdf.js)
  * 100% Client-Side Word to PDF Converter powered by JSZip 3.10.1, docx-preview 0.1.20,
  * html2canvas 1.4.1, and pdf-lib 1.17.1.
  * Preserves the exact original Word formatting — page dimensions, margins, fonts, inline runs
@@ -654,7 +654,7 @@
       '<w:p><w:pPr><w:pStyle w:val="Heading1"/><w:jc w:val="center"/></w:pPr><w:r><w:rPr><w:b/><w:color w:val="1E3A8A"/><w:sz w:val="36"/></w:rPr><w:t>SERVICE LEVEL AGREEMENT (SLA)</w:t></w:r></w:p>' +
       '<w:p><w:pPr><w:jc w:val="center"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Client: Dhaka Digital Commerce Ltd. | Date: 26 October 2026</w:t></w:r></w:p>' +
       '<w:p><w:pPr><w:pStyle w:val="Heading2"/></w:pPr><w:r><w:rPr><w:b/><w:color w:val="1E3A8A"/><w:sz w:val="26"/></w:rPr><w:t>1. Scope of Browser-Based Document Services</w:t></w:r></w:p>' +
-      '<w:p><w:r><w:t>This Microsoft Word (.docx) document was parsed and converted into a PDF directly inside your web browser using ToolNest, preserving original fonts, colors, alignments, and table borders.</w:t></w:r></w:p>' +
+      '<w:p><w:r><w:t>This Microsoft Word (.docx) document was parsed and converted into a PDF directly inside your web browser using ToolZebra, preserving original fonts, colors, alignments, and table borders.</w:t></w:r></w:p>' +
       '<w:tbl>' +
       '<w:tr><w:tc><w:tcPr><w:shd w:fill="1E3A8A"/></w:tcPr><w:p><w:r><w:rPr><w:b/><w:color w:val="FFFFFF"/></w:rPr><w:t>Deliverable Item</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:shd w:fill="1E3A8A"/></w:tcPr><w:p><w:r><w:rPr><w:b/><w:color w:val="FFFFFF"/></w:rPr><w:t>Timeline</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:shd w:fill="1E3A8A"/></w:tcPr><w:p><w:pPr><w:jc w:val="right"/></w:pPr><w:r><w:rPr><w:b/><w:color w:val="FFFFFF"/></w:rPr><w:t>Fee (BDT)</w:t></w:r></w:p></w:tc></w:tr>' +
       '<w:tr><w:tc><w:p><w:r><w:t>UI/UX Design &amp; Prototyping</w:t></w:r></w:p></w:tc><w:tc><w:p><w:r><w:t>2 Weeks</w:t></w:r></w:p></w:tc><w:tc><w:p><w:pPr><w:jc w:val="right"/></w:pPr><w:r><w:t>45,000</w:t></w:r></w:p></w:tc></w:tr>' +
@@ -692,7 +692,7 @@
 
   // Expose helpers for automated testing
   if (typeof window !== 'undefined') {
-    window.ToolNestWordToPdf = {
+    window.ToolZebraWordToPdf = {
       parseDocxXml: parseDocxXml,
       parseDocxDocument: parseDocxDocument,
       parsePlainTextToParagraphs: parsePlainTextToParagraphs,
@@ -730,7 +730,7 @@
         errorBox.classList.remove('d-none');
         errorBox.innerHTML =
           '<i class="bi bi-exclamation-octagon-fill me-1" aria-hidden="true"></i> ' +
-          window.ToolNest.escapeHtml(msg);
+          window.ToolZebra.escapeHtml(msg);
       }
     }
 
@@ -830,8 +830,8 @@
         if (fileNameEl) fileNameEl.textContent = convertedPdfFilename;
         if (fileMetaEl) {
           var pdfSizeStr =
-            window.ToolNest && window.ToolNest.formatBytes
-              ? window.ToolNest.formatBytes(convertedPdfBlob.size)
+            window.ToolZebra && window.ToolZebra.formatBytes
+              ? window.ToolZebra.formatBytes(convertedPdfBlob.size)
               : Math.round(convertedPdfBlob.size / 1024) + ' KB';
           fileMetaEl.textContent =
             'Converted from ' +
@@ -848,7 +848,7 @@
 
         if (progressBox) progressBox.classList.add('d-none');
         if (resultsWrap) resultsWrap.classList.remove('d-none');
-        window.ToolNest.showToast('Word document converted to PDF! Click Download PDF to save.', 'success');
+        window.ToolZebra.showToast('Word document converted to PDF! Click Download PDF to save.', 'success');
       } catch (err) {
         if (progressBox) progressBox.classList.add('d-none');
         if (resultsWrap) resultsWrap.classList.add('d-none');
@@ -856,7 +856,7 @@
       }
     }
 
-    window.ToolNest.setupDropzone(dropzone, fileInput, function (files) {
+    window.ToolZebra.setupDropzone(dropzone, fileInput, function (files) {
       if (files && files.length > 0) {
         handleWordFile(files[0]);
       }
@@ -865,8 +865,8 @@
     if (dlPdfBtn) {
       dlPdfBtn.addEventListener('click', function () {
         if (!convertedPdfBlob) return;
-        window.ToolNest.downloadBlob(convertedPdfBlob, convertedPdfFilename);
-        window.ToolNest.showToast('Downloading ' + convertedPdfFilename, 'success');
+        window.ToolZebra.downloadBlob(convertedPdfBlob, convertedPdfFilename);
+        window.ToolZebra.showToast('Downloading ' + convertedPdfFilename, 'success');
       });
     }
 

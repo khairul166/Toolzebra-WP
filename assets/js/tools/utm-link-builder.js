@@ -1,5 +1,5 @@
 /**
- * ToolNest - UTM Link Builder (/assets/js/tools/utm-link-builder.js)
+ * ToolZebra - UTM Link Builder (/assets/js/tools/utm-link-builder.js)
  * 100% Client-Side Google Analytics 4 (GA4) & Meta Ads Campaign URL Builder.
  * Supports one-click channel presets, lowercase normalization, space replacement,
  * existing query/hash preservation, parameter breakdown, and batch CSV history export.
@@ -176,7 +176,7 @@
 
   // Expose helper for automated testing
   if (typeof window !== 'undefined') {
-    window.ToolNestUtmBuilder = {
+    window.ToolZebraUtmBuilder = {
       presets: UTM_CHANNEL_PRESETS,
       formatUtmValue: formatUtmValue,
       buildUtmUrl: buildUtmUrl
@@ -239,7 +239,7 @@
           statusBadge.className = 'badge bg-danger-subtle text-danger px-3 py-2';
           statusBadge.innerHTML =
             '<i class="bi bi-exclamation-triangle-fill me-1" aria-hidden="true"></i> ' +
-            window.ToolNest.escapeHtml(res.error);
+            window.ToolZebra.escapeHtml(res.error);
         }
         if (paramsBreakdownEl) {
           paramsBreakdownEl.innerHTML =
@@ -262,7 +262,7 @@
           statusBadge.className = 'badge bg-warning-subtle text-dark border border-warning px-3 py-2';
           statusBadge.innerHTML =
             '<i class="bi bi-info-circle-fill me-1" aria-hidden="true"></i> Recommended: Fill in ' +
-            window.ToolNest.escapeHtml(res.missingRequired.join(', '));
+            window.ToolZebra.escapeHtml(res.missingRequired.join(', '));
         } else {
           statusBadge.className = 'badge bg-success-subtle text-success px-3 py-2';
           statusBadge.innerHTML =
@@ -280,9 +280,9 @@
               return (
                 '<span class="badge bg-white text-dark border px-2 py-1 fw-normal">' +
                 '<strong class="text-primary">' +
-                window.ToolNest.escapeHtml(p.key) +
+                window.ToolZebra.escapeHtml(p.key) +
                 '</strong>=' +
-                window.ToolNest.escapeHtml(p.value) +
+                window.ToolZebra.escapeHtml(p.value) +
                 '</span>'
               );
             })
@@ -303,14 +303,14 @@
           return (
             '<tr>' +
             '<td class="small fw-semibold">' +
-            window.ToolNest.escapeHtml(item.campaign || '—') +
+            window.ToolZebra.escapeHtml(item.campaign || '—') +
             '<div class="text-muted fw-normal">' +
-            window.ToolNest.escapeHtml(item.source) +
+            window.ToolZebra.escapeHtml(item.source) +
             ' / ' +
-            window.ToolNest.escapeHtml(item.medium) +
+            window.ToolZebra.escapeHtml(item.medium) +
             '</div></td>' +
             '<td class="small"><code class="text-break">' +
-            window.ToolNest.escapeHtml(item.finalUrl) +
+            window.ToolZebra.escapeHtml(item.finalUrl) +
             '</code></td>' +
             '<td class="text-end text-nowrap">' +
             '<button type="button" class="btn tn-btn--outline btn-sm py-1 px-2 me-1" data-copy-saved="' +
@@ -329,7 +329,7 @@
         btn.addEventListener('click', function () {
           const idx = Number(btn.getAttribute('data-copy-saved'));
           if (savedLinks[idx]) {
-            window.ToolNest.copyToClipboard(savedLinks[idx].finalUrl, btn);
+            window.ToolZebra.copyToClipboard(savedLinks[idx].finalUrl, btn);
           }
         });
       });
@@ -367,17 +367,17 @@
         if (termInput) termInput.value = preset.term;
         if (contentInput) contentInput.value = preset.content;
         updateUtmPreview();
-        window.ToolNest.showToast('Applied "' + preset.label + '" preset!', 'success');
+        window.ToolZebra.showToast('Applied "' + preset.label + '" preset!', 'success');
       });
     });
 
     if (copyBtn) {
       copyBtn.addEventListener('click', function () {
         if (!outputTextarea.value) {
-          window.ToolNest.showToast('Please enter a valid URL first.', 'warning');
+          window.ToolZebra.showToast('Please enter a valid URL first.', 'warning');
           return;
         }
-        window.ToolNest.copyToClipboard(outputTextarea.value, copyBtn);
+        window.ToolZebra.copyToClipboard(outputTextarea.value, copyBtn);
       });
     }
 
@@ -385,7 +385,7 @@
       saveHistoryBtn.addEventListener('click', function () {
         const res = buildUtmUrl(getCurrentParams());
         if (!res.isValid || !res.finalUrl) {
-          window.ToolNest.showToast('Enter a valid URL before adding to your campaign list.', 'warning');
+          window.ToolZebra.showToast('Enter a valid URL before adding to your campaign list.', 'warning');
           return;
         }
         savedLinks.unshift({
@@ -397,7 +397,7 @@
           finalUrl: res.finalUrl
         });
         renderHistory();
-        window.ToolNest.showToast('Added UTM link to Campaign List!', 'success');
+        window.ToolZebra.showToast('Added UTM link to Campaign List!', 'success');
       });
     }
 
@@ -415,7 +415,7 @@
           })
           .join('\n');
         const blob = new Blob([header + rows], { type: 'text/csv;charset=utf-8' });
-        window.ToolNest.downloadBlob(blob, 'toolnest-utm-campaign-links.csv');
+        window.ToolZebra.downloadBlob(blob, 'toolnest-utm-campaign-links.csv');
       });
     }
 
@@ -436,7 +436,7 @@
         if (termInput) termInput.value = 'mens_cotton_panjabi';
         if (contentInput) contentInput.value = 'video_reel_ad_1';
         updateUtmPreview();
-        window.ToolNest.showToast('Sample Facebook Ad campaign loaded.', 'success');
+        window.ToolZebra.showToast('Sample Facebook Ad campaign loaded.', 'success');
       });
     }
 

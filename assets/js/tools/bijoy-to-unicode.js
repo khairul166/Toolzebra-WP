@@ -1,5 +1,5 @@
 /**
- * ToolNest - Bijoy to Unicode & Unicode to Bijoy Converter
+ * ToolZebra - Bijoy to Unicode & Unicode to Bijoy Converter
  * (/assets/js/tools/bijoy-to-unicode.js)
  * 100% Client-Side Bidirectional Bangla Encoding Converter
  */
@@ -204,14 +204,14 @@
     if (btnBijoyToUni) {
       btnBijoyToUni.addEventListener('click', function () {
         runBijoyToUni();
-        window.ToolNest.showToast('Converted Bijoy ANSI to Unicode!', 'success');
+        window.ToolZebra.showToast('Converted Bijoy ANSI to Unicode!', 'success');
       });
     }
 
     if (btnUniToBijoy) {
       btnUniToBijoy.addEventListener('click', function () {
         runUniToBijoy();
-        window.ToolNest.showToast('Converted Unicode to Bijoy ANSI!', 'success');
+        window.ToolZebra.showToast('Converted Unicode to Bijoy ANSI!', 'success');
       });
     }
 
@@ -219,7 +219,7 @@
       btnSample.addEventListener('click', function () {
         unicodeBox.value = 'আমার সোনার বাংলা, আমি তোমায় ভালোবাসি। ২০২৬ সালে টুলনেস্ট ব্যবহার করে সহজেই বাংলা কনভার্ট করুন।';
         runUniToBijoy();
-        window.ToolNest.showToast('Sample Bangla text loaded!', 'success');
+        window.ToolZebra.showToast('Sample Bangla text loaded!', 'success');
       });
     }
 
@@ -235,13 +235,13 @@
 
     if (btnCopyBijoy) {
       btnCopyBijoy.addEventListener('click', function () {
-        window.ToolNest.copyToClipboard(bijoyBox.value, btnCopyBijoy);
+        window.ToolZebra.copyToClipboard(bijoyBox.value, btnCopyBijoy);
       });
     }
 
     if (btnCopyUnicode) {
       btnCopyUnicode.addEventListener('click', function () {
-        window.ToolNest.copyToClipboard(unicodeBox.value, btnCopyUnicode);
+        window.ToolZebra.copyToClipboard(unicodeBox.value, btnCopyUnicode);
       });
     }
   });

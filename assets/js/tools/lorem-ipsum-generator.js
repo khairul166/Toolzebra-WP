@@ -1,5 +1,5 @@
 /**
- * ToolNest - Lorem Ipsum Generator (/assets/js/tools/lorem-ipsum-generator.js)
+ * ToolZebra - Lorem Ipsum Generator (/assets/js/tools/lorem-ipsum-generator.js)
  * 100% Client-Side placeholder text generator with custom paragraphs, sentences, and words.
  * Generates HTML, plain text, and Markdown formats.
  */
@@ -148,7 +148,7 @@
       copyBtn.disabled = false;
       
       // Show success message
-      window.ToolNest.showToast(
+      window.ToolZebra.showToast(
         `Generated ${paragraphs} paragraph(s) with ${sentences} sentence(s) each`,
         'success'
       );
@@ -161,14 +161,14 @@
     const textToCopy = textarea.value;
     
     navigator.clipboard.writeText(textToCopy).then(() => {
-      window.ToolNest.showToast('Lorem Ipsum text copied to clipboard!', 'success');
+      window.ToolZebra.showToast('Lorem Ipsum text copied to clipboard!', 'success');
       copyBtn.textContent = 'Copied!';
       setTimeout(() => {
         copyBtn.textContent = 'Copy to Clipboard';
       }, 2000);
     }).catch(err => {
       console.error('Failed to copy:', err);
-      window.ToolNest.showToast('Failed to copy text', 'error');
+      window.ToolZebra.showToast('Failed to copy text', 'error');
     });
   }
 

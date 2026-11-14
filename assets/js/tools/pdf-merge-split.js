@@ -1,5 +1,5 @@
 /**
- * ToolNest - PDF Merge & Split (/assets/js/tools/pdf-merge-split.js)
+ * ToolZebra - PDF Merge & Split (/assets/js/tools/pdf-merge-split.js)
  * 100% Client-Side PDF Merger, Page Reorderer, and Range Splitter powered by pdf-lib 1.17.1
  */
 (function () {
@@ -60,7 +60,7 @@
     for (let i = 1; i <= 3; i++) {
       const p = docA.addPage([595, 842]);
       p.drawRectangle({ x: 40, y: 720, width: 515, height: 70, color: rgb(0.145, 0.388, 0.921) });
-      p.drawText('ToolNest Sample Document A - Page ' + i + ' of 3', {
+      p.drawText('ToolZebra Sample Document A - Page ' + i + ' of 3', {
         x: 60,
         y: 748,
         size: 18,
@@ -82,7 +82,7 @@
     for (let j = 1; j <= 2; j++) {
       const p2 = docB.addPage([595, 842]);
       p2.drawRectangle({ x: 40, y: 720, width: 515, height: 70, color: rgb(0.96, 0.62, 0.04) });
-      p2.drawText('ToolNest Sample Document B - Page ' + j + ' of 2', {
+      p2.drawText('ToolZebra Sample Document B - Page ' + j + ' of 2', {
         x: 60,
         y: 748,
         size: 18,
@@ -143,7 +143,7 @@
             '</span>' +
             '<div>' +
             '<div class="fw-bold small text-break">' +
-            window.ToolNest.escapeHtml(item.fileName) +
+            window.ToolZebra.escapeHtml(item.fileName) +
             '</div>' +
             '<div class="text-muted" style="font-size:0.8rem;">Source Page ' +
             item.originalPageNum +
@@ -213,7 +213,7 @@
 
     async function addPdfFiles(files) {
       if (!window.PDFLib) {
-        window.ToolNest.showToast('PDF engine is loading. Please try again.', 'warning');
+        window.ToolZebra.showToast('PDF engine is loading. Please try again.', 'warning');
         return;
       }
 
@@ -225,7 +225,7 @@
         for (let f = 0; f < files.length; f++) {
           const file = files[f];
           if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
-            window.ToolNest.showToast('Skipped non-PDF file: ' + file.name, 'warning');
+            window.ToolZebra.showToast('Skipped non-PDF file: ' + file.name, 'warning');
             continue;
           }
           const arrayBuffer = await file.arrayBuffer();
@@ -246,20 +246,20 @@
 
         progressWrap.classList.add('d-none');
         renderPageList();
-        window.ToolNest.showToast('Loaded ' + pageItems.length + ' total PDF page(s).', 'success');
+        window.ToolZebra.showToast('Loaded ' + pageItems.length + ' total PDF page(s).', 'success');
       } catch (err) {
         progressWrap.classList.add('d-none');
-        window.ToolNest.showToast('Could not parse PDF: ' + (err.message || 'Invalid file'), 'danger');
+        window.ToolZebra.showToast('Could not parse PDF: ' + (err.message || 'Invalid file'), 'danger');
       }
     }
 
     async function buildPdfFromIndices(oneBasedPositions, outputFilename) {
       if (pageItems.length === 0) {
-        window.ToolNest.showToast('Please upload at least one PDF first.', 'warning');
+        window.ToolZebra.showToast('Please upload at least one PDF first.', 'warning');
         return;
       }
       if (oneBasedPositions.length === 0) {
-        window.ToolNest.showToast('No valid page numbers matched your range.', 'danger');
+        window.ToolZebra.showToast('No valid page numbers matched your range.', 'danger');
         return;
       }
 
@@ -289,17 +289,17 @@
         progressBar.style.width = '90%';
         const pdfBytes = await outDoc.save();
         const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-        window.ToolNest.downloadBlob(blob, outputFilename);
+        window.ToolZebra.downloadBlob(blob, outputFilename);
 
         progressWrap.classList.add('d-none');
-        window.ToolNest.showToast('Downloaded ' + outputFilename + ' (' + oneBasedPositions.length + ' pages)!', 'success');
+        window.ToolZebra.showToast('Downloaded ' + outputFilename + ' (' + oneBasedPositions.length + ' pages)!', 'success');
       } catch (err) {
         progressWrap.classList.add('d-none');
-        window.ToolNest.showToast('Error generating PDF: ' + (err.message || 'Unknown error'), 'danger');
+        window.ToolZebra.showToast('Error generating PDF: ' + (err.message || 'Unknown error'), 'danger');
       }
     }
 
-    window.ToolNest.setupDropzone(dropzone, fileInput, function (files) {
+    window.ToolZebra.setupDropzone(dropzone, fileInput, function (files) {
       addPdfFiles(files);
     });
 
@@ -324,7 +324,7 @@
       btnReverseOrder.addEventListener('click', function () {
         pageItems.reverse();
         renderPageList();
-        window.ToolNest.showToast('Page order reversed!', 'success');
+        window.ToolZebra.showToast('Page order reversed!', 'success');
       });
     }
 
@@ -336,7 +336,7 @@
             return addPdfFiles(sampleFiles);
           })
           .catch(function (err) {
-            window.ToolNest.showToast(err.message, 'danger');
+            window.ToolZebra.showToast(err.message, 'danger');
           });
       });
     }

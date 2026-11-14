@@ -142,7 +142,7 @@ function tn_age_calculator_shortcode() {
             Calculating exact age by hand seems simple until you account for months with 28, 29, 30, and 31 days and leap years occurring every four years. In Bangladesh, public service recruitment exams (such as BCS, Bangladesh Bank, NTRCA, primary school teacher recruitment, and defense services) require candidates to state their exact age in <strong>Years, Months, and Days</strong> as of a specific gazetted circular date.
         </p>
         <p class="text-muted">
-            Even a one-day miscalculation on an official Teletalk or ministry application portal can create complications during viva verification. ToolNest's Age Calculator uses the standard chronological calendar method recognized by HR departments, passport offices, and admission boards worldwide.
+            Even a one-day miscalculation on an official Teletalk or ministry application portal can create complications during viva verification. ToolZebra's Age Calculator uses the standard chronological calendar method recognized by HR departments, passport offices, and admission boards worldwide.
         </p>
         <div class="row g-3 my-2">
             <div class="col-md-6">
@@ -344,7 +344,7 @@ function tn_amount_to_words_shortcode() {
             When writing a commercial bank cheque, preparing a VAT invoice, or registering property deeds in Bangladesh, even a tiny discrepancy between numeric digits and spelled-out words causes banks to dishonor the cheque. Many international number-to-word calculators only output <em>Hundreds of Thousands</em> and <em>Millions</em>, which are rejected by local bank tellers who require <strong>Lakh (লক্ষ)</strong> and <strong>Crore (কোটি)</strong> notation.
         </p>
         <p class="text-muted">
-            Furthermore, spelling compound Bangla numbers between 1 and 99—such as <em>পঁয়তাল্লিশ</em> (45), <em>ঊনপঞ্চাশ</em> (49), <em>তিপ্পান্ন</em> (53), or <em>পঁয়ষট্টি</em> (65)—is notoriously tricky even for native speakers. ToolNest solves both problems simultaneously in a single screen.
+            Furthermore, spelling compound Bangla numbers between 1 and 99—such as <em>পঁয়তাল্লিশ</em> (45), <em>ঊনপঞ্চাশ</em> (49), <em>তিপ্পান্ন</em> (53), or <em>পঁয়ষট্টি</em> (65)—is notoriously tricky even for native speakers. ToolZebra solves both problems simultaneously in a single screen.
         </p>
         <div class="row g-3 my-2">
             <div class="col-md-6">
@@ -499,7 +499,7 @@ function tn_background_remover_shortcode() {
           <!-- Features & Detailed SEO Content (300+ Words) -->
           <section class="tn-card mb-4" aria-labelledby="bg-privacy-heading">
             <h2 id="bg-privacy-heading" class="tn-section-title">Private, Browser-Based Background Removal</h2>
-            <p class="text-muted mb-0">The segmentation model runs locally in a browser worker. Your chosen image is not uploaded to ToolNest; an internet connection is used to fetch the AI model files on first use. This tool uses <a href="https://huggingface.co/Xenova/modnet" target="_blank" rel="noopener noreferrer">MODNet</a> through <a href="https://huggingface.co/docs/transformers.js" target="_blank" rel="noopener noreferrer">Transformers.js</a>. Portrait matting works best with a clear subject and distinct background. Fine hair, motion blur, and low-contrast edges can affect the cutout.</p>
+            <p class="text-muted mb-0">The segmentation model runs locally in a browser worker. Your chosen image is not uploaded to ToolZebra; an internet connection is used to fetch the AI model files on first use. This tool uses <a href="https://huggingface.co/Xenova/modnet" target="_blank" rel="noopener noreferrer">MODNet</a> through <a href="https://huggingface.co/docs/transformers.js" target="_blank" rel="noopener noreferrer">Transformers.js</a>. Portrait matting works best with a clear subject and distinct background. Fine hair, motion blur, and low-contrast edges can affect the cutout.</p>
           </section>
 
           <!-- 5-Question FAQ Section -->
@@ -511,7 +511,7 @@ function tn_background_remover_shortcode() {
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tnBgFaqOne" aria-expanded="true" aria-controls="tnBgFaqOne">1. Are my photos uploaded to remove the background?</button>
                 </h3>
                 <div id="tnBgFaqOne" class="accordion-collapse collapse show" aria-labelledby="tnBgFaqHeadingOne" data-bs-parent="#tnBgFaq">
-                  <div class="accordion-body text-muted">No. The AI model files are downloaded to your browser, but your selected photo is processed locally and is not uploaded to ToolNest.</div>
+                  <div class="accordion-body text-muted">No. The AI model files are downloaded to your browser, but your selected photo is processed locally and is not uploaded to ToolZebra.</div>
                 </div>
               </div>
               <div class="accordion-item">
@@ -726,7 +726,7 @@ function tn_bangla_typing_test_shortcode() {
           <section class="tn-card mb-4" aria-labelledby="features-heading">
             <h2 id="features-heading" class="tn-section-title">How Bangla WPM &amp; Conjunct-Safe Accuracy Are Calculated</h2>
             <p class="text-muted">
-              Many generic online typing tests are built only for ASCII English characters and fail when testing Bengali because a single Bangla syllable or conjunct (<em>Juktoborno / যুক্তবর্ণ</em>) is composed of multiple Unicode code points (base consonant + <em>hasant</em> <code>্</code> + second consonant + vowel sign). ToolNest's Bangla Typing Test is engineered specifically for Bengali Unicode scripts.
+              Many generic online typing tests are built only for ASCII English characters and fail when testing Bengali because a single Bangla syllable or conjunct (<em>Juktoborno / যুক্তবর্ণ</em>) is composed of multiple Unicode code points (base consonant + <em>hasant</em> <code>্</code> + second consonant + vowel sign). ToolZebra's Bangla Typing Test is engineered specifically for Bengali Unicode scripts.
             </p>
 
             <div class="row g-3 my-2">
@@ -970,7 +970,7 @@ function tn_bijoy_to_unicode_shortcode() {
               </div>
             </div>
             <p class="text-muted mb-0 mt-2">
-              Whether you are a journalist meeting a tight deadline, a university student formatting a thesis, or an administrative officer updating an official notice board, ToolNest ensures your Bangla typography remains crisp, accurate, and universally readable.
+              Whether you are a journalist meeting a tight deadline, a university student formatting a thesis, or an administrative officer updating an official notice board, ToolZebra ensures your Bangla typography remains crisp, accurate, and universally readable.
             </p>
           </section>
 
@@ -1491,7 +1491,7 @@ function tn_bulk_image_resizer_shortcode() {
           <section class="tn-card mb-4" aria-labelledby="features-heading">
             <h2 id="features-heading" class="tn-section-title">Why E-Commerce Stores &amp; Designers Love This Bulk Image Resizer</h2>
             <p class="text-muted">
-              Preparing a catalog of 50 product photos for Daraz, Shopify, WooCommerce, or a Facebook shop one image at a time is tedious and error-prone. Inspired by professional batch workflows like RedKetchup Bulk Image Resizer, ToolNest gives you complete control over dimensions, target file sizes (KB/MB), aspect ratios, cropping anchors, and file naming across an entire folder of images in seconds.
+              Preparing a catalog of 50 product photos for Daraz, Shopify, WooCommerce, or a Facebook shop one image at a time is tedious and error-prone. Inspired by professional batch workflows like RedKetchup Bulk Image Resizer, ToolZebra gives you complete control over dimensions, target file sizes (KB/MB), aspect ratios, cropping anchors, and file naming across an entire folder of images in seconds.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -1844,7 +1844,7 @@ function tn_color_picker_shortcode() {
           <section class="tn-card mb-4" aria-labelledby="features-heading">
             <h2 id="features-heading" class="tn-section-title">All-in-One Browser Color Toolkit for Designers &amp; Developers</h2>
             <p class="text-muted">
-              Whether you are matching a client's brand color from a product photo, converting web HEX codes into CMYK percentages for a print shop in Dhaka, or verifying WCAG AA accessibility contrast for a modern user interface, ToolNest's Color Picker brings every color workflow into one fast, zero-upload workspace.
+              Whether you are matching a client's brand color from a product photo, converting web HEX codes into CMYK percentages for a print shop in Dhaka, or verifying WCAG AA accessibility contrast for a modern user interface, ToolZebra's Color Picker brings every color workflow into one fast, zero-upload workspace.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -2150,7 +2150,7 @@ function tn_create_pdf_shortcode() {
           <section class="tn-card mb-4" aria-labelledby="features-heading">
             <h2 id="features-heading" class="tn-section-title">Adobe Acrobat-Style Visual Page Organizer — 100% Free in Your Browser</h2>
             <p class="text-muted">
-              Preparing a complete application package, legal filing, or project report often means combining a Word-exported PDF cover letter with smartphone photos of signed receipts, NID cards, or academic certificates. Instead of switching between separate image converters and blind PDF mergers, ToolNest's <strong>Create PDF &amp; Organize Pages</strong> workspace displays every single page—whether from a PDF or an image—in a unified visual grid.
+              Preparing a complete application package, legal filing, or project report often means combining a Word-exported PDF cover letter with smartphone photos of signed receipts, NID cards, or academic certificates. Instead of switching between separate image converters and blind PDF mergers, ToolZebra's <strong>Create PDF &amp; Organize Pages</strong> workspace displays every single page—whether from a PDF or an image—in a unified visual grid.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -2459,7 +2459,7 @@ function tn_currency_converter_shortcode() {
               Whether you are a freelancer withdrawing earnings from Upwork, Fiverr, or Payoneer to a Bangladeshi bank account, an expatriate worker sending remittance from Saudi Arabia, the UAE, Qatar, Oman, Malaysia, the UK, or the US, or an importer calculating landed product costs, knowing the exact exchange rate makes a major financial difference.
             </p>
             <p class="text-muted">
-              Online search engines typically display the <strong>mid-market exchange rate</strong>—the midpoint between wholesale buy and sell orders on global foreign exchange markets. However, when you exchange currency through a commercial bank, credit card, or money transfer agency, the institution applies its own <em>TT Clean Rate</em>, <em>BC Selling Rate</em>, or <em>Cash Note Rate</em>. That is why ToolNest gives you both automatic live market rates and an instant <strong>Custom Exchange Rate</strong> override.
+              Online search engines typically display the <strong>mid-market exchange rate</strong>—the midpoint between wholesale buy and sell orders on global foreign exchange markets. However, when you exchange currency through a commercial bank, credit card, or money transfer agency, the institution applies its own <em>TT Clean Rate</em>, <em>BC Selling Rate</em>, or <em>Cash Note Rate</em>. That is why ToolZebra gives you both automatic live market rates and an instant <strong>Custom Exchange Rate</strong> override.
             </p>
 
             <h3 class="h6 fw-bold mt-3">3 Worked Currency &amp; Remittance Examples</h3>
@@ -2508,7 +2508,7 @@ function tn_currency_converter_shortcode() {
                 </h3>
                 <div id="ccFaqCol1" class="accordion-collapse collapse show" aria-labelledby="ccFaq1" data-bs-parent="#ccFaqAccordion">
                   <div class="accordion-body text-muted">
-                    Yes. ToolNest automatically fetches live mid-market exchange rates when you are connected to the internet and falls back to built-in reference rates when offline. You can also turn on <strong>Custom Bank / Exchange Rate</strong> at any time to type the exact rate quoted by your bank or exchange house.
+                    Yes. ToolZebra automatically fetches live mid-market exchange rates when you are connected to the internet and falls back to built-in reference rates when offline. You can also turn on <strong>Custom Bank / Exchange Rate</strong> at any time to type the exact rate quoted by your bank or exchange house.
                   </div>
                 </div>
               </div>
@@ -2725,7 +2725,7 @@ function tn_developer_webmaster_tools_shortcode() {
               100% Client-Side &bull; Code, Tokens &amp; Hashes Stay in Your Browser
             </span>
             <div class="dw-grid">
-              <section id="json-formatter" class="dw-card dw-section"><h2>JSON Formatter</h2><textarea id="dw-json-input" class="form-control mb-2" placeholder='{"name":"ToolNest","free":true}'></textarea><div class="d-flex gap-2 mb-2"><button id="dw-json-format" class="btn tn-btn--primary">Format</button><button id="dw-json-minify" class="btn tn-btn--outline">Minify</button></div><textarea id="dw-json-output" class="form-control" readonly></textarea></section>
+              <section id="json-formatter" class="dw-card dw-section"><h2>JSON Formatter</h2><textarea id="dw-json-input" class="form-control mb-2" placeholder='{"name":"ToolZebra","free":true}'></textarea><div class="d-flex gap-2 mb-2"><button id="dw-json-format" class="btn tn-btn--primary">Format</button><button id="dw-json-minify" class="btn tn-btn--outline">Minify</button></div><textarea id="dw-json-output" class="form-control" readonly></textarea></section>
               <section id="base64-encoder" class="dw-card dw-section"><h2>Base64 Encoder / Decoder</h2><textarea id="dw-base64-input" class="form-control mb-2" placeholder="Text or Base64 input"></textarea><div class="d-flex gap-2 mb-2"><button id="dw-base64-encode" class="btn tn-btn--primary">Encode</button><button id="dw-base64-decode" class="btn tn-btn--outline">Decode</button></div><textarea id="dw-base64-output" class="form-control" readonly></textarea></section>
               <section id="url-encoder" class="dw-card dw-section"><h2>URL Encoder / Decoder</h2><textarea id="dw-url-input" class="form-control mb-2" placeholder="https://example.com/?q=hello world"></textarea><div class="d-flex gap-2 mb-2"><button id="dw-url-encode" class="btn tn-btn--primary">Encode</button><button id="dw-url-decode" class="btn tn-btn--outline">Decode</button></div><textarea id="dw-url-output" class="form-control" readonly></textarea></section>
               <section id="password-generator" class="dw-card dw-section"><h2>Password Generator</h2><label class="form-label" for="dw-password-length">Length</label><input id="dw-password-length" type="number" class="form-control mb-2" value="16" min="6" max="128"><div class="input-group"><input id="dw-password-output" class="form-control" readonly><button id="dw-password-generate" class="btn tn-btn--primary">Generate</button></div></section>
@@ -2804,7 +2804,7 @@ function tn_developer_webmaster_tools_shortcode() {
               <div class="accordion-item">
                 <h3 class="accordion-header" id="dwFaq4">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dwFaqCol4" aria-expanded="false" aria-controls="dwFaqCol4">
-                    4. Does ToolNest also have dedicated pages for JSON, Passwords, Meta Tags, and robots.txt?
+                    4. Does ToolZebra also have dedicated pages for JSON, Passwords, Meta Tags, and robots.txt?
                   </button>
                 </h3>
                 <div id="dwFaqCol4" class="accordion-collapse collapse" aria-labelledby="dwFaq4" data-bs-parent="#dwFaqAccordion">
@@ -3118,7 +3118,7 @@ function tn_discount_vat_profit_calculator_shortcode() {
           <section class="tn-card mb-4" aria-labelledby="features-heading">
             <h2 id="features-heading" class="tn-section-title">Formulas Explained: Discount, VAT Extraction, Margin vs. Markup &amp; F-Commerce Net Profit</h2>
             <p class="text-muted">
-              Accurate pricing is the difference between a profitable online store and selling at a hidden loss. Many Facebook commerce (F-commerce) and Daraz/Shopify merchants calculate gross product profit (`Selling Price - Sourcing Cost`) without accounting for Steadfast/Pathao/RedX courier fees, bubble-wrap packaging, Facebook ad cost per conversion, and COD parcel return losses. ToolNest gives you transparent formulas for every scenario:
+              Accurate pricing is the difference between a profitable online store and selling at a hidden loss. Many Facebook commerce (F-commerce) and Daraz/Shopify merchants calculate gross product profit (`Selling Price - Sourcing Cost`) without accounting for Steadfast/Pathao/RedX courier fees, bubble-wrap packaging, Facebook ad cost per conversion, and COD parcel return losses. ToolZebra gives you transparent formulas for every scenario:
             </p>
 
             <div class="row g-3 my-2">
@@ -3435,7 +3435,7 @@ function tn_document_scanner_shortcode() {
           <section class="tn-card mb-4" aria-labelledby="features-heading">
             <h2 id="features-heading" class="tn-section-title">CamScanner-Style Perspective Deskew &amp; Shadow Removal Without Mobile Apps</h2>
             <p class="text-muted">
-              Taking a photo of a paper document under indoor lighting almost always produces a trapezoid angle and a dark shadow cast by your phone or hand. Submitting raw, gray smartphone photos for bank KYC, job applications, or university portals looks unprofessional and makes text hard to read. ToolNest's <strong>AI Document Scanner &amp; Auto-Enhancer</strong> uses 4-point homography perspective warping and integral-image local illumination normalization to turn uneven photos into flatbed-quality scans.
+              Taking a photo of a paper document under indoor lighting almost always produces a trapezoid angle and a dark shadow cast by your phone or hand. Submitting raw, gray smartphone photos for bank KYC, job applications, or university portals looks unprofessional and makes text hard to read. ToolZebra's <strong>AI Document Scanner &amp; Auto-Enhancer</strong> uses 4-point homography perspective warping and integral-image local illumination normalization to turn uneven photos into flatbed-quality scans.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -3909,7 +3909,7 @@ function tn_image_alt_text_generator_shortcode() {
           <section class="tn-card mb-4" aria-labelledby="features-heading">
             <h2 id="features-heading" class="tn-section-title">Boost Image SEO &amp; Web Accessibility Privately</h2>
             <p class="text-muted">
-              Missing or poorly written <code>alt</code> attributes hurt both your Google Images rankings and your website's accessibility for visually impaired visitors using screen readers like NVDA, JAWS, or VoiceOver. ToolNest's <strong>AI Image Alt-Text &amp; Caption Generator</strong> combines an in-browser Vision-Language transformer model with pixel-level color palette analysis to craft accurate, human-friendly descriptions in seconds.
+              Missing or poorly written <code>alt</code> attributes hurt both your Google Images rankings and your website's accessibility for visually impaired visitors using screen readers like NVDA, JAWS, or VoiceOver. ToolZebra's <strong>AI Image Alt-Text &amp; Caption Generator</strong> combines an in-browser Vision-Language transformer model with pixel-level color palette analysis to craft accurate, human-friendly descriptions in seconds.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -4116,12 +4116,12 @@ function tn_image_compressor_shortcode() {
 
           <!-- Features & Detailed SEO Content (300+ Words) -->
           <section class="tn-card mb-4" aria-labelledby="features-heading">
-            <h2 id="features-heading" class="tn-section-title">Why Compress Images Client-Side on ToolNest?</h2>
+            <h2 id="features-heading" class="tn-section-title">Why Compress Images Client-Side on ToolZebra?</h2>
             <p class="text-muted">
               Smartphone cameras routinely capture photos between 4 MB and 12 MB each. While large files are great for archival printing, they slow down WordPress websites, hurt Google Core Web Vitals (LCP) rankings, consume mobile data, and get rejected by online job and visa application forms that enforce strict 50 KB or 100 KB upload limits.
             </p>
             <p class="text-muted">
-              Most online image compressors upload your personal family photos, NID scans, or product shots to remote third-party servers. ToolNest eliminates that privacy risk completely by performing perceptual quantization directly inside your web browser.
+              Most online image compressors upload your personal family photos, NID scans, or product shots to remote third-party servers. ToolZebra eliminates that privacy risk completely by performing perceptual quantization directly inside your web browser.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -4349,7 +4349,7 @@ function tn_image_format_converter_shortcode() {
           <section class="tn-card mb-4" aria-labelledby="features-heading">
             <h2 id="features-heading" class="tn-section-title">Why Convert Between HEIC, WebP, PNG, and JPG Locally?</h2>
             <p class="text-muted">
-              Modern smartphones and web browsers use specialized image formats that are not always compatible with older government job portals, university admission forms, or desktop software. Apple iPhones capture photos in <strong>HEIC (High Efficiency Image Container)</strong> by default, while websites serve graphics in Google's <strong>WebP</strong> format. ToolNest's Image Format Converter bridges all of these formats right inside your browser without uploading private photos to any server.
+              Modern smartphones and web browsers use specialized image formats that are not always compatible with older government job portals, university admission forms, or desktop software. Apple iPhones capture photos in <strong>HEIC (High Efficiency Image Container)</strong> by default, while websites serve graphics in Google's <strong>WebP</strong> format. ToolZebra's Image Format Converter bridges all of these formats right inside your browser without uploading private photos to any server.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -4391,7 +4391,7 @@ function tn_image_format_converter_shortcode() {
                 </h3>
                 <div id="ifcFaqCol1" class="accordion-collapse collapse show" aria-labelledby="ifcFaq1" data-bs-parent="#ifcFaqAccordion">
                   <div class="accordion-body text-muted">
-                    Yes. As soon as you select a <code>.heic</code> or <code>.heif</code> photo, ToolNest loads the pinned client-side <code>heic2any</code> library and decodes the image directly in your browser.
+                    Yes. As soon as you select a <code>.heic</code> or <code>.heif</code> photo, ToolZebra loads the pinned client-side <code>heic2any</code> library and decodes the image directly in your browser.
                   </div>
                 </div>
               </div>
@@ -4581,7 +4581,7 @@ function tn_image_resizer_shortcode() {
               Every social network crops feed photos, cover banners, and vertical stories differently. If you upload an unformatted camera photo to a Facebook business page or an F-commerce ad campaign, key headlines and product details often get cut off on mobile screens.
             </p>
             <p class="text-muted">
-              ToolNest keeps all current social media and Bangladesh job application sizes in one centralized preset selector so marketers, content creators, and job applicants can format visuals in seconds:
+              ToolZebra keeps all current social media and Bangladesh job application sizes in one centralized preset selector so marketers, content creators, and job applicants can format visuals in seconds:
             </p>
             <div class="table-responsive">
               <table class="table table-bordered table-sm small mb-0">
@@ -4839,7 +4839,7 @@ function tn_image_to_pdf_shortcode() {
           <section class="tn-card mb-4" aria-labelledby="features-heading">
             <h2 id="features-heading" class="tn-section-title">Turn Phone Scans, Certificates &amp; Receipts into Clean PDFs Privately</h2>
             <p class="text-muted">
-              Students submitting handwritten assignments, job applicants combining academic transcripts and National ID cards, and business owners archiving delivery receipts often need to turn multiple phone photos into a single, well-formatted PDF file. Uploading personal identity documents or financial statements to unknown cloud servers poses a serious privacy risk. ToolNest's Image to PDF converter builds your document 100% locally inside your browser using <code>pdf-lib</code>.
+              Students submitting handwritten assignments, job applicants combining academic transcripts and National ID cards, and business owners archiving delivery receipts often need to turn multiple phone photos into a single, well-formatted PDF file. Uploading personal identity documents or financial statements to unknown cloud servers poses a serious privacy risk. ToolZebra's Image to PDF converter builds your document 100% locally inside your browser using <code>pdf-lib</code>.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -5024,7 +5024,7 @@ function tn_image_upscaler_shortcode() {
           <!-- Features & Detailed SEO Content (300+ Words) -->
           <section class="tn-card mb-4" aria-labelledby="tn-upscale-about-heading">
             <h2 id="tn-upscale-about-heading" class="tn-section-title">Private, Browser-Based AI Upscaling</h2>
-            <p class="text-muted mb-0">This tool uses the <a href="https://huggingface.co/Xenova/swin2SR-classical-sr-x2-64" target="_blank" rel="noopener noreferrer">Swin2SR classical 2x super-resolution model</a> through <a href="https://huggingface.co/docs/transformers.js" target="_blank" rel="noopener noreferrer">Transformers.js</a>. Processing runs locally in a browser worker; your image is not uploaded to ToolNest. The model files are downloaded the first time you use the feature. Upscaling estimates image detail rather than recovering guaranteed original pixels, so results vary by photo. The model is based on work released under the Apache 2.0 license.</p>
+            <p class="text-muted mb-0">This tool uses the <a href="https://huggingface.co/Xenova/swin2SR-classical-sr-x2-64" target="_blank" rel="noopener noreferrer">Swin2SR classical 2x super-resolution model</a> through <a href="https://huggingface.co/docs/transformers.js" target="_blank" rel="noopener noreferrer">Transformers.js</a>. Processing runs locally in a browser worker; your image is not uploaded to ToolZebra. The model files are downloaded the first time you use the feature. Upscaling estimates image detail rather than recovering guaranteed original pixels, so results vary by photo. The model is based on work released under the Apache 2.0 license.</p>
           </section>
 
           <!-- 5-Question FAQ Section -->
@@ -5036,7 +5036,7 @@ function tn_image_upscaler_shortcode() {
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tnUpscaleFaqOne" aria-expanded="true" aria-controls="tnUpscaleFaqOne">1. Does the AI image upscaler upload my photo?</button>
                 </h3>
                 <div id="tnUpscaleFaqOne" class="accordion-collapse collapse show" aria-labelledby="tnUpscaleFaqHeadingOne" data-bs-parent="#tnUpscaleFaq">
-                  <div class="accordion-body text-muted">No. The AI model is downloaded to your browser, but your selected image is processed locally and is not uploaded to ToolNest.</div>
+                  <div class="accordion-body text-muted">No. The AI model is downloaded to your browser, but your selected image is processed locally and is not uploaded to ToolZebra.</div>
                 </div>
               </div>
               <div class="accordion-item">
@@ -5346,7 +5346,7 @@ function tn_invoice_generator_shortcode() {
               Running a Facebook page shop (F-commerce) or small e-commerce business in Bangladesh means handling dozens of Cash-on-Delivery (COD) orders every day through Steadfast, Pathao, RedX, Sundarban, or Paperfly. Customers frequently pay the delivery fee in advance via bKash or Nagad and pay the remaining balance in cash to the delivery rider.
             </p>
             <p class="text-muted">
-              Standard western invoice templates lack fields for courier names, delivery charges, and partial advance deductions—leading to confusion when the courier rider collects cash at the doorstep. ToolNest's Invoice &amp; Courier Slip Generator calculates the exact <strong>Collectible COD Balance</strong> automatically and displays it in a bold banner.
+              Standard western invoice templates lack fields for courier names, delivery charges, and partial advance deductions—leading to confusion when the courier rider collects cash at the doorstep. ToolZebra's Invoice &amp; Courier Slip Generator calculates the exact <strong>Collectible COD Balance</strong> automatically and displays it in a bold banner.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -5452,7 +5452,7 @@ function tn_json_formatter_shortcode() {
             <div class="row g-3 mb-3">
               <div class="col-12">
                 <label for="jf-input" class="form-label small mb-2 fw-bold">Input JSON</label>
-                <textarea id="jf-input" class="form-control font-monospace" rows="6" placeholder='Paste JSON here... e.g. {"name":"ToolNest","tools":["converter","generator"]}'></textarea>
+                <textarea id="jf-input" class="form-control font-monospace" rows="6" placeholder='Paste JSON here... e.g. {"name":"ToolZebra","tools":["converter","generator"]}'></textarea>
               </div>
             </div>
 
@@ -6225,7 +6225,7 @@ function tn_loan_emi_fdr_dps_calculator_shortcode() {
           <section class="tn-card mb-4 d-none" aria-labelledby="features-heading">
             <h2 id="features-heading" class="tn-section-title">Formulas Explained: Discount, VAT Extraction, Margin vs. Markup &amp; F-Commerce Net Profit</h2>
             <p class="text-muted">
-              Accurate pricing is the difference between a profitable online store and selling at a hidden loss. Many Facebook commerce (F-commerce) and Daraz/Shopify merchants calculate gross product profit (`Selling Price - Sourcing Cost`) without accounting for Steadfast/Pathao/RedX courier fees, bubble-wrap packaging, Facebook ad cost per conversion, and COD parcel return losses. ToolNest gives you transparent formulas for every scenario:
+              Accurate pricing is the difference between a profitable online store and selling at a hidden loss. Many Facebook commerce (F-commerce) and Daraz/Shopify merchants calculate gross product profit (`Selling Price - Sourcing Cost`) without accounting for Steadfast/Pathao/RedX courier fees, bubble-wrap packaging, Facebook ad cost per conversion, and COD parcel return losses. ToolZebra gives you transparent formulas for every scenario:
             </p>
 
             <div class="row g-3 my-2">
@@ -6517,7 +6517,7 @@ function tn_meta_tag_generator_shortcode() {
                   <form id="mtg-form" class="row g-3">
                     <div class="col-12">
                       <label for="mtg-page-title" class="form-label small fw-bold">Page Title <span class="text-muted fw-normal">(required)</span></label>
-                      <input id="mtg-page-title" class="form-control" placeholder="Example: Loan EMI Calculator — ToolNest">
+                      <input id="mtg-page-title" class="form-control" placeholder="Example: Loan EMI Calculator — ToolZebra">
                     </div>
                     <div class="col-12">
                       <label for="mtg-description" class="form-label small fw-bold">Meta Description</label>
@@ -6529,11 +6529,11 @@ function tn_meta_tag_generator_shortcode() {
                     </div>
                     <div class="col-12">
                       <label for="mtg-author" class="form-label small fw-bold">Author</label>
-                      <input id="mtg-author" class="form-control" placeholder="ToolNest Team">
+                      <input id="mtg-author" class="form-control" placeholder="ToolZebra Team">
                     </div>
                     <div class="col-12">
                       <label for="mtg-website" class="form-label small fw-bold">Website Name</label>
-                      <input id="mtg-website" class="form-control" value="ToolNest">
+                      <input id="mtg-website" class="form-control" value="ToolZebra">
                     </div>
                     <div class="col-12">
                       <label for="mtg-url" class="form-label small fw-bold">Canonical / Page URL</label>
@@ -6833,7 +6833,7 @@ function tn_passport_photo_maker_shortcode() {
           <section class="tn-card mb-4" aria-labelledby="features-heading">
             <h2 id="features-heading" class="tn-section-title">Official Passport, Visa &amp; Stamp Size Specifications</h2>
             <p class="text-muted">
-              Getting passport and visa photos printed at a studio often costs 150 to 300 BDT for just four copies, and digital copies frequently have the wrong pixel dimensions for online visa portals. With ToolNest's Passport &amp; Visa Photo Maker, you can prepare compliant 300 DPI digital photos and multi-copy 4R sheets in under a minute from your phone or laptop.
+              Getting passport and visa photos printed at a studio often costs 150 to 300 BDT for just four copies, and digital copies frequently have the wrong pixel dimensions for online visa portals. With ToolZebra's Passport &amp; Visa Photo Maker, you can prepare compliant 300 DPI digital photos and multi-copy 4R sheets in under a minute from your phone or laptop.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -7023,7 +7023,7 @@ function tn_password_generator_shortcode() {
               <li>Generate or adjust the password, then use <strong>Copy</strong> and save it in a trusted password manager.</li>
             </ol>
             <h3 class="h5 fw-bold mt-4">Privacy and password safety</h3>
-            <p class="text-muted mb-0">Password generation happens in your browser; the generated value is not sent to ToolNest. The strength indicator is a basic estimate based on length and character variety, not a security audit. For better account security, use a unique password for every service, avoid sharing it, and enable multi-factor authentication when available.</p>
+            <p class="text-muted mb-0">Password generation happens in your browser; the generated value is not sent to ToolZebra. The strength indicator is a basic estimate based on length and character variety, not a security audit. For better account security, use a unique password for every service, avoid sharing it, and enable multi-factor authentication when available.</p>
           </section>
 
           <!-- 5-Question FAQ Section -->
@@ -7057,7 +7057,7 @@ function tn_password_generator_shortcode() {
                   </button>
                 </h3>
                 <div id="passwordFaqThree" class="accordion-collapse collapse" aria-labelledby="passwordFaqHeadingThree" data-bs-parent="#passwordFaqAccordion">
-                  <div class="accordion-body text-muted">No. The password is generated in your browser and is not sent to ToolNest. Copy and save it somewhere secure before leaving the page.</div>
+                  <div class="accordion-body text-muted">No. The password is generated in your browser and is not sent to ToolZebra. Copy and save it somewhere secure before leaving the page.</div>
                 </div>
               </div>
               <div class="accordion-item">
@@ -7203,7 +7203,7 @@ function tn_pdf_merge_split_shortcode() {
               Whether you are assembling bank statements, TIN tax certificates, trade licenses, academic transcripts, or property deeds, your PDF files contain sensitive personal and financial records. Traditional cloud PDF mergers upload your documents to remote servers where files may be cached or logged.
             </p>
             <p class="text-muted">
-              ToolNest uses the open-source <code>pdf-lib</code> engine inside your web browser. When you select PDF files on this page, your browser reads the binary page streams directly from your device's memory and constructs the new PDF locally—zero bytes are ever uploaded over the internet.
+              ToolZebra uses the open-source <code>pdf-lib</code> engine inside your web browser. When you select PDF files on this page, your browser reads the binary page streams directly from your device's memory and constructs the new PDF locally—zero bytes are ever uploaded over the internet.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -7272,7 +7272,7 @@ function tn_pdf_merge_split_shortcode() {
                 </h3>
                 <div id="pdfFaqCol4" class="accordion-collapse collapse" aria-labelledby="pdfFaq4" data-bs-parent="#pdfFaqAccordion">
                   <div class="accordion-body text-muted">
-                    No. ToolNest adds zero watermarks and imposes no daily limits. Your exported PDF preserves full vector text and image quality.
+                    No. ToolZebra adds zero watermarks and imposes no daily limits. Your exported PDF preserves full vector text and image quality.
                   </div>
                 </div>
               </div>
@@ -7442,7 +7442,7 @@ function tn_pdf_to_excel_shortcode() {
               Accountants, business owners, auditors, and operations teams frequently receive vendor price lists, courier COD settlement reports, tax schedules, and bank statements locked inside PDF files. Re-typing hundreds of numbers by hand is slow and prone to human error, while uploading confidential financial PDFs to unknown online converters exposes sensitive business numbers.
             </p>
             <p class="text-muted">
-              ToolNest solves both problems by running 100% inside your browser. Using Mozilla's <code>pdf.js</code> engine, the converter reads the exact horizontal (<code>X</code>) and vertical (<code>Y</code>) coordinates of every text item on each page, clusters items on the same horizontal baseline into rows, and separates columns based on spatial gaps. Finally, it constructs a genuine <strong>Office Open XML (<code>.xlsx</code>)</strong> workbook using <code>JSZip</code> with automatic numeric cell typing.
+              ToolZebra solves both problems by running 100% inside your browser. Using Mozilla's <code>pdf.js</code> engine, the converter reads the exact horizontal (<code>X</code>) and vertical (<code>Y</code>) coordinates of every text item on each page, clusters items on the same horizontal baseline into rows, and separates columns based on spatial gaps. Finally, it constructs a genuine <strong>Office Open XML (<code>.xlsx</code>)</strong> workbook using <code>JSZip</code> with automatic numeric cell typing.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -7472,7 +7472,7 @@ function tn_pdf_to_excel_shortcode() {
                 </h3>
                 <div id="peFaqCol1" class="accordion-collapse collapse show" aria-labelledby="peFaq1" data-bs-parent="#p2eFaqAccordion">
                   <div class="accordion-body text-muted">
-                    Yes. ToolNest builds a standards-compliant Office Open XML (<code>.xlsx</code>) workbook directly in your browser using JSZip, complete with numeric cell types so you can run <code>SUM</code> and <code>AVERAGE</code> formulas immediately in Microsoft Excel, Google Sheets, or LibreOffice Calc.
+                    Yes. ToolZebra builds a standards-compliant Office Open XML (<code>.xlsx</code>) workbook directly in your browser using JSZip, complete with numeric cell types so you can run <code>SUM</code> and <code>AVERAGE</code> formulas immediately in Microsoft Excel, Google Sheets, or LibreOffice Calc.
                   </div>
                 </div>
               </div>
@@ -7671,7 +7671,7 @@ function tn_pdf_to_jpg_shortcode() {
           <section class="tn-card mb-4" aria-labelledby="features-heading">
             <h2 id="features-heading" class="tn-section-title">Crisp, Private PDF-to-Image Extraction in Your Browser</h2>
             <p class="text-muted">
-              Online application portals, social media platforms, and presentation slides frequently require JPG or PNG images rather than PDF attachments. Taking low-resolution screenshots of a PDF leaves text blurry and pixelated. ToolNest's PDF to JPG Converter uses Mozilla's industry-standard <code>pdf.js</code> engine to rasterize vector text and graphics at up to <strong>3x resolution (~216 DPI)</strong> directly on your device.
+              Online application portals, social media platforms, and presentation slides frequently require JPG or PNG images rather than PDF attachments. Taking low-resolution screenshots of a PDF leaves text blurry and pixelated. ToolZebra's PDF to JPG Converter uses Mozilla's industry-standard <code>pdf.js</code> engine to rasterize vector text and graphics at up to <strong>3x resolution (~216 DPI)</strong> directly on your device.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -7918,7 +7918,7 @@ function tn_pdf_to_word_shortcode() {
               Most online PDF-to-Word converters require you to upload your PDF to a remote cloud server, wait in a processing queue, and download the result. When you are working with legal agreements, employment contracts, academic theses, government circulars, or financial statements, uploading files to third-party servers creates unnecessary privacy risks.
             </p>
             <p class="text-muted">
-              ToolNest performs the entire conversion inside your web browser. Using Mozilla's <code>pdf.js</code> engine, the tool reads the X/Y coordinates and font heights of every text element on each page, reconstructs flowing paragraphs and headings, and packages them into a standards-compliant <strong>Office Open XML (<code>.docx</code>)</strong> archive using <code>JSZip</code>.
+              ToolZebra performs the entire conversion inside your web browser. Using Mozilla's <code>pdf.js</code> engine, the tool reads the X/Y coordinates and font heights of every text element on each page, reconstructs flowing paragraphs and headings, and packages them into a standards-compliant <strong>Office Open XML (<code>.docx</code>)</strong> archive using <code>JSZip</code>.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -7948,7 +7948,7 @@ function tn_pdf_to_word_shortcode() {
                 </h3>
                 <div id="pwFaqCol1" class="accordion-collapse collapse show" aria-labelledby="pwFaq1" data-bs-parent="#p2wFaqAccordion">
                   <div class="accordion-body text-muted">
-                    Yes. ToolNest builds a genuine Office Open XML (<code>.docx</code>) package directly in your browser using JSZip. The downloaded <code>.docx</code> file opens natively in Microsoft Word, Google Docs, LibreOffice Writer, and WPS Office.
+                    Yes. ToolZebra builds a genuine Office Open XML (<code>.docx</code>) package directly in your browser using JSZip. The downloaded <code>.docx</code> file opens natively in Microsoft Word, Google Docs, LibreOffice Writer, and WPS Office.
                   </div>
                 </div>
               </div>
@@ -8254,7 +8254,7 @@ function tn_protect_pdf_shortcode() {
           <section class="tn-card mb-4" aria-labelledby="features-heading">
             <h2 id="features-heading" class="tn-section-title">Why Encrypt Confidential PDFs Locally in Your Browser?</h2>
             <p class="text-muted">
-              When sending bank statements, salary slips, tax returns, legal contracts, or NID/passport scans over email or WhatsApp, leaving the PDF unencrypted means anyone who intercepts or forwards the file can read and copy your private data. However, uploading sensitive PDFs and passwords to an unknown online server defeats the entire purpose of security. ToolNest's <strong>Protect PDF</strong> utility performs <strong>128-bit Standard Security Handler encryption</strong> directly inside your browser.
+              When sending bank statements, salary slips, tax returns, legal contracts, or NID/passport scans over email or WhatsApp, leaving the PDF unencrypted means anyone who intercepts or forwards the file can read and copy your private data. However, uploading sensitive PDFs and passwords to an unknown online server defeats the entire purpose of security. ToolZebra's <strong>Protect PDF</strong> utility performs <strong>128-bit Standard Security Handler encryption</strong> directly inside your browser.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -8348,7 +8348,7 @@ function tn_protect_pdf_shortcode() {
                 </h3>
                 <div id="ppdfFaqCol5" class="accordion-collapse collapse" aria-labelledby="ppdfFaq5" data-bs-parent="#ppdfFaqAccordion">
                   <div class="accordion-body text-muted">
-                    Because ToolNest never transmits or stores your password, we cannot recover a forgotten password. Always copy and save your password in a secure password manager before sharing the encrypted PDF.
+                    Because ToolZebra never transmits or stores your password, we cannot recover a forgotten password. Always copy and save your password in a secure password manager before sharing the encrypted PDF.
                   </div>
                 </div>
               </div>
@@ -8525,7 +8525,7 @@ function tn_qr_code_generator_shortcode() {
               Have you ever printed thousands of product boxes, restaurant table tents, or visiting cards with a "free" QR code, only to discover two weeks later that the QR code stopped working unless you pay a monthly subscription? Many QR websites secretly replace your URL with their own short redirect link so they can deactivate it after a trial period.
             </p>
             <p class="text-muted">
-              ToolNest never uses redirect middleman links. Our QR Code Generator encodes your exact URL, plain text, or WiFi credentials directly into the ISO/IEC 18004 QR matrix inside your browser. Once you download your PNG or SVG file, it is <strong>100% permanent, works offline, and will never expire</strong>.
+              ToolZebra never uses redirect middleman links. Our QR Code Generator encodes your exact URL, plain text, or WiFi credentials directly into the ISO/IEC 18004 QR matrix inside your browser. Once you download your PNG or SVG file, it is <strong>100% permanent, works offline, and will never expire</strong>.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -8550,7 +8550,7 @@ function tn_qr_code_generator_shortcode() {
               <div class="accordion-item">
                 <h3 class="accordion-header" id="qFaq1">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#qFaqCol1" aria-expanded="true" aria-controls="qFaqCol1">
-                    1. Do QR codes created on ToolNest ever expire?
+                    1. Do QR codes created on ToolZebra ever expire?
                   </button>
                 </h3>
                 <div id="qFaqCol1" class="accordion-collapse collapse show" aria-labelledby="qFaq1" data-bs-parent="#qrFaqAccordion">
@@ -9057,7 +9057,7 @@ function tn_text_tools_shortcode() {
               Content writers, SEO specialists, data entry freelancers, and e-commerce managers spend hours cleaning up messy spreadsheets, fixing accidentally capitalized paragraphs, and counting characters for Google meta titles or SMS marketing campaigns.
             </p>
             <p class="text-muted">
-              Instead of opening heavy spreadsheet software just to deduplicate a list of customer phone numbers or sort product SKUs alphabetically, ToolNest's Text Tools suite handles all common string operations in one lightweight workspace:
+              Instead of opening heavy spreadsheet software just to deduplicate a list of customer phone numbers or sort product SKUs alphabetically, ToolZebra's Text Tools suite handles all common string operations in one lightweight workspace:
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -9469,7 +9469,7 @@ function tn_utm_link_builder_shortcode() {
                 </h3>
                 <div id="uFaqCol3" class="accordion-collapse collapse" aria-labelledby="uFaq3" data-bs-parent="#utmFaqAccordion">
                   <div class="accordion-body text-muted">
-                    Google Analytics is strictly case-sensitive. It treats <code>utm_source=Facebook</code> and <code>utm_source=facebook</code> as two separate traffic sources. ToolNest includes an automatic <em>Force lowercase</em> toggle enabled by default so your analytics reports stay clean and unified.
+                    Google Analytics is strictly case-sensitive. It treats <code>utm_source=Facebook</code> and <code>utm_source=facebook</code> as two separate traffic sources. ToolZebra includes an automatic <em>Force lowercase</em> toggle enabled by default so your analytics reports stay clean and unified.
                   </div>
                 </div>
               </div>
@@ -9482,7 +9482,7 @@ function tn_utm_link_builder_shortcode() {
                 </h3>
                 <div id="uFaqCol4" class="accordion-collapse collapse" aria-labelledby="uFaq4" data-bs-parent="#utmFaqAccordion">
                   <div class="accordion-body text-muted">
-                    ToolNest parses your URL using the native browser URL API. If your link already has parameters like <code>?product=12</code> or a section anchor like <code>#pricing</code>, the builder preserves them and appends the UTM parameters in the proper position before the hash.
+                    ToolZebra parses your URL using the native browser URL API. If your link already has parameters like <code>?product=12</code> or a section anchor like <code>#pricing</code>, the builder preserves them and appends the UTM parameters in the proper position before the hash.
                   </div>
                 </div>
               </div>
@@ -9747,7 +9747,7 @@ function tn_word_to_pdf_shortcode() {
               Sending a raw <code>.docx</code> file to a client, recruiter, or government portal often leads to broken layouts when the recipient opens the file on a different operating system or without your installed fonts. Converting your Word document into a standardized <strong>PDF (Portable Document Format)</strong> locks in your pagination, margins, and typography across every phone, tablet, and desktop.
             </p>
             <p class="text-muted">
-              With ToolNest, you never have to upload confidential employment contracts, legal drafts, or academic papers to a third-party server. Our browser engine unpacks the OpenXML structure of your <code>.docx</code> file locally using <code>JSZip</code>, reads the document's original page setup, styles, and tables, and builds an exact multi-page vector PDF using <code>pdf-lib</code>.
+              With ToolZebra, you never have to upload confidential employment contracts, legal drafts, or academic papers to a third-party server. Our browser engine unpacks the OpenXML structure of your <code>.docx</code> file locally using <code>JSZip</code>, reads the document's original page setup, styles, and tables, and builds an exact multi-page vector PDF using <code>pdf-lib</code>.
             </p>
             <div class="row g-3 my-2">
               <div class="col-md-6">
@@ -9772,12 +9772,12 @@ function tn_word_to_pdf_shortcode() {
               <div class="accordion-item">
                 <h3 class="accordion-header" id="wpFaq1">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#wpFaqCol1" aria-expanded="true" aria-controls="wpFaqCol1">
-                    1. How does ToolNest convert Word (.docx) to PDF without uploading my file?
+                    1. How does ToolZebra convert Word (.docx) to PDF without uploading my file?
                   </button>
                 </h3>
                 <div id="wpFaqCol1" class="accordion-collapse collapse show" aria-labelledby="wpFaq1" data-bs-parent="#w2pFaqAccordion">
                   <div class="accordion-body text-muted">
-                    ToolNest reads the internal XML structure (<code>word/document.xml</code>) of your <code>.docx</code> file directly inside your browser using JSZip, formats the headings and paragraphs, and builds a vector PDF file using <code>pdf-lib</code>—all 100% locally on your device.
+                    ToolZebra reads the internal XML structure (<code>word/document.xml</code>) of your <code>.docx</code> file directly inside your browser using JSZip, formats the headings and paragraphs, and builds a vector PDF file using <code>pdf-lib</code>—all 100% locally on your device.
                   </div>
                 </div>
               </div>
@@ -9839,3 +9839,679 @@ function tn_word_to_pdf_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('tool_word_to_pdf', 'tn_word_to_pdf_shortcode');
+
+function tn_video_to_audio_shortcode() {
+    ob_start();
+    ?>
+    <!-- TOOL AREA START -->
+    <section class="tn-tool-workspace" aria-label="YouTube Video & Audio Downloader Workspace">
+      <span class="tn-privacy-banner">
+        <i class="fa-brands fa-youtube text-danger" aria-hidden="true"></i>
+        Multi-Quality YouTube Video &amp; Audio Downloader &bull; MP4 (4K/1080p/720p) &amp; Audio (MP3 320kbps / M4A / WAV / FLAC)
+      </span>
+
+      <div class="tn-step-bar">
+        <div class="tn-step-bar__item"><span class="tn-step-bar__num">1</span> Paste YouTube Video Link</div>
+        <div class="tn-step-bar__item"><span class="tn-step-bar__num">2</span> Choose Audio or Video Quality</div>
+        <div class="tn-step-bar__item"><span class="tn-step-bar__num">3</span> Click Download</div>
+      </div>
+
+      <!-- Mode Tabs -->
+      <ul class="nav nav-pills mb-3 gap-2" id="tnV2aTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active fw-semibold" id="tn-v2a-tab-yt" data-bs-toggle="pill" data-bs-target="#tn-v2a-pane-yt" type="button" role="tab" aria-controls="tn-v2a-pane-yt" aria-selected="true">
+            <i class="fa-brands fa-youtube me-1" aria-hidden="true"></i> YouTube URL Downloader (Video &amp; Audio)
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link fw-semibold" id="tn-v2a-tab-local" data-bs-toggle="pill" data-bs-target="#tn-v2a-pane-local" type="button" role="tab" aria-controls="tn-v2a-pane-local" aria-selected="false">
+            <i class="fa-solid fa-file-audio me-1" aria-hidden="true"></i> Local Video File to MP3 / WAV
+          </button>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="tnV2aTabContent">
+        <!-- TAB 1: YouTube Video & Audio Downloader (Primary) -->
+        <div class="tab-pane fade show active" id="tn-v2a-pane-yt" role="tabpanel" aria-labelledby="tn-v2a-tab-yt">
+          <div class="tn-result-box mb-3">
+            <label for="tn-v2a-yt-url" class="form-label fw-bold">Paste YouTube Video or Shorts Link</label>
+            <div class="input-group input-group-lg mb-2">
+              <span class="input-group-text bg-white text-danger">
+                <i class="fa-brands fa-youtube fs-4" aria-hidden="true"></i>
+              </span>
+              <input
+                type="url"
+                id="tn-v2a-yt-url"
+                class="form-control"
+                placeholder="Paste link here (e.g. https://www.youtube.com/watch?v=... or https://youtu.be/...)"
+                autocomplete="off">
+              <button type="button" id="tn-v2a-yt-paste-btn" class="btn tn-btn--outline" title="Paste from clipboard">
+                <i class="bi bi-clipboard" aria-hidden="true"></i> Paste
+              </button>
+              <button type="button" id="tn-v2a-yt-fetch-btn" class="btn tn-btn--primary px-4">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i> Get Download Options
+              </button>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+              <span class="small text-muted">
+                Supports regular YouTube videos, Shorts, and <code>youtu.be</code> links in <strong>MP4, WEBM, MP3 (320/256/192/128 kbps), M4A, WAV, FLAC, OPUS, and OGG</strong>.
+              </span>
+              <button type="button" id="tn-v2a-yt-sample-btn" class="btn tn-btn--outline btn-sm">
+                <i class="bi bi-magic" aria-hidden="true"></i> Try Sample Video
+              </button>
+            </div>
+          </div>
+
+          <!-- Loading Spinner while fetching formats -->
+          <div id="tn-v2a-yt-loading" class="tn-result-box text-center py-4 mb-3 d-none">
+            <div class="spinner-border text-primary mb-2" role="status" aria-hidden="true"></div>
+            <div class="fw-bold">Analyzing YouTube video &amp; preparing Audio / Video quality options...</div>
+            <div class="small text-muted">Fetching available bitrates and resolutions</div>
+          </div>
+
+          <div id="tn-v2a-yt-error" class="alert alert-danger d-none" role="alert"></div>
+
+          <!-- Video Info & Multi-Quality Download Table -->
+          <div id="tn-v2a-yt-result" class="d-none">
+            <div class="tn-result-box mb-3">
+              <div class="row g-3 align-items-center">
+                <div class="col-md-4">
+                  <div class="position-relative rounded overflow-hidden border shadow-sm bg-dark">
+                    <img id="tn-v2a-yt-thumb" src="" alt="YouTube Video Thumbnail" class="img-fluid w-100 d-block">
+                    <span id="tn-v2a-yt-duration-badge" class="badge bg-dark bg-opacity-75 text-white position-absolute bottom-0 end-0 m-2 px-2 py-1 d-none">00:00</span>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="d-flex flex-wrap gap-2 mb-2">
+                    <span class="badge bg-danger-subtle text-danger fw-semibold">
+                      <i class="fa-brands fa-youtube me-1"></i> ID: <span id="tn-v2a-yt-id"></span>
+                    </span>
+                    <span id="tn-v2a-yt-views-badge" class="badge bg-secondary-subtle text-secondary fw-semibold d-none"></span>
+                  </div>
+                  <h2 id="tn-v2a-yt-title" class="h5 fw-bold mb-1">Video Title</h2>
+                  <p class="small text-muted mb-3">
+                    Channel: <strong id="tn-v2a-yt-author" class="text-dark">Channel Name</strong>
+                  </p>
+                  <div class="d-flex flex-wrap align-items-center gap-2">
+                    <span class="small fw-semibold text-muted me-1">Save Thumbnail:</span>
+                    <div id="tn-v2a-yt-thumb-links" class="d-flex flex-wrap gap-2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Format Category Filter Buttons -->
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+              <div class="d-flex flex-wrap gap-2" role="group" aria-label="Filter download formats">
+                <button type="button" class="btn btn-primary btn-sm active" data-tn-yt-filter="all">
+                  <i class="fa-solid fa-layer-group me-1"></i> All Formats (Audio &amp; Video)
+                </button>
+                <button type="button" class="btn tn-btn--outline btn-sm" data-tn-yt-filter="audio">
+                  <i class="fa-solid fa-headphones me-1"></i> Audio Only (MP3 320kbps, M4A, WAV, FLAC)
+                </button>
+                <button type="button" class="btn tn-btn--outline btn-sm" data-tn-yt-filter="video">
+                  <i class="fa-solid fa-video me-1"></i> Video + Audio (MP4 4K, 1080p, 720p, WEBM)
+                </button>
+              </div>
+            </div>
+
+            <!-- AUDIO DOWNLOAD OPTIONS SECTION -->
+            <div id="tn-v2a-audio-section" class="tn-result-box mb-3">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="h6 fw-bold mb-0 text-primary">
+                  <i class="fa-solid fa-music me-1" aria-hidden="true"></i> Audio Download Options (Multiple Qualities &amp; File Types)
+                </h3>
+                <span class="badge bg-primary-subtle text-primary">MP3 &bull; M4A &bull; WAV &bull; FLAC &bull; OPUS &bull; OGG</span>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                  <thead class="table-light small text-uppercase text-muted">
+                    <tr>
+                      <th scope="col">File Type</th>
+                      <th scope="col">Audio Quality / Bitrate</th>
+                      <th scope="col">Est. Size</th>
+                      <th scope="col" class="text-end" style="min-width: 195px;">Download</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tn-v2a-audio-tbody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- VIDEO DOWNLOAD OPTIONS SECTION -->
+            <div id="tn-v2a-video-section" class="tn-result-box mb-2">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="h6 fw-bold mb-0 text-primary">
+                  <i class="fa-solid fa-film me-1" aria-hidden="true"></i> Video Download Options (MP4 &amp; WEBM Multiple Resolutions)
+                </h3>
+                <span class="badge bg-success-subtle text-success">4K &bull; 1440p &bull; 1080p &bull; 720p &bull; 480p &bull; 360p</span>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                  <thead class="table-light small text-uppercase text-muted">
+                    <tr>
+                      <th scope="col">File Type</th>
+                      <th scope="col">Resolution &amp; Quality</th>
+                      <th scope="col">Est. Size</th>
+                      <th scope="col" class="text-end" style="min-width: 195px;">Download</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tn-v2a-video-tbody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: Local Video to High-Quality Audio Extractor -->
+        <div class="tab-pane fade" id="tn-v2a-pane-local" role="tabpanel" aria-labelledby="tn-v2a-tab-local">
+          <div id="tn-v2a-dropzone" class="tn-dropzone mb-3" role="button" tabindex="0" aria-label="Choose or drop a video file to extract high quality audio">
+            <i class="fa-solid fa-file-audio tn-dropzone__icon d-block" aria-hidden="true"></i>
+            <h2 class="h5 fw-bold mb-1">Drop a local video file from your device</h2>
+            <p class="small text-muted mb-3">Supports MP4, WebM, MOV, MKV, AVI, or existing audio files. Extracts 320 kbps MP3 or 16-bit WAV locally.</p>
+            <label for="tn-v2a-file" class="btn tn-btn--primary mb-0">
+              <i class="bi bi-folder2-open" aria-hidden="true"></i> Choose Video File
+            </label>
+            <input type="file" id="tn-v2a-file" class="d-none" accept="video/*,audio/*,.mp4,.webm,.mov,.mkv,.m4v,.avi">
+          </div>
+
+          <div id="tn-v2a-editor" class="d-none">
+            <div class="tn-result-box mb-3">
+              <div class="row g-3 align-items-center">
+                <div class="col-md-5">
+                  <video id="tn-v2a-video-preview" class="w-100 rounded border bg-dark d-none" style="max-height: 200px;" controls playsinline></video>
+                </div>
+                <div class="col-md-7">
+                  <div class="d-flex justify-content-between align-items-start mb-1">
+                    <div>
+                      <h3 id="tn-v2a-file-name" class="h6 fw-bold mb-0 text-break">video.mp4</h3>
+                      <div id="tn-v2a-file-meta" class="small text-muted">Ready to extract</div>
+                    </div>
+                    <span id="tn-v2a-trim-duration" class="badge bg-primary-subtle text-primary fw-semibold">Full Length</span>
+                  </div>
+                  <div class="my-2">
+                    <canvas id="tn-v2a-waveform" class="w-100 rounded border" style="height: 96px; display: block;"></canvas>
+                  </div>
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <label for="tn-v2a-start" class="form-label small fw-semibold mb-1">Trim Start (Seconds)</label>
+                      <input type="number" id="tn-v2a-start" class="form-control form-control-sm" min="0" step="0.5" value="0">
+                    </div>
+                    <div class="col-6">
+                      <label for="tn-v2a-end" class="form-label small fw-semibold mb-1">Trim End (Seconds)</label>
+                      <input type="number" id="tn-v2a-end" class="form-control form-control-sm" min="0" step="0.5" value="0">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-sm-6 col-md-4">
+                <label for="tn-v2a-format" class="form-label fw-bold small">Audio Format &amp; Bitrate</label>
+                <select id="tn-v2a-format" class="form-select">
+                  <option value="mp3-320" selected>MP3 — 320 kbps (Studio Best Quality)</option>
+                  <option value="mp3-256">MP3 — 256 kbps (High Quality)</option>
+                  <option value="mp3-192">MP3 — 192 kbps (Standard Quality)</option>
+                  <option value="mp3-128">MP3 — 128 kbps (Compact / Podcast)</option>
+                  <option value="wav-pcm">WAV — 16-Bit PCM (Uncompressed Lossless)</option>
+                </select>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <label for="tn-v2a-samplerate" class="form-label fw-bold small">Sample Rate</label>
+                <select id="tn-v2a-samplerate" class="form-select">
+                  <option value="48000">48,000 Hz (Studio / Video Master)</option>
+                  <option value="44100" selected>44,100 Hz (CD Quality Standard)</option>
+                  <option value="22050">22,050 Hz (Speech / Compact)</option>
+                </select>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <label for="tn-v2a-channels" class="form-label fw-bold small">Audio Channels</label>
+                <select id="tn-v2a-channels" class="form-select">
+                  <option value="2" selected>Stereo (2.0 — Left &amp; Right)</option>
+                  <option value="1">Mono (1.0 — Single Channel)</option>
+                </select>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <label for="tn-v2a-volume" class="form-label fw-bold small">Volume Level / Gain Boost</label>
+                <select id="tn-v2a-volume" class="form-select">
+                  <option value="100" selected>100% (Original Volume)</option>
+                  <option value="125">125% (Mild Volume Boost)</option>
+                  <option value="150">150% (Strong Volume Boost)</option>
+                  <option value="200">200% (Maximum Amplifier)</option>
+                </select>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <label for="tn-v2a-fadein" class="form-label fw-bold small">Fade-In Effect</label>
+                <select id="tn-v2a-fadein" class="form-select">
+                  <option value="0" selected>None (Instant Start)</option>
+                  <option value="1">1 Second Fade-In</option>
+                  <option value="2">2 Seconds Fade-In</option>
+                  <option value="3">3 Seconds Fade-In</option>
+                </select>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <label for="tn-v2a-fadeout" class="form-label fw-bold small">Fade-Out Effect</label>
+                <select id="tn-v2a-fadeout" class="form-select">
+                  <option value="0" selected>None (Instant End)</option>
+                  <option value="1">1 Second Fade-Out</option>
+                  <option value="2">2 Seconds Fade-Out</option>
+                  <option value="3">3 Seconds Fade-Out</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-check form-switch mb-3">
+              <input class="form-check-input" type="checkbox" role="switch" id="tn-v2a-normalize" checked>
+              <label class="form-check-label small fw-semibold" for="tn-v2a-normalize">
+                Enable Smart Peak Normalization (Prevents clipping &amp; balances quiet recordings)
+              </label>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <button type="button" id="tn-v2a-extract-btn" class="btn tn-btn--primary" disabled>
+              <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Extract High-Quality Audio
+            </button>
+            <button type="button" id="tn-v2a-download-btn" class="btn tn-btn--success" disabled>
+              <i class="bi bi-download" aria-hidden="true"></i> Download Audio
+            </button>
+            <button type="button" id="tn-v2a-reset-btn" class="btn tn-btn--outline text-danger" disabled>
+              <i class="bi bi-trash3" aria-hidden="true"></i> Clear
+            </button>
+          </div>
+
+          <div id="tn-v2a-progress-wrap" class="mb-3 d-none">
+            <div id="tn-v2a-progress-label" class="small fw-semibold mb-1">Encoding high-quality audio...</div>
+            <div class="progress" style="height: 18px;">
+              <div id="tn-v2a-progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <p id="tn-v2a-status" class="small text-muted mb-3" role="status" aria-live="polite">
+            Select or drop a video file above to extract 320 kbps MP3 or Lossless WAV audio.
+          </p>
+
+          <div id="tn-v2a-result-box" class="tn-result-box d-none">
+            <div class="small fw-bold text-success text-uppercase mb-1">
+              <i class="bi bi-check-circle-fill me-1" aria-hidden="true"></i> Extracted Audio Ready
+            </div>
+            <div id="tn-v2a-result-summary" class="fw-semibold mb-2">audio.mp3 • 320 kbps</div>
+            <audio id="tn-v2a-audio-preview" class="w-100" controls></audio>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TOOL AREA END -->
+
+    <?php toolnest_render_incontent_ad_slot(); ?>
+
+    <section class="tn-card mb-4" aria-labelledby="v2a-howto-heading">
+      <h2 id="v2a-howto-heading" class="tn-section-title">How to Download YouTube Videos &amp; High-Quality Audio</h2>
+      <ol class="mb-0 ps-3">
+        <li class="mb-2"><strong>Step 1 — Paste the YouTube Link:</strong> Copy any YouTube video or Shorts URL and paste it into the input box above, then click <strong>Get Download Options</strong>.</li>
+        <li class="mb-2"><strong>Step 2 — Pick Your Audio or Video Format &amp; Quality:</strong> Browse the <strong>Audio Download Options</strong> (MP3 320kbps, 256kbps, 192kbps, 128kbps, M4A, WAV, FLAC, OPUS, OGG) or <strong>Video Download Options</strong> (MP4 4K 2160p, 1440p, 1080p Full HD, 720p HD, 480p, 360p, WEBM).</li>
+        <li><strong>Step 3 — Click Download:</strong> Click the <strong>Download</strong> button next to your chosen quality. The converter prepares your file with a live progress indicator and starts the download automatically.</li>
+      </ol>
+    </section>
+
+    <section class="tn-card mb-4" aria-labelledby="v2a-features-heading">
+      <h2 id="v2a-features-heading" class="tn-section-title">Multi-Format YouTube Video &amp; Studio Audio Downloader</h2>
+      <p class="text-muted">
+        Whether you need crisp <strong>320 kbps MP3</strong> audio for offline listening, uncompressed <strong>16-Bit WAV / FLAC</strong> tracks for video editing, or full-resolution <strong>1080p Full HD and 4K MP4</strong> videos for presentations and study materials, ToolZebra gives you every format and bitrate in one clean table.
+      </p>
+      <p class="text-muted mb-0">
+        In addition to direct YouTube link downloading, the built-in <strong>Local Video File to MP3 / WAV</strong> tab lets you convert, trim, and boost any video file already stored on your phone or computer 100% locally in your browser.
+      </p>
+    </section>
+
+    <section class="mb-4" aria-labelledby="v2a-faq-heading">
+      <h2 id="v2a-faq-heading" class="tn-section-title">Frequently Asked Questions</h2>
+      <div class="accordion tn-faq" id="v2aFaqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="v2aFaq1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#v2aFaqCol1" aria-expanded="true" aria-controls="v2aFaqCol1">
+              1. Which audio and video file formats are supported?
+            </button>
+          </h3>
+          <div id="v2aFaqCol1" class="accordion-collapse collapse show" aria-labelledby="v2aFaq1" data-bs-parent="#v2aFaqAccordion">
+            <div class="accordion-body text-muted">
+              For audio, you can download in <strong>MP3 (320 kbps, 256 kbps, 192 kbps, 128 kbps)</strong>, <strong>M4A (AAC)</strong>, <strong>OPUS</strong>, <strong>WAV (Lossless)</strong>, <strong>FLAC</strong>, and <strong>OGG</strong>. For video, you can download in <strong>MP4 (2160p 4K, 1440p 2K, 1080p Full HD, 720p HD, 480p, 360p)</strong> and <strong>WEBM</strong>.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="v2aFaq2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#v2aFaqCol2" aria-expanded="false" aria-controls="v2aFaqCol2">
+              2. Does this tool support YouTube Shorts and mobile youtu.be links?
+            </button>
+          </h3>
+          <div id="v2aFaqCol2" class="accordion-collapse collapse" aria-labelledby="v2aFaq2" data-bs-parent="#v2aFaqAccordion">
+            <div class="accordion-body text-muted">
+              Yes! You can paste standard <code>youtube.com/watch?v=...</code> URLs, mobile <code>youtu.be/...</code> share links, or <code>youtube.com/shorts/...</code> links.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="v2aFaq3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#v2aFaqCol3" aria-expanded="false" aria-controls="v2aFaqCol3">
+              3. Which audio quality should I choose for the best sound?
+            </button>
+          </h3>
+          <div id="v2aFaqCol3" class="accordion-collapse collapse" aria-labelledby="v2aFaq3" data-bs-parent="#v2aFaqAccordion">
+            <div class="accordion-body text-muted">
+              Choose <strong>MP3 — 320 kbps</strong> for universal compatibility with maximum MP3 fidelity, or choose <strong>WAV / FLAC</strong> if you want uncompressed lossless audio for editing software.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="v2aFaq4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#v2aFaqCol4" aria-expanded="false" aria-controls="v2aFaqCol4">
+              4. Can I also download the video's HD thumbnail image?
+            </button>
+          </h3>
+          <div id="v2aFaqCol4" class="accordion-collapse collapse" aria-labelledby="v2aFaq4" data-bs-parent="#v2aFaqAccordion">
+            <div class="accordion-body text-muted">
+              Yes. When you inspect any link, quick buttons appear right below the channel name to download the <strong>HD 1280&times;720 (MaxRes)</strong>, <strong>HQ 480&times;360</strong>, and <strong>MQ 320&times;180</strong> cover images.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="v2aFaq5">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#v2aFaqCol5" aria-expanded="false" aria-controls="v2aFaqCol5">
+              5. Can I convert a video file that is already saved on my device?
+            </button>
+          </h3>
+          <div id="v2aFaqCol5" class="accordion-collapse collapse" aria-labelledby="v2aFaq5" data-bs-parent="#v2aFaqAccordion">
+            <div class="accordion-body text-muted">
+              Yes! Click the <strong>Local Video File to MP3 / WAV</strong> tab at the top of the tool to extract, trim, normalize, and boost audio from any local video file directly in your browser.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('tool_video_to_audio', 'tn_video_to_audio_shortcode');
+add_shortcode('tool_youtube_downloader', 'tn_video_to_audio_shortcode');
+
+/**
+ * YouTube Playlist Downloader (Full Playlist Audio & Video .ZIP + Track Selector)
+ */
+function tn_youtube_playlist_downloader_shortcode() {
+    ob_start();
+    ?>
+    <!-- TOOL AREA START -->
+    <section class="tn-tool-workspace" aria-label="YouTube Playlist Downloader Workspace">
+      <span class="tn-privacy-banner">
+        <i class="fa-solid fa-file-zipper" aria-hidden="true"></i>
+        Full YouTube Playlist to .ZIP &bull; Multi-Format Audio (MP3 320k, WAV, FLAC, M4A) &amp; Video (4K, 1080p, 720p MP4/WEBM)
+      </span>
+
+      <div class="tn-step-bar mb-3">
+        <div class="tn-step-bar__item"><span class="tn-step-bar__num">1</span> Paste YouTube Playlist Link</div>
+        <div class="tn-step-bar__item"><span class="tn-step-bar__num">2</span> Select Songs &amp; Pick Audio/Video Format</div>
+        <div class="tn-step-bar__item"><span class="tn-step-bar__num">3</span> Download Full Playlist as .ZIP</div>
+      </div>
+
+      <!-- URL Input Bar -->
+      <div class="row g-2 mb-3">
+        <div class="col-md-8">
+          <label for="tn-ytpl-url" class="form-label fw-bold">
+            <i class="fa-brands fa-youtube text-danger me-1" aria-hidden="true"></i>
+            Paste YouTube Playlist URL
+          </label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-text"><i class="fa-solid fa-list-ul" aria-hidden="true"></i></span>
+            <input
+              type="url"
+              id="tn-ytpl-url"
+              class="form-control"
+              placeholder="https://www.youtube.com/playlist?list=PL... or watch?v=...&list=PL..."
+              autocomplete="off"
+            >
+          </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-end gap-2">
+          <button type="button" id="tn-ytpl-fetch-btn" class="btn tn-btn--primary btn-lg flex-grow-1">
+            <i class="fa-solid fa-magnifying-glass me-1" aria-hidden="true"></i> Fetch Playlist
+          </button>
+          <button type="button" id="tn-ytpl-sample-btn" class="btn tn-btn--outline btn-lg" title="Try Sample Playlist">
+            <i class="bi bi-magic" aria-hidden="true"></i>
+          </button>
+          <button type="button" id="tn-ytpl-clear-btn" class="btn tn-btn--outline btn-lg text-danger" title="Clear">
+            <i class="bi bi-x-lg" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="tn-ytpl-error" class="alert alert-danger d-none mb-3" role="alert"></div>
+
+      <!-- Loading Spinner -->
+      <div id="tn-ytpl-loading" class="tn-result-box text-center py-4 mb-3 d-none">
+        <div class="spinner-border text-primary mb-2" role="status" aria-hidden="true"></div>
+        <div class="fw-bold">Loading YouTube Playlist Songs &amp; Building .ZIP Format Options...</div>
+        <div class="small text-muted">Fetching track list, durations, and preparing multi-quality Audio &amp; Video ZIP packages.</div>
+      </div>
+
+      <!-- Playlist Results Panel -->
+      <div id="tn-ytpl-results" class="d-none">
+        <!-- Playlist Header Banner -->
+        <div class="tn-result-box mb-3">
+          <div class="row g-3 align-items-center">
+            <div class="col-md-3">
+              <div class="position-relative rounded overflow-hidden shadow-sm" style="aspect-ratio: 16/9; background:#0b1120;">
+                <img id="tn-ytpl-thumb" src="" alt="Playlist Thumbnail" class="w-100 h-100" style="object-fit: cover;">
+                <span id="tn-ytpl-count-badge" class="badge bg-dark position-absolute bottom-0 end-0 m-2">0 Songs</span>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                <span class="badge bg-danger"><i class="fa-brands fa-youtube me-1" aria-hidden="true"></i>YouTube Playlist</span>
+                <span id="tn-ytpl-channel" class="small text-muted fw-semibold"></span>
+                <span id="tn-ytpl-duration-badge" class="badge bg-secondary">00:00</span>
+              </div>
+              <h2 id="tn-ytpl-title" class="h5 fw-bold mb-2">Playlist Title</h2>
+              <div id="tn-ytpl-selected-summary" class="small fw-semibold text-primary">
+                All songs selected for .ZIP archive
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Batch ZIP Progress Card -->
+        <div id="tn-ytpl-zip-progress-card" class="tn-result-box border-primary mb-3 d-none">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+            <div class="fw-bold text-primary">
+              <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+              <span id="tn-ytpl-zip-progress-title">Preparing Playlist .ZIP Archive...</span>
+            </div>
+            <span id="tn-ytpl-zip-progress-badge" class="badge bg-primary">0%</span>
+          </div>
+          <div class="progress mb-2" style="height: 18px;">
+            <div
+              id="tn-ytpl-zip-progress-bar"
+              class="progress-bar progress-bar-striped progress-bar-animated"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+              style="width: 0%;"
+            >0%</div>
+          </div>
+          <div id="tn-ytpl-zip-progress-status" class="small text-muted">
+            Downloading and converting selected playlist tracks on server...
+          </div>
+        </div>
+
+        <!-- Filter Pills for Audio ZIP vs Video ZIP -->
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+          <div class="btn-group" role="group" aria-label="Playlist ZIP Format Filter">
+            <button type="button" class="btn btn-sm tn-btn--primary" id="tn-ytpl-filter-all">
+              <i class="fa-solid fa-layer-group me-1" aria-hidden="true"></i> All .ZIP Formats (Audio &amp; Video)
+            </button>
+            <button type="button" class="btn btn-sm tn-btn--outline" id="tn-ytpl-filter-audio">
+              <i class="fa-solid fa-music me-1" aria-hidden="true"></i> Audio Playlist .ZIP (MP3 / WAV / FLAC / M4A)
+            </button>
+            <button type="button" class="btn btn-sm tn-btn--outline" id="tn-ytpl-filter-video">
+              <i class="fa-solid fa-video me-1" aria-hidden="true"></i> Video Playlist .ZIP (MP4 4K–360p / WEBM)
+            </button>
+          </div>
+          <a href="#tn-ytpl-tracks-section" class="btn btn-sm tn-btn--outline">
+            <i class="fa-solid fa-list-check me-1" aria-hidden="true"></i> View / Select Songs (<span id="tn-ytpl-jump-count">0</span>)
+          </a>
+        </div>
+
+        <!-- Audio Playlist .ZIP Options Table -->
+        <div id="tn-ytpl-audio-section" class="tn-result-box mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h3 class="h6 fw-bold mb-0 text-primary">
+              <i class="fa-solid fa-file-audio me-1" aria-hidden="true"></i>
+              Full Playlist Audio .ZIP Download Options (Multiple File Types &amp; Bitrates)
+            </h3>
+            <span class="badge bg-primary">MP3 &bull; M4A &bull; OPUS &bull; WAV &bull; FLAC &bull; OGG (.ZIP)</span>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead>
+                <tr class="small text-muted text-uppercase">
+                  <th>ZIP File Type</th>
+                  <th>Audio Format &amp; Quality</th>
+                  <th>Est. ZIP Size</th>
+                  <th class="text-end">Download Full Playlist</th>
+                </tr>
+              </thead>
+              <tbody id="tn-ytpl-audio-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Video Playlist .ZIP Options Table -->
+        <div id="tn-ytpl-video-section" class="tn-result-box mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h3 class="h6 fw-bold mb-0 text-primary">
+              <i class="fa-solid fa-file-video me-1" aria-hidden="true"></i>
+              Full Playlist Video .ZIP Download Options (MP4 &amp; WEBM Multiple Resolutions)
+            </h3>
+            <span class="badge bg-success">4K &bull; 1440p &bull; 1080p &bull; 720p &bull; 480p &bull; 360p (.ZIP)</span>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead>
+                <tr class="small text-muted text-uppercase">
+                  <th>ZIP File Type</th>
+                  <th>Video Resolution &amp; Format</th>
+                  <th>Est. ZIP Size</th>
+                  <th class="text-end">Download Full Playlist</th>
+                </tr>
+              </thead>
+              <tbody id="tn-ytpl-video-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Playlist Songs / Videos Checklist -->
+        <div id="tn-ytpl-tracks-section" class="tn-result-box">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+            <h3 class="h6 fw-bold mb-0 text-primary">
+              <i class="fa-solid fa-list-check me-1" aria-hidden="true"></i>
+              Playlist Songs &amp; Videos Included in .ZIP Archive
+            </h3>
+            <div class="d-flex flex-wrap gap-1">
+              <button type="button" id="tn-ytpl-select-all-btn" class="btn btn-sm tn-btn--outline">
+                <i class="bi bi-check2-all me-1" aria-hidden="true"></i> Select All
+              </button>
+              <button type="button" id="tn-ytpl-select-10-btn" class="btn btn-sm tn-btn--outline">
+                First 10
+              </button>
+              <button type="button" id="tn-ytpl-select-25-btn" class="btn btn-sm tn-btn--outline">
+                First 25
+              </button>
+              <button type="button" id="tn-ytpl-deselect-all-btn" class="btn btn-sm tn-btn--outline text-danger">
+                Deselect All
+              </button>
+            </div>
+          </div>
+          <div class="table-responsive" style="max-height: 460px; overflow-y: auto;">
+            <table class="table table-hover align-middle mb-0">
+              <thead class="sticky-top bg-dark">
+                <tr class="small text-muted text-uppercase">
+                  <th style="width: 44px;">#</th>
+                  <th>Song / Video Title</th>
+                  <th>Duration</th>
+                  <th class="text-end">Single Track Download</th>
+                </tr>
+              </thead>
+              <tbody id="tn-ytpl-tracks-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TOOL AREA END -->
+
+    <?php toolnest_render_incontent_ad_slot(); ?>
+
+    <section class="tn-card mb-4" aria-labelledby="ytpl-howto-heading">
+      <h2 id="ytpl-howto-heading" class="tn-section-title">How to Download a Full YouTube Playlist as a .ZIP File</h2>
+      <ol class="mb-0 ps-3">
+        <li class="mb-2"><strong>Step 1 — Paste the YouTube Playlist Link:</strong> Copy any public or unlisted YouTube playlist link (<code>youtube.com/playlist?list=...</code> or <code>watch?v=...&amp;list=...</code>) and click <strong>Fetch Playlist</strong>.</li>
+        <li class="mb-2"><strong>Step 2 — Review or Filter Songs:</strong> All songs in the playlist are selected by default, or you can check/uncheck specific tracks in the song list below.</li>
+        <li><strong>Step 3 — Choose Audio or Video .ZIP Format:</strong> Click <strong>Download .ZIP</strong> next to your preferred audio format (<strong>MP3 320 kbps, 256 kbps, 192 kbps, 128 kbps, M4A, OPUS, WAV, FLAC, OGG</strong>) or video resolution (<strong>MP4 4K 2160p, 1440p, 1080p Full HD, 720p HD, 480p, 360p, WEBM</strong>) to download all songs bundled in one <code>.zip</code> file.</li>
+      </ol>
+    </section>
+
+    <section class="tn-card mb-4" aria-labelledby="ytpl-features-heading">
+      <h2 id="ytpl-features-heading" class="tn-section-title">Batch YouTube Playlist to MP3 / WAV / MP4 .ZIP Downloader</h2>
+      <p class="text-muted mb-0">
+        Downloading music albums, lecture series, or course playlists one video at a time is tedious. ToolZebra's <strong>YouTube Playlist Downloader</strong> fetches the entire track list in seconds, lets you customize which songs to include, and packages every track into a numbered, cleanly named <code>.zip</code> archive in your chosen audio bitrate or video resolution.
+      </p>
+    </section>
+
+    <section class="mb-4" aria-labelledby="ytpl-faq-heading">
+      <h2 id="ytpl-faq-heading" class="tn-section-title">Frequently Asked Questions</h2>
+      <div class="accordion tn-faq" id="ytplFaqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="ytplFaq1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ytplFaqCol1" aria-expanded="true" aria-controls="ytplFaqCol1">
+              1. Which audio and video formats can I download as a playlist .ZIP?
+            </button>
+          </h3>
+          <div id="ytplFaqCol1" class="accordion-collapse collapse show" aria-labelledby="ytplFaq1" data-bs-parent="#ytplFaqAccordion">
+            <div class="accordion-body text-muted">
+              You can download the entire playlist as a single <code>.zip</code> file in <strong>MP3 (320 kbps, 256 kbps, 192 kbps, 128 kbps)</strong>, <strong>M4A</strong>, <strong>OPUS</strong>, <strong>WAV</strong>, <strong>FLAC</strong>, or <strong>OGG</strong> for audio, and <strong>MP4 (4K 2160p, 1440p, 1080p, 720p, 480p, 360p)</strong> or <strong>WEBM (1080p, 720p)</strong> for video.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="ytplFaq2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ytplFaqCol2" aria-expanded="false" aria-controls="ytplFaqCol2">
+              2. Can I select specific songs from the playlist before downloading the .ZIP?
+            </button>
+          </h3>
+          <div id="ytplFaqCol2" class="accordion-collapse collapse" aria-labelledby="ytplFaq2" data-bs-parent="#ytplFaqAccordion">
+            <div class="accordion-body text-muted">
+              Yes! Every track has a checkbox, and the estimated <code>.zip</code> size updates automatically as you select or deselect songs.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="ytplFaq3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ytplFaqCol3" aria-expanded="false" aria-controls="ytplFaqCol3">
+              3. Can I also download a single song from the playlist without downloading the full .ZIP?
+            </button>
+          </h3>
+          <div id="ytplFaqCol3" class="accordion-collapse collapse" aria-labelledby="ytplFaq3" data-bs-parent="#ytplFaqAccordion">
+            <div class="accordion-body text-muted">
+              Yes. Each row in the playlist track table includes quick <strong>MP3 320k</strong> and <strong>MP4 HD</strong> buttons so you can grab individual tracks anytime.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('tool_youtube_playlist_downloader', 'tn_youtube_playlist_downloader_shortcode');
+add_shortcode('tool_playlist_downloader', 'tn_youtube_playlist_downloader_shortcode');

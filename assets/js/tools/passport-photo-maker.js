@@ -1,5 +1,5 @@
 /**
- * ToolNest - Passport & Visa Photo Maker (/assets/js/tools/passport-photo-maker.js)
+ * ToolZebra - Passport & Visa Photo Maker (/assets/js/tools/passport-photo-maker.js)
  * Official size presets (300 DPI), interactive crop/zoom/pan, background color replacement,
  * and printable 4R / A4 multi-photo sheet generator.
  */
@@ -280,10 +280,10 @@
       });
     });
 
-    window.ToolNest.setupDropzone(dropzone, fileInput, function (files) {
+    window.ToolZebra.setupDropzone(dropzone, fileInput, function (files) {
       const file = files[0];
       if (!file || !file.type.startsWith('image/')) {
-        window.ToolNest.showToast('Please select a valid photo file.', 'danger');
+        window.ToolZebra.showToast('Please select a valid photo file.', 'danger');
         return;
       }
       const url = URL.createObjectURL(file);
@@ -295,7 +295,7 @@
         panXRange.value = 0;
         panYRange.value = 0;
         updateAll();
-        window.ToolNest.showToast('Portrait photo loaded!', 'success');
+        window.ToolZebra.showToast('Portrait photo loaded!', 'success');
       };
       img.src = url;
     });
@@ -307,8 +307,8 @@
           function (blob) {
             if (blob) {
               const preset = getActivePreset();
-              window.ToolNest.downloadBlob(blob, preset.id + '-photo.jpg');
-              window.ToolNest.showToast('Single passport photo downloaded!', 'success');
+              window.ToolZebra.downloadBlob(blob, preset.id + '-photo.jpg');
+              window.ToolZebra.showToast('Single passport photo downloaded!', 'success');
             }
             if (showGuideCheck && showGuideCheck.checked) renderSinglePhoto(true);
           },
@@ -325,8 +325,8 @@
           function (blob) {
             if (blob) {
               const sheetMode = sheetTypeSelect.value || '4r';
-              window.ToolNest.downloadBlob(blob, 'passport-printable-sheet-' + sheetMode + '.jpg');
-              window.ToolNest.showToast('Printable photo sheet downloaded!', 'success');
+              window.ToolZebra.downloadBlob(blob, 'passport-printable-sheet-' + sheetMode + '.jpg');
+              window.ToolZebra.showToast('Printable photo sheet downloaded!', 'success');
             }
           },
           'image/jpeg',
@@ -346,7 +346,7 @@
           bgColor = '#D0E7FF';
           if (bgColorInput) bgColorInput.value = '#D0E7FF';
           updateAll();
-          window.ToolNest.showToast('Sample portrait loaded!', 'success');
+          window.ToolZebra.showToast('Sample portrait loaded!', 'success');
         };
       });
     }

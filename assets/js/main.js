@@ -373,6 +373,24 @@
       icon: 'bi-textarea',
       desc: 'Generate placeholder text with customizable paragraphs, sentences, and words. Perfect for design mockups and content placeholders.',
       keywords: 'lorem ipsum generator, placeholder text, dummy text, ipsum lorem, filler text, mockup text'
+    },
+    {
+      id: 'video-to-audio',
+      name: 'YouTube Video & Audio Downloader (4K MP4 & 320kbps MP3)',
+      url: '/youtube-downloader/',
+      category: 'Youtube',
+      icon: 'fa-brands fa-youtube',
+      desc: 'Download YouTube videos and Shorts in 4K 2160p, 1440p, 1080p Full HD, 720p MP4/WEBM and high-quality 320kbps MP3, WAV, FLAC, M4A, and OPUS audio.',
+      keywords: 'youtube video downloader, youtube to mp3 320kbps, youtube 4k downloader, video to audio, mp4 downloader'
+    },
+    {
+      id: 'youtube-playlist-downloader',
+      name: 'YouTube Playlist Downloader (.ZIP Audio & Video)',
+      url: '/youtube-playlist-downloader/',
+      category: 'Youtube',
+      icon: 'fa-solid fa-file-zipper',
+      desc: 'Download full YouTube playlists as a single .ZIP file in multiple Audio (MP3 320/256/192/128kbps, WAV, FLAC, M4A, OPUS) and Video (4K, 1440p, 1080p, 720p MP4/WEBM) formats.',
+      keywords: 'youtube playlist downloader, playlist to zip, youtube playlist to mp3 zip, download full youtube playlist mp4'
     }
   ];
 
@@ -576,12 +594,25 @@
 
       resultsBox.innerHTML = matches
         .map(function (tool) {
+          const rawIcon = (tool.icon || '').trim();
+          let iconClass = 'fa-solid fa-screwdriver-wrench';
+          if (rawIcon) {
+            if (/\b(fa-solid|fa-regular|fa-brands|fas|far|fab)\b/.test(rawIcon)) {
+              iconClass = rawIcon;
+            } else if (rawIcon.indexOf('fa-') === 0) {
+              iconClass = 'fa-solid ' + rawIcon;
+            } else if (rawIcon.indexOf('bi-') === 0) {
+              iconClass = 'bi ' + rawIcon;
+            } else {
+              iconClass = rawIcon;
+            }
+          }
           return (
             '<a href="' +
             tool.url +
             '" class="tn-search-results__item">' +
-            '<i class="bi ' +
-            tool.icon +
+            '<i class="' +
+            escapeHtml(iconClass) +
             ' text-primary fs-5" aria-hidden="true"></i>' +
             '<div>' +
             '<div class="fw-semibold">' +
@@ -815,9 +846,14 @@
 
         if (matchesCategory && matchesQuery) {
           card.classList.remove('d-none');
+          card.classList.remove('tn-card-filter-in');
+          void card.offsetWidth;
+          card.style.animationDelay = Math.min(visibleCount * 35, 280) + 'ms';
+          card.classList.add('tn-card-filter-in');
           visibleCount++;
         } else {
           card.classList.add('d-none');
+          card.classList.remove('tn-card-filter-in');
         }
       });
 
@@ -879,8 +915,72 @@
         button.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
       });
     }
-    buttons.forEach(function (button) { button.addEventListener('click', function () { const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; root.setAttribute('data-theme', next); localStorage.setItem('toolnest-theme', next); render(); }); });
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('toolnest-theme', next);
+        render();
+        button.classList.remove('is-animating');
+        void button.offsetWidth;
+        button.classList.add('is-animating');
+      });
+    });
     render();
+  }
+
+  function initSiteAnimations() {
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    const selectors = [
+      '.tn-tool-card',
+      '.tn-card',
+      '.tn-tool-workspace',
+      '.tn-stat-card',
+      '.tn-result-box',
+      '.tn-faq .accordion-item',
+      '.tn-section-title',
+      '.tn-footer .row > div'
+    ];
+    const elements = document.querySelectorAll(selectors.join(', '));
+    if (!elements.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      elements.forEach(function (el) {
+        el.classList.add('is-revealed');
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.08
+      }
+    );
+
+    elements.forEach(function (el, idx) {
+      el.classList.add('tn-reveal');
+      // Group stagger delay within sibling columns/items
+      const parent = el.parentElement;
+      let siblingIndex = idx % 6;
+      if (parent && parent.parentElement && parent.parentElement.classList.contains('row')) {
+        const cols = Array.prototype.indexOf.call(parent.parentElement.children, parent);
+        if (cols >= 0) siblingIndex = cols % 6;
+      }
+      el.style.setProperty('--tn-reveal-delay', (siblingIndex * 55) + 'ms');
+      observer.observe(el);
+    });
   }
 
   function highlightActiveNav() {
@@ -935,6 +1035,7 @@
     initGridFiltering();
     highlightActiveNav();
     initBackToTop();
+    initSiteAnimations();
   });
 
   window.ToolNest = {

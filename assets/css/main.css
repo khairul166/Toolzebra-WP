@@ -1454,3 +1454,268 @@ h1, h2, h3, h4, h5, h6 {
     height: 2.85rem;
   }
 }
+
+/* ==========================================================================
+   Site-Wide Animations, Scroll Reveal & Micro-Interactions
+   ========================================================================== */
+
+/* Keyframes */
+@keyframes tnFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tnFilterPop {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes tnFloatWindow {
+  0%, 100% {
+    transform: rotate(-3deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-1.5deg) translateY(-8px);
+  }
+}
+
+@keyframes tnSparkPulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.25) rotate(18deg);
+    opacity: 1;
+  }
+}
+
+@keyframes tnDropzoneBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes tnIconSpinPop {
+  0% {
+    transform: rotate(-75deg) scale(0.75);
+    opacity: 0.4;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes tnShieldPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.14);
+  }
+}
+
+/* Page & Hero Entrance */
+main#main-content {
+  animation: tnFadeInUp 0.48s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.tn-privacy-banner i {
+  display: inline-block;
+  animation: tnShieldPulse 2.8s ease-in-out infinite;
+}
+
+/* Scroll Reveal Elements */
+.tn-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--tn-reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.tn-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Grid Filtering Card Reflow Animation */
+[data-tn-tool-card].tn-card-filter-in {
+  animation: tnFilterPop 0.36s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Enhanced Tool Card Hover Micro-Interactions */
+.tn-tool-card {
+  transition:
+    transform 0.26s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.26s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.26s ease;
+}
+
+.tn-tool-card:hover,
+.tn-tool-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--tn-shadow-lg);
+  border-color: var(--tn-primary);
+}
+
+.tn-tool-card__icon {
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tn-tool-card:hover .tn-tool-card__icon,
+.tn-tool-card:focus-within .tn-tool-card__icon {
+  transform: scale(1.1) rotate(-5deg);
+  background-color: var(--tn-primary);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.28);
+}
+
+.tn-tool-card__cta i {
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tn-tool-card:hover .tn-tool-card__cta i,
+.tn-tool-card:focus-within .tn-tool-card__cta i {
+  transform: translateX(5px);
+}
+
+/* Interactive Cards & Category Cards */
+a.tn-card {
+  transition:
+    transform 0.26s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.26s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.26s ease;
+}
+
+a.tn-card:hover,
+a.tn-card:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: var(--tn-shadow-md);
+  border-color: var(--tn-primary);
+}
+
+a.tn-card i {
+  transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a.tn-card:hover i,
+a.tn-card:focus-visible i {
+  transform: translateY(-3px) scale(1.12);
+}
+
+/* Buttons & Controls Micro-Interactions */
+.btn,
+.tn-btn,
+.tn-btn--primary,
+.tn-btn--outline,
+.tn-btn--success {
+  transition:
+    transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.18s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.btn:hover:not(:disabled),
+.tn-btn--primary:hover:not(:disabled),
+.tn-btn--outline:hover:not(:disabled),
+.tn-btn--success:hover:not(:disabled) {
+  transform: translateY(-1.5px);
+}
+
+.btn:active:not(:disabled),
+.tn-btn--primary:active:not(:disabled),
+.tn-btn--outline:active:not(:disabled),
+.tn-btn--success:active:not(:disabled) {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Header Navigation, Search Dropdown & Theme Toggle */
+.tn-header__brand img {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tn-header__brand:hover img {
+  transform: scale(1.03);
+}
+
+.tn-theme-toggle.is-animating i {
+  animation: tnIconSpinPop 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tn-search-results.is-open,
+.tn-header__mega-item.is-open .tn-mega-menu {
+  animation: tnFadeInUp 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Workspace, Step Bar, Dropzone & Stat Cards */
+.tn-step-bar__num {
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease;
+}
+
+.tn-step-bar__item:hover .tn-step-bar__num {
+  transform: scale(1.12);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.16);
+}
+
+.tn-dropzone__icon {
+  transition: transform 0.25s ease;
+}
+
+.tn-dropzone:hover .tn-dropzone__icon,
+.tn-dropzone.is-dragover .tn-dropzone__icon {
+  animation: tnDropzoneBounce 1.1s ease-in-out infinite;
+}
+
+.tn-stat-card,
+.tn-result-box {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.tn-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--tn-shadow-sm);
+  border-color: var(--tn-primary);
+}
+
+/* 404 Not Found Decorative Animations */
+.tn-not-found__window {
+  animation: tnFloatWindow 4.5s ease-in-out infinite;
+}
+
+.tn-not-found__spark--one {
+  animation: tnSparkPulse 2.6s ease-in-out infinite;
+}
+
+.tn-not-found__spark--two {
+  animation: tnSparkPulse 3.2s ease-in-out infinite 0.8s;
+}
+
+/* Back-to-top Hover Lift */
+.tn-back-to-top.is-visible:hover {
+  transform: translateY(-3px) scale(1.06);
+}

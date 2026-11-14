@@ -4,8 +4,8 @@
 <header class="tn-header" role="banner">
   <nav class="navbar navbar-expand-lg py-2" aria-label="Main Navigation">
     <div class="container">
-      <a class="navbar-brand tn-header__brand" href="<?php echo esc_url(home_url('/')); ?>" aria-label="ToolNest Home">
-        <img src="<?php echo esc_url(get_theme_file_uri('/assets/img/logo.svg')); ?>" alt="ToolNest - Free Online Tools" class="tn-header__logo" width="180"
+      <a class="navbar-brand tn-header__brand" href="<?php echo esc_url(home_url('/')); ?>" aria-label="ToolZebra Home">
+        <img src="<?php echo esc_url(get_theme_file_uri('/assets/img/logo.svg')); ?>" alt="ToolZebra - Free Online Tools" class="tn-header__logo" width="192"
           height="38">
       </a>
 

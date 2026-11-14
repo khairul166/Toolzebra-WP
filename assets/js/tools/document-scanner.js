@@ -1,5 +1,5 @@
 /**
- * ToolNest - AI Document Scanner & Auto-Enhancer (/assets/js/tools/document-scanner.js)
+ * ToolZebra - AI Document Scanner & Auto-Enhancer (/assets/js/tools/document-scanner.js)
  * 100% Client-Side Document Scanner with automatic 4-corner paper detection,
  * 8-DOF projective homography perspective warp, integral-image shadow removal
  * (Magic Color, Adaptive B&W, Clean Grayscale), and PDF/PNG/JPG export.
@@ -816,8 +816,8 @@
     if (downloadPngBtn) {
       downloadPngBtn.addEventListener('click', function () {
         resultCanvas.toBlob(function (blob) {
-          if (blob && window.ToolNest && window.ToolNest.downloadBlob) {
-            window.ToolNest.downloadBlob(blob, getCleanBaseFilename() + '.png');
+          if (blob && window.ToolZebra && window.ToolZebra.downloadBlob) {
+            window.ToolZebra.downloadBlob(blob, getCleanBaseFilename() + '.png');
           }
         }, 'image/png');
       });
@@ -826,8 +826,8 @@
     if (downloadJpgBtn) {
       downloadJpgBtn.addEventListener('click', function () {
         resultCanvas.toBlob(function (blob) {
-          if (blob && window.ToolNest && window.ToolNest.downloadBlob) {
-            window.ToolNest.downloadBlob(blob, getCleanBaseFilename() + '.jpg');
+          if (blob && window.ToolZebra && window.ToolZebra.downloadBlob) {
+            window.ToolZebra.downloadBlob(blob, getCleanBaseFilename() + '.jpg');
           }
         }, 'image/jpeg', 0.92);
       });
@@ -836,8 +836,8 @@
     if (downloadPdfBtn) {
       downloadPdfBtn.addEventListener('click', async function () {
         if (!window.PDFLib) {
-          if (window.ToolNest && window.ToolNest.showToast) {
-            window.ToolNest.showToast('PDF library is loading. Please try again in a moment.', 'warning');
+          if (window.ToolZebra && window.ToolZebra.showToast) {
+            window.ToolZebra.showToast('PDF library is loading. Please try again in a moment.', 'warning');
           }
           return;
         }
@@ -867,15 +867,15 @@
 
           const pdfBytes = await pdfDoc.save();
           const pdfBlob = new Blob([pdfBytes], { type: 'application/pdf' });
-          if (window.ToolNest && window.ToolNest.downloadBlob) {
-            window.ToolNest.downloadBlob(pdfBlob, getCleanBaseFilename() + '.pdf');
+          if (window.ToolZebra && window.ToolZebra.downloadBlob) {
+            window.ToolZebra.downloadBlob(pdfBlob, getCleanBaseFilename() + '.pdf');
           }
-          if (window.ToolNest && window.ToolNest.showToast) {
-            window.ToolNest.showToast('Scanned PDF downloaded!', 'success');
+          if (window.ToolZebra && window.ToolZebra.showToast) {
+            window.ToolZebra.showToast('Scanned PDF downloaded!', 'success');
           }
         } catch (err) {
-          if (window.ToolNest && window.ToolNest.showToast) {
-            window.ToolNest.showToast(err.message || 'Could not create PDF.', 'danger');
+          if (window.ToolZebra && window.ToolZebra.showToast) {
+            window.ToolZebra.showToast(err.message || 'Could not create PDF.', 'danger');
           }
         }
       });

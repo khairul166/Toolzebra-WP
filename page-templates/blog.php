@@ -18,7 +18,7 @@ $blog_query = new WP_Query([
   <div class="container">
     <?php toolnest_page_breadcrumb(); ?>
     <h1 class="tn-page-title"><?php esc_html_e('Helpful Guides & Tips', 'toolnest'); ?></h1>
-    <p class="lead text-secondary"><?php esc_html_e('Guides, practical tips, and updates from ToolNest.', 'toolnest'); ?></p>
+    <p class="lead text-secondary"><?php esc_html_e('Guides, practical tips, and updates from ToolZebra.', 'toolnest'); ?></p>
     <?php while (have_posts()) : the_post(); ?>
       <?php the_content(); ?>
     <?php endwhile; ?>

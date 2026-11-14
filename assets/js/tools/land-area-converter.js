@@ -1,5 +1,5 @@
 /**
- * ToolNest - Land Area Converter (/assets/js/tools/land-area-converter.js)
+ * ToolZebra - Land Area Converter (/assets/js/tools/land-area-converter.js)
  * 100% Client-Side Land Measurement Converter for Bangladesh & Global Users.
  * Converts between Square Feet, Square Meter, Square Yard, Katha, Bigha, Decimal (Shatak),
  * Acre, and Hectare with Region Standards, Custom Katha/Bigha overrides, and Bangla Digits toggle.
@@ -123,7 +123,7 @@
 
   // Expose pure calculation helpers for automated verification
   if (typeof window !== 'undefined') {
-    window.ToolNestLandConverter = {
+    window.ToolZebraLandConverter = {
       config: LAND_CONVERSION_CONFIG,
       getActiveFactors: getActiveFactors,
       convertLandArea: convertLandArea
@@ -221,10 +221,10 @@
               rowClass +
               '">' +
               '<td>' +
-              window.ToolNest.escapeHtml(u.name) +
+              window.ToolZebra.escapeHtml(u.name) +
               '</td>' +
               '<td class="tn-bangla-text text-muted">' +
-              window.ToolNest.escapeHtml(u.nameBn) +
+              window.ToolZebra.escapeHtml(u.nameBn) +
               '</td>' +
               '<td class="font-monospace fw-bold text-primary">' +
               formatLandNumber(uVal, useBn) +
@@ -267,7 +267,7 @@
     if (copyResultBtn) {
       copyResultBtn.addEventListener('click', function () {
         const text = primaryResultVal.textContent + ' (' + primaryResultSub.textContent + ')';
-        window.ToolNest.copyToClipboard(text, copyResultBtn);
+        window.ToolZebra.copyToClipboard(text, copyResultBtn);
       });
     }
 
@@ -280,7 +280,7 @@
             rows.push(cols[0].textContent + ': ' + cols[2].textContent);
           }
         });
-        window.ToolNest.copyToClipboard(rows.join('\n'), copyTableBtn);
+        window.ToolZebra.copyToClipboard(rows.join('\n'), copyTableBtn);
       });
     }
 

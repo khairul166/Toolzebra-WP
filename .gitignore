@@ -1,8 +1,4 @@
-*.log
-*.bak
-*.fixed
-*.fixed.html
-node_modules/
 .vscode/
-.DS_Store
-Thumbs.db
+inc/bin/*.exe
+inc/bin/*.zip
+inc/bin/_internal/

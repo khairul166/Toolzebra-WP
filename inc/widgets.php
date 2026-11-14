@@ -91,7 +91,7 @@ class ToolNest_Footer_Tool_Links_Widget extends WP_Widget
     {
         parent::__construct(
             'toolnest_footer_tool_links',
-            __('ToolNest Footer Tool Links', 'toolnest'),
+            __('ToolZebra Footer Tool Links', 'toolnest'),
             ['description' => __('Displays selected Tool posts as links in the footer.', 'toolnest')]
         );
     }
@@ -341,8 +341,8 @@ class ToolNest_Footer_About_Widget extends WP_Widget
     {
         parent::__construct(
             'toolnest_footer_about',
-            __('ToolNest About', 'toolnest'),
-            ['description' => __('Displays the ToolNest logo and about information in the footer.', 'toolnest')]
+            __('ToolZebra About', 'toolnest'),
+            ['description' => __('Displays the ToolZebra logo and about information in the footer.', 'toolnest')]
         );
     }
 
@@ -350,12 +350,12 @@ class ToolNest_Footer_About_Widget extends WP_Widget
     {
         ?>
         <div class="col-lg-3">
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="d-inline-block mb-3" aria-label="<?php esc_attr_e('ToolNest Home', 'toolnest'); ?>">
-            <img src="<?php echo esc_url(get_theme_file_uri('/assets/img/logo.svg')); ?>" alt="<?php esc_attr_e('ToolNest Logo', 'toolnest'); ?>" width="170" height="36" loading="lazy"
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="d-inline-block mb-3" aria-label="<?php esc_attr_e('ToolZebra Home', 'toolnest'); ?>">
+            <img src="<?php echo esc_url(get_theme_file_uri('/assets/img/logo.svg')); ?>" alt="<?php esc_attr_e('ToolZebra Logo', 'toolnest'); ?>" width="170" height="36" loading="lazy"
                 style="filter: brightness(0) invert(1);">
             </a>
             <p class="small mb-3">
-            <strong>ToolNest</strong> — Free online tools that just work. All utilities run 100% in your browser so your
+            <strong>ToolZebra</strong> — Free online tools that just work. All utilities run 100% in your browser so your
             files and data never leave your device.
             </p>
             <span class="badge bg-success bg-opacity-25 text-white border border-success border-opacity-50 px-3 py-2">
@@ -385,7 +385,7 @@ class ToolNest_Footer_Ad_Widget extends WP_Widget
     {
         parent::__construct(
             'toolnest_footer_ad',
-            __('ToolNest Above Footer Ad Slot', 'toolnest'),
+            __('ToolZebra Above Footer Ad Slot', 'toolnest'),
             ['description' => __('An ad widget matching the above-footer banner slot.', 'toolnest')]
         );
     }
@@ -451,7 +451,7 @@ class ToolNest_Incontent_Ad_Widget extends WP_Widget
     {
         parent::__construct(
             'toolnest_incontent_ad',
-            __('ToolNest In-Content Ad Slot', 'toolnest'),
+            __('ToolZebra In-Content Ad Slot', 'toolnest'),
             ['description' => __('An ad widget for in-content tool ad slots.', 'toolnest')]
         );
     }
@@ -502,7 +502,7 @@ class ToolNest_Quick_Tool_Navigation_Widget extends WP_Widget
     {
         parent::__construct(
             'toolnest_quick_tool_navigation',
-            __('ToolNest Quick Tool Navigation', 'toolnest'),
+            __('ToolZebra Quick Tool Navigation', 'toolnest'),
             ['description' => __('Displays links to frequently used tools in the tool page sidebar.', 'toolnest')]
         );
     }
@@ -618,7 +618,7 @@ class ToolNest_Sidebar_Ad_Widget extends WP_Widget
     {
         parent::__construct(
             'toolnest_sidebar_ad',
-            __('ToolNest Sidebar Ad Slot', 'toolnest'),
+            __('ToolZebra Sidebar Ad Slot', 'toolnest'),
             ['description' => __('An ad widget matching the tool page sidebar slot.', 'toolnest')]
         );
     }
@@ -669,7 +669,7 @@ class ToolNest_Leaderboard_Ad_Widget extends WP_Widget
     {
         parent::__construct(
             'toolnest_leaderboard_ad',
-            __('ToolNest Leaderboard Ad Slot', 'toolnest'),
+            __('ToolZebra Leaderboard Ad Slot', 'toolnest'),
             ['description' => __('An ad widget matching the theme header leaderboard slot.', 'toolnest')]
         );
     }

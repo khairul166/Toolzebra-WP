@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const desc = val('mtg-description');
     const keywords = val('mtg-keywords');
     const author = val('mtg-author');
-    const website = val('mtg-website') || 'ToolNest';
+    const website = val('mtg-website') || 'ToolZebra';
     const url = val('mtg-url');
     const image = val('mtg-image');
     const ogType = typeSelect ? typeSelect.value : 'website';
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (resetBtn) {
     resetBtn.addEventListener('click', function () {
       form.reset();
-      document.getElementById('mtg-website').value = 'ToolNest';
+      document.getElementById('mtg-website').value = 'ToolZebra';
       twitterBox.checked = true;
       output.value = '';
       setStatus('Ready');

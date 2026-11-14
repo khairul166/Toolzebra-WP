@@ -1,5 +1,5 @@
 /**
- * ToolNest - Exact Age Calculator (/assets/js/tools/age-calculator.js)
+ * ToolZebra - Exact Age Calculator (/assets/js/tools/age-calculator.js)
  * Calculates chronological age in years, months, days, total time units,
  * and next birthday countdown 100% in the browser.
  */
@@ -165,7 +165,7 @@
 
     btnCalc.addEventListener('click', function () {
       runAgeCalculation();
-      window.ToolNest.showToast('Exact age calculated!', 'success');
+      window.ToolZebra.showToast('Exact age calculated!', 'success');
     });
 
     dobInput.addEventListener('change', runAgeCalculation);
@@ -176,7 +176,7 @@
         dobInput.value = '1999-11-20';
         targetInput.value = formatDateYMD(todayClean);
         runAgeCalculation();
-        window.ToolNest.showToast('Sample date of birth loaded!', 'success');
+        window.ToolZebra.showToast('Sample date of birth loaded!', 'success');
       });
     }
 
@@ -199,7 +199,7 @@
           document.getElementById('tn-age-next-bday').textContent +
           '\nTotal Days: ' +
           document.getElementById('tn-age-total-days').textContent;
-        window.ToolNest.copyToClipboard(text, btnCopy);
+        window.ToolZebra.copyToClipboard(text, btnCopy);
       });
     }
 

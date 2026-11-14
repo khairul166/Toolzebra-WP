@@ -127,9 +127,9 @@ $tool_cards_query = new WP_Query([
     </div>
 
     <section class="tn-card mt-5">
-      <h2 class="h4 fw-bold mb-3"><?php esc_html_e('How ToolNest Keeps Your Workflow Fast and Private', 'toolnest'); ?></h2>
+      <h2 class="h4 fw-bold mb-3"><?php esc_html_e('How ToolZebra Keeps Your Workflow Fast and Private', 'toolnest'); ?></h2>
       <p class="text-muted">
-        <?php esc_html_e('Whether you are preparing an official government job application in Bangladesh, running a Facebook commerce (F-commerce) store, or managing remote freelance projects globally, switching between slow, ad-cluttered websites wastes valuable time. ToolNest brings practical daily utilities together under one clean, consistent interface.', 'toolnest'); ?>
+        <?php esc_html_e('Whether you are preparing an official government job application in Bangladesh, running a Facebook commerce (F-commerce) store, or managing remote freelance projects globally, switching between slow, ad-cluttered websites wastes valuable time. ToolZebra brings practical daily utilities together under one clean, consistent interface.', 'toolnest'); ?>
       </p>
       <p class="text-muted mb-0">
         <?php esc_html_e('Every tool follows a predictable three-step layout: enter your input or drop your file, adjust your preferences, and copy or download your result immediately. Because all calculations and file transformations happen inside your device’s RAM via modern browser APIs, you never have to worry about data breaches or document leaks.', 'toolnest'); ?>

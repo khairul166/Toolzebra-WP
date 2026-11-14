@@ -24,7 +24,7 @@ foreach (['all-tools', 'about', 'contact', 'privacy-policy', 'terms', 'disclaime
 
       <div
         class="pt-4 d-flex flex-column flex-sm-row justify-content-between align-items-center small text-secondary gap-2">
-        <p class="mb-0">&copy; 2026 ToolNest. All rights reserved. Built for Global &amp; Bangladesh users.</p>
+        <p class="mb-0">&copy; 2026 ToolZebra (toolzebra.xyz). All rights reserved. Built for Global &amp; Bangladesh users.</p>
         <p class="mb-0">Fast, accessible, zero-upload browser tools.</p>
       </div>
     </div>

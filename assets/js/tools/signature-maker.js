@@ -1,5 +1,5 @@
 /**
- * ToolNest - Signature Maker
+ * ToolZebra - Signature Maker
  * Draw and export handwritten signatures locally as PNG.
  */
 (function () {
@@ -85,7 +85,7 @@
     });
     function canDownload() {
       if (!hasInk) {
-        window.ToolNest.showToast('Draw a signature before downloading.', 'warning');
+        window.ToolZebra.showToast('Draw a signature before downloading.', 'warning');
         return false;
       }
       return true;
@@ -94,7 +94,7 @@
     document.getElementById('tn-signature-download').addEventListener('click', function () {
       if (!canDownload()) return;
       canvas.toBlob(function (blob) {
-        window.ToolNest.downloadBlob(blob, 'toolnest-signature.png');
+        window.ToolZebra.downloadBlob(blob, 'toolnest-signature.png');
       }, 'image/png');
     });
 
@@ -108,7 +108,7 @@
       jpgContext.fillRect(0, 0, jpgCanvas.width, jpgCanvas.height);
       jpgContext.drawImage(canvas, 0, 0);
       jpgCanvas.toBlob(function (blob) {
-        window.ToolNest.downloadBlob(blob, 'toolnest-signature.jpg');
+        window.ToolZebra.downloadBlob(blob, 'toolnest-signature.jpg');
       }, 'image/jpeg', 0.95);
     });
     document.getElementById('tn-signature-sample').addEventListener('click', function () {

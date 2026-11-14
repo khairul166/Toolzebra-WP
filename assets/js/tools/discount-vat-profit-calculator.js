@@ -1,5 +1,5 @@
 /**
- * ToolNest - Discount, VAT & Profit Calculator (/assets/js/tools/discount-vat-profit-calculator.js)
+ * ToolZebra - Discount, VAT & Profit Calculator (/assets/js/tools/discount-vat-profit-calculator.js)
  * 100% Client-Side 3-Tab Business & F-Commerce Financial Calculator:
  * 1) Discount Calculator (Percentage or Fixed + Optional Extra Stacked Discount)
  * 2) VAT Calculator (Add VAT or Extract VAT from Inclusive Price with Editable Rate)
@@ -137,7 +137,7 @@
 
   // Expose pure calculation helpers for automated verification
   if (typeof window !== 'undefined') {
-    window.ToolNestFinanceCalc = {
+    window.ToolZebraFinanceCalc = {
       config: DEFAULT_FINANCE_CONFIG,
       calculateDiscount: calculateDiscount,
       calculateVat: calculateVat,
@@ -297,7 +297,7 @@
           ' (' +
           discEffOut.textContent +
           ' off)';
-        window.ToolNest.copyToClipboard(txt, discCopyBtn);
+        window.ToolZebra.copyToClipboard(txt, discCopyBtn);
       });
     }
 
@@ -322,7 +322,7 @@
           vatTaxOut.textContent +
           ' | Gross Total: ' +
           vatGrossOut.textContent;
-        window.ToolNest.copyToClipboard(txt, vatCopyBtn);
+        window.ToolZebra.copyToClipboard(txt, vatCopyBtn);
       });
     }
 
@@ -348,7 +348,7 @@
           profMarkupOut.textContent +
           ') | Net Profit/Order: ' +
           profNetOut.textContent;
-        window.ToolNest.copyToClipboard(txt, profCopyBtn);
+        window.ToolZebra.copyToClipboard(txt, profCopyBtn);
       });
     }
 

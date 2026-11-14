@@ -380,5 +380,23 @@ function tools_enqueue_scripts() {
         filemtime($script_path),
         true
     );
+
+    $script_path = get_theme_file_path('/assets/js/tools/video-to-audio.js');
+    wp_enqueue_script(
+        'tools-video-to-audio',
+        get_theme_file_uri('/assets/js/tools/video-to-audio.js'),
+        ['toolnest-bootstrap'],
+        filemtime($script_path),
+        true
+    );
+
+    $script_path = get_theme_file_path('/assets/js/tools/youtube-playlist-downloader.js');
+    wp_enqueue_script(
+        'tools-youtube-playlist-downloader',
+        get_theme_file_uri('/assets/js/tools/youtube-playlist-downloader.js'),
+        ['toolnest-bootstrap'],
+        filemtime($script_path),
+        true
+    );
 }
 add_action('wp_enqueue_scripts', 'tools_enqueue_scripts');

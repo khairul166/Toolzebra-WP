@@ -98,8 +98,9 @@ function toolnest_tool_breadcrumb()
 }
 
 /**
- * Resolve stored tool icon meta value into a full CSS class string.
- * Supports Font Awesome 6 classes (e.g. "fa-solid fa-calculator") as well as legacy Bootstrap Icons ("bi-...").
+ * Resolve stored tool icon meta value into full CSS icon classes.
+ * Supports Font Awesome 6 classes (fa-solid, fa-regular, fa-brands, fas, far, fab)
+ * as well as legacy Bootstrap Icons (bi-*) and a default fallback icon.
  */
 function toolnest_get_tool_icon_class($icon = '')
 {
@@ -109,16 +110,16 @@ function toolnest_get_tool_icon_class($icon = '')
         return 'fa-solid fa-screwdriver-wrench';
     }
 
-    if (0 === strpos($icon, 'bi ') || 0 === strpos($icon, 'bi-')) {
-        return 0 === strpos($icon, 'bi ') ? $icon : 'bi ' . $icon;
-    }
-
     if (preg_match('/\b(fa-solid|fa-regular|fa-brands|fas|far|fab)\b/', $icon)) {
         return $icon;
     }
 
     if (0 === strpos($icon, 'fa-')) {
         return 'fa-solid ' . $icon;
+    }
+
+    if (0 === strpos($icon, 'bi-')) {
+        return 'bi ' . $icon;
     }
 
     return $icon;
@@ -130,140 +131,159 @@ function toolnest_get_tool_icon_class($icon = '')
 function toolnest_get_fontawesome_icons()
 {
     return [
-        // Calculators, Numbers & Converters
-        ['class' => 'fa-solid fa-calculator', 'label' => 'Calculator', 'style' => 'solid', 'keywords' => 'math age emi vat discount finance'],
-        ['class' => 'fa-solid fa-arrows-rotate', 'label' => 'Convert / Sync', 'style' => 'solid', 'keywords' => 'converter refresh format bijoy unicode'],
-        ['class' => 'fa-solid fa-right-left', 'label' => 'Exchange / Swap', 'style' => 'solid', 'keywords' => 'converter currency unit swap'],
-        ['class' => 'fa-solid fa-language', 'label' => 'Language / Translate', 'style' => 'solid', 'keywords' => 'bangla bijoy unicode translate text'],
-        ['class' => 'fa-solid fa-coins', 'label' => 'Coins / Currency', 'style' => 'solid', 'keywords' => 'money taka bdt amount words finance'],
-        ['class' => 'fa-solid fa-money-bill-wave', 'label' => 'Money Bill', 'style' => 'solid', 'keywords' => 'currency taka cash amount cheque'],
-        ['class' => 'fa-solid fa-sack-dollar', 'label' => 'Money Sack', 'style' => 'solid', 'keywords' => 'loan fdr dps profit finance'],
-        ['class' => 'fa-solid fa-percent', 'label' => 'Percentage', 'style' => 'solid', 'keywords' => 'discount vat tax interest rate'],
-        ['class' => 'fa-solid fa-scale-balanced', 'label' => 'Scale / Unit', 'style' => 'solid', 'keywords' => 'unit measure weight compare'],
-        ['class' => 'fa-solid fa-ruler-combined', 'label' => 'Ruler / Area', 'style' => 'solid', 'keywords' => 'land area katha decimal bigha size'],
-        ['class' => 'fa-solid fa-ruler-horizontal', 'label' => 'Ruler Horizontal', 'style' => 'solid', 'keywords' => 'measure length dimension'],
-        ['class' => 'fa-solid fa-calendar-check', 'label' => 'Calendar Check', 'style' => 'solid', 'keywords' => 'age calculator date birth schedule'],
-        ['class' => 'fa-solid fa-calendar-days', 'label' => 'Calendar Days', 'style' => 'solid', 'keywords' => 'date age month year'],
-        ['class' => 'fa-regular fa-calendar-check', 'label' => 'Calendar (Regular)', 'style' => 'regular', 'keywords' => 'date age schedule'],
-        ['class' => 'fa-solid fa-clock', 'label' => 'Clock / Time', 'style' => 'solid', 'keywords' => 'timer countdown hours'],
-        ['class' => 'fa-regular fa-clock', 'label' => 'Clock (Regular)', 'style' => 'regular', 'keywords' => 'timer time'],
-        ['class' => 'fa-solid fa-hourglass-half', 'label' => 'Hourglass', 'style' => 'solid', 'keywords' => 'timer speed test'],
+        // Solid — Tools, Files, PDF, Image, Text, Calculators, Dev & Business
+        ['class' => 'fa-solid fa-screwdriver-wrench', 'label' => 'Wrench & Screwdriver', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-wand-magic-sparkles', 'label' => 'Magic Wand / AI', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-calculator', 'label' => 'Calculator', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-language', 'label' => 'Language / Translate', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-coins', 'label' => 'Coins / Currency', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-money-bill-wave', 'label' => 'Money Bill', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-money-check-dollar', 'label' => 'Cheque / Amount', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-sack-dollar', 'label' => 'Money Sack', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-scale-balanced', 'label' => 'Balance / Converter', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-right-left', 'label' => 'Swap / Convert', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-arrows-rotate', 'label' => 'Sync / Format Convert', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-calendar-check', 'label' => 'Calendar Check / Age', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-calendar-days', 'label' => 'Calendar Days', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-cake-candles', 'label' => 'Birthday / Age', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-clock', 'label' => 'Clock / Time', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-stopwatch', 'label' => 'Stopwatch / Timer', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-image', 'label' => 'Image / Photo', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-images', 'label' => 'Multiple Images / Batch', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-camera', 'label' => 'Camera', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-crop-simple', 'label' => 'Crop / Resize', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-expand', 'label' => 'Expand / Upscale', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-compress', 'label' => 'Compress / Shrink', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-magnifying-glass-plus', 'label' => 'Zoom In / Upscaler', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-eye-dropper', 'label' => 'Eyedropper / Color Picker', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-palette', 'label' => 'Color Palette', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-eraser', 'label' => 'Eraser / BG Remover', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-user-tie', 'label' => 'Passport / Official Photo', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-id-card', 'label' => 'ID Card / Passport', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-id-badge', 'label' => 'ID Badge', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-eye', 'label' => 'Eye / Vision AI', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-closed-captioning', 'label' => 'Alt Text / Caption', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-pdf', 'label' => 'PDF File', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-word', 'label' => 'Word File', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-excel', 'label' => 'Excel File', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-csv', 'label' => 'CSV File', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-image', 'label' => 'Image File', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-audio', 'label' => 'Audio / MP3 File', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-video', 'label' => 'Video File', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-music', 'label' => 'Music / Audio', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-headphones', 'label' => 'Headphones / Studio Audio', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-microphone-lines', 'label' => 'Microphone / Voice', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-volume-high', 'label' => 'Volume / Audio Boost', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-zipper', 'label' => 'ZIP / Archive File', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-lines', 'label' => 'Document / Text File', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-code', 'label' => 'Code / Meta File', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-shield', 'label' => 'Protected / Encrypted File', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-signature', 'label' => 'File Signature', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-invoice', 'label' => 'Invoice', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-invoice-dollar', 'label' => 'Invoice Dollar', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-export', 'label' => 'File Export', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-file-import', 'label' => 'File Import', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-copy', 'label' => 'Copy / Merge Files', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-scissors', 'label' => 'Scissors / Split PDF', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-object-group', 'label' => 'Organize / Layout', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-layer-group', 'label' => 'Layers / Batch', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-lock', 'label' => 'Lock / Protect', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-unlock-keyhole', 'label' => 'Unlock', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-key', 'label' => 'Key / Password', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-shield-halved', 'label' => 'Shield / Security', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-qrcode', 'label' => 'QR Code', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-barcode', 'label' => 'Barcode / Scanner', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-receipt', 'label' => 'Receipt / Slip', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-briefcase', 'label' => 'Briefcase / Business', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-building-columns', 'label' => 'Bank / Finance', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-percent', 'label' => 'Percent / Discount / VAT', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-chart-line', 'label' => 'Chart Line / Profit', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-chart-pie', 'label' => 'Chart Pie / Analytics', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-piggy-bank', 'label' => 'Savings / DPS / FDR', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-ruler-combined', 'label' => 'Ruler / Land Area', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-map-location-dot', 'label' => 'Map / Land Measurement', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-font', 'label' => 'Font / Typography', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-bold', 'label' => 'Bold Text', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-italic', 'label' => 'Italic Text', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-text-height', 'label' => 'Text Size / Case', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-spell-check', 'label' => 'Spell Check / Word Count', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-paragraph', 'label' => 'Paragraph / Lorem Ipsum', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-align-left', 'label' => 'Text Align / Formatter', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-list-ol', 'label' => 'Numbered List / Counter', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-keyboard', 'label' => 'Keyboard / Typing Test', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-pen-nib', 'label' => 'Pen Nib / Signature', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-signature', 'label' => 'Signature Maker', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-pen-fancy', 'label' => 'Pen Fancy / Writer', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-code', 'label' => 'Code / Developer', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-terminal', 'label' => 'Terminal / Console', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-brackets-curly', 'label' => 'JSON / Braces', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-robot', 'label' => 'Robot / Robots.txt / AI', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-tags', 'label' => 'Meta Tags / SEO', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-globe', 'label' => 'Globe / Webmaster', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-link', 'label' => 'Link / UTM Builder', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-share-nodes', 'label' => 'Share / Social Link', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-bullhorn', 'label' => 'Campaign / Marketing', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-magnifying-glass', 'label' => 'Search / SEO Inspect', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-user-graduate', 'label' => 'CV / Resume / Education', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-print', 'label' => 'Print / Sheet', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-download', 'label' => 'Download', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-cloud-arrow-up', 'label' => 'Upload', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-bolt', 'label' => 'Fast / Instant Tool', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-gears', 'label' => 'Gears / Utility', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-sliders', 'label' => 'Sliders / Settings', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-table', 'label' => 'Table / Spreadsheet', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-filter', 'label' => 'Filter', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-fingerprint', 'label' => 'Fingerprint / Identity', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-truck-fast', 'label' => 'Courier / Delivery Slip', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-box-open', 'label' => 'Package / Order', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-wifi', 'label' => 'WiFi / Network', 'style' => 'solid'],
+        ['class' => 'fa-solid fa-microchip', 'label' => 'AI / Processor', 'style' => 'solid'],
 
-        // Image, Camera & Design Tools
-        ['class' => 'fa-solid fa-image', 'label' => 'Image', 'style' => 'solid', 'keywords' => 'photo picture resizer compressor'],
-        ['class' => 'fa-regular fa-image', 'label' => 'Image (Regular)', 'style' => 'regular', 'keywords' => 'photo picture'],
-        ['class' => 'fa-solid fa-images', 'label' => 'Multiple Images', 'style' => 'solid', 'keywords' => 'bulk image gallery batch photos'],
-        ['class' => 'fa-regular fa-images', 'label' => 'Images (Regular)', 'style' => 'regular', 'keywords' => 'gallery batch photos'],
-        ['class' => 'fa-solid fa-crop-simple', 'label' => 'Crop / Resize', 'style' => 'solid', 'keywords' => 'image resizer aspect ratio crop'],
-        ['class' => 'fa-solid fa-compress', 'label' => 'Compress', 'style' => 'solid', 'keywords' => 'image compressor shrink size'],
-        ['class' => 'fa-solid fa-expand', 'label' => 'Expand / Upscale', 'style' => 'solid', 'keywords' => 'image upscaler enlarge fullscreen'],
-        ['class' => 'fa-solid fa-magnifying-glass-plus', 'label' => 'Zoom In / Upscale', 'style' => 'solid', 'keywords' => 'upscaler 2x super resolution'],
-        ['class' => 'fa-solid fa-wand-magic-sparkles', 'label' => 'AI Magic Wand', 'style' => 'solid', 'keywords' => 'ai background remover enhancer auto'],
-        ['class' => 'fa-solid fa-eraser', 'label' => 'Eraser / BG Remove', 'style' => 'solid', 'keywords' => 'background remover clear clean'],
-        ['class' => 'fa-solid fa-eye-dropper', 'label' => 'Eyedropper / Color', 'style' => 'solid', 'keywords' => 'color picker hex rgb palette'],
-        ['class' => 'fa-solid fa-palette', 'label' => 'Color Palette', 'style' => 'solid', 'keywords' => 'color picker design theme'],
-        ['class' => 'fa-solid fa-id-card', 'label' => 'ID / Passport Card', 'style' => 'solid', 'keywords' => 'passport photo visa id maker'],
-        ['class' => 'fa-regular fa-id-card', 'label' => 'ID Card (Regular)', 'style' => 'regular', 'keywords' => 'passport photo profile'],
-        ['class' => 'fa-solid fa-camera', 'label' => 'Camera', 'style' => 'solid', 'keywords' => 'photo capture snapshot'],
-        ['class' => 'fa-solid fa-user-tie', 'label' => 'Passport Portrait', 'style' => 'solid', 'keywords' => 'passport photo cv resume formal'],
-        ['class' => 'fa-solid fa-eye', 'label' => 'Vision / Alt Text', 'style' => 'solid', 'keywords' => 'image alt text caption preview accessibility'],
-        ['class' => 'fa-regular fa-eye', 'label' => 'Eye (Regular)', 'style' => 'regular', 'keywords' => 'view preview vision'],
-        ['class' => 'fa-solid fa-vector-square', 'label' => 'Bounding Box / Scan', 'style' => 'solid', 'keywords' => 'document scanner perspective crop'],
-        ['class' => 'fa-solid fa-signature', 'label' => 'Signature', 'style' => 'solid', 'keywords' => 'signature maker draw sign'],
-        ['class' => 'fa-solid fa-pen-nib', 'label' => 'Pen Nib', 'style' => 'solid', 'keywords' => 'signature design vector draw'],
+        // Regular
+        ['class' => 'fa-regular fa-file-pdf', 'label' => 'PDF File (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-file-word', 'label' => 'Word File (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-file-excel', 'label' => 'Excel File (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-file-image', 'label' => 'Image File (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-file-lines', 'label' => 'Text File (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-file-code', 'label' => 'Code File (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-file-zipper', 'label' => 'Archive File (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-image', 'label' => 'Image (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-images', 'label' => 'Gallery (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-calendar-check', 'label' => 'Calendar Check (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-calendar-days', 'label' => 'Calendar (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-clock', 'label' => 'Clock (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-copy', 'label' => 'Copy (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-clipboard', 'label' => 'Clipboard (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-id-card', 'label' => 'ID Card (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-keyboard', 'label' => 'Keyboard (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-pen-to-square', 'label' => 'Edit / Write (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-eye', 'label' => 'Eye (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-lightbulb', 'label' => 'Lightbulb / Idea (Outline)', 'style' => 'regular'],
+        ['class' => 'fa-regular fa-Credit-card', 'label' => 'Card (Outline)', 'style' => 'regular'],
 
-        // PDF & Document Tools
-        ['class' => 'fa-solid fa-file-pdf', 'label' => 'PDF File', 'style' => 'solid', 'keywords' => 'pdf merge split convert document'],
-        ['class' => 'fa-regular fa-file-pdf', 'label' => 'PDF File (Regular)', 'style' => 'regular', 'keywords' => 'pdf document'],
-        ['class' => 'fa-solid fa-file-word', 'label' => 'Word File', 'style' => 'solid', 'keywords' => 'word to pdf docx doc'],
-        ['class' => 'fa-regular fa-file-word', 'label' => 'Word File (Regular)', 'style' => 'regular', 'keywords' => 'word docx'],
-        ['class' => 'fa-solid fa-file-excel', 'label' => 'Excel File', 'style' => 'solid', 'keywords' => 'excel to pdf xlsx csv spreadsheet'],
-        ['class' => 'fa-regular fa-file-excel', 'label' => 'Excel File (Regular)', 'style' => 'regular', 'keywords' => 'excel spreadsheet'],
-        ['class' => 'fa-solid fa-file-image', 'label' => 'Image File', 'style' => 'solid', 'keywords' => 'image to pdf pdf to jpg'],
-        ['class' => 'fa-regular fa-file-image', 'label' => 'Image File (Regular)', 'style' => 'regular', 'keywords' => 'image to pdf jpg'],
-        ['class' => 'fa-solid fa-file-zipper', 'label' => 'ZIP / Archive File', 'style' => 'solid', 'keywords' => 'compress zip batch archive'],
-        ['class' => 'fa-regular fa-file-zipper', 'label' => 'ZIP File (Regular)', 'style' => 'regular', 'keywords' => 'zip archive'],
-        ['class' => 'fa-solid fa-file-shield', 'label' => 'Protect File / PDF', 'style' => 'solid', 'keywords' => 'protect pdf encrypt password lock'],
-        ['class' => 'fa-solid fa-file-lines', 'label' => 'Document Lines', 'style' => 'solid', 'keywords' => 'text file robots doc'],
-        ['class' => 'fa-regular fa-file-lines', 'label' => 'Document (Regular)', 'style' => 'regular', 'keywords' => 'text file doc'],
-        ['class' => 'fa-solid fa-file-invoice', 'label' => 'Invoice File', 'style' => 'solid', 'keywords' => 'invoice bill receipt'],
-        ['class' => 'fa-solid fa-file-invoice-dollar', 'label' => 'Invoice Dollar', 'style' => 'solid', 'keywords' => 'invoice generator billing courier'],
-        ['class' => 'fa-solid fa-file-signature', 'label' => 'File Signature / CV', 'style' => 'solid', 'keywords' => 'contract cv resume sign'],
-        ['class' => 'fa-solid fa-file-export', 'label' => 'File Export', 'style' => 'solid', 'keywords' => 'convert export output'],
-        ['class' => 'fa-solid fa-file-import', 'label' => 'File Import', 'style' => 'solid', 'keywords' => 'upload import input'],
-        ['class' => 'fa-solid fa-copy', 'label' => 'Combine / Copy Files', 'style' => 'solid', 'keywords' => 'merge pdf duplicate copy'],
-        ['class' => 'fa-regular fa-copy', 'label' => 'Copy (Regular)', 'style' => 'regular', 'keywords' => 'duplicate copy files'],
-        ['class' => 'fa-solid fa-scissors', 'label' => 'Split / Cut', 'style' => 'solid', 'keywords' => 'pdf split extract cut'],
-        ['class' => 'fa-solid fa-layer-group', 'label' => 'Organize Pages', 'style' => 'solid', 'keywords' => 'create pdf organize merge stack'],
-        ['class' => 'fa-solid fa-print', 'label' => 'Print', 'style' => 'solid', 'keywords' => 'print sheet a4 slip'],
-
-        // Text, Fonts & Typing Tools
-        ['class' => 'fa-solid fa-font', 'label' => 'Font / Typography', 'style' => 'solid', 'keywords' => 'text font case converter'],
-        ['class' => 'fa-solid fa-bold', 'label' => 'Bold Text', 'style' => 'solid', 'keywords' => 'bold text generator unicode fancy'],
-        ['class' => 'fa-solid fa-italic', 'label' => 'Italic Text', 'style' => 'solid', 'keywords' => 'italic style text'],
-        ['class' => 'fa-solid fa-text-height', 'label' => 'Text Size / Counter', 'style' => 'solid', 'keywords' => 'word counter text tools'],
-        ['class' => 'fa-solid fa-spell-check', 'label' => 'Spell Check / Words', 'style' => 'solid', 'keywords' => 'text grammar word count'],
-        ['class' => 'fa-solid fa-paragraph', 'label' => 'Paragraph / Lorem', 'style' => 'solid', 'keywords' => 'lorem ipsum generator dummy text'],
-        ['class' => 'fa-solid fa-align-left', 'label' => 'Align Text', 'style' => 'solid', 'keywords' => 'text tools format lines'],
-        ['class' => 'fa-solid fa-list-ol', 'label' => 'Numbered List', 'style' => 'solid', 'keywords' => 'sort lines counter'],
-        ['class' => 'fa-solid fa-keyboard', 'label' => 'Keyboard / Typing', 'style' => 'solid', 'keywords' => 'bangla typing test wpm speed'],
-        ['class' => 'fa-regular fa-keyboard', 'label' => 'Keyboard (Regular)', 'style' => 'regular', 'keywords' => 'typing test input'],
-        ['class' => 'fa-solid fa-quote-left', 'label' => 'Quotes / Caption', 'style' => 'solid', 'keywords' => 'caption quote text'],
-
-        // Business, E-Commerce & Marketing Tools
-        ['class' => 'fa-solid fa-qrcode', 'label' => 'QR Code', 'style' => 'solid', 'keywords' => 'qr code generator scanner barcode'],
-        ['class' => 'fa-solid fa-barcode', 'label' => 'Barcode', 'style' => 'solid', 'keywords' => 'sku product scanner'],
-        ['class' => 'fa-solid fa-receipt', 'label' => 'Receipt / Slip', 'style' => 'solid', 'keywords' => 'invoice generator courier slip cod'],
-        ['class' => 'fa-solid fa-briefcase', 'label' => 'Business Briefcase', 'style' => 'solid', 'keywords' => 'business work cv job'],
-        ['class' => 'fa-solid fa-building-columns', 'label' => 'Bank / Finance', 'style' => 'solid', 'keywords' => 'bank loan emi fdr dps cheque'],
-        ['class' => 'fa-solid fa-chart-line', 'label' => 'Profit Chart', 'style' => 'solid', 'keywords' => 'profit margin analytics growth'],
-        ['class' => 'fa-solid fa-chart-pie', 'label' => 'Pie Chart', 'style' => 'solid', 'keywords' => 'statistics breakdown'],
-        ['class' => 'fa-solid fa-bullhorn', 'label' => 'Marketing / Campaign', 'style' => 'solid', 'keywords' => 'utm link ads promotion'],
-        ['class' => 'fa-solid fa-link', 'label' => 'Link / URL', 'style' => 'solid', 'keywords' => 'utm link builder url shortener'],
-        ['class' => 'fa-solid fa-truck-fast', 'label' => 'Courier / Delivery', 'style' => 'solid', 'keywords' => 'courier slip cod shipping'],
-        ['class' => 'fa-solid fa-user-graduate', 'label' => 'CV / Education', 'style' => 'solid', 'keywords' => 'cv maker resume student'],
-        ['class' => 'fa-solid fa-address-card', 'label' => 'Resume / Profile', 'style' => 'solid', 'keywords' => 'cv maker bio contact'],
-        ['class' => 'fa-regular fa-address-card', 'label' => 'Profile (Regular)', 'style' => 'regular', 'keywords' => 'cv resume card'],
-
-        // Developer, SEO & Security Tools
-        ['class' => 'fa-solid fa-code', 'label' => 'Code / HTML', 'style' => 'solid', 'keywords' => 'developer meta tag html json'],
-        ['class' => 'fa-solid fa-file-code', 'label' => 'File Code', 'style' => 'solid', 'keywords' => 'json formatter meta tag script'],
-        ['class' => 'fa-regular fa-file-code', 'label' => 'File Code (Regular)', 'style' => 'regular', 'keywords' => 'code json xml'],
-        ['class' => 'fa-solid fa-terminal', 'label' => 'Terminal / Dev', 'style' => 'solid', 'keywords' => 'developer webmaster console'],
-        ['class' => 'fa-solid fa-laptop-code', 'label' => 'Laptop Code', 'style' => 'solid', 'keywords' => 'developer tool webmaster'],
-        ['class' => 'fa-solid fa-robot', 'label' => 'Robot / AI / Bot', 'style' => 'solid', 'keywords' => 'robots.txt generator ai crawler'],
-        ['class' => 'fa-solid fa-spider', 'label' => 'Crawler / Spider', 'style' => 'solid', 'keywords' => 'robots.txt seo search engine'],
-        ['class' => 'fa-solid fa-magnifying-glass-chart', 'label' => 'SEO Analytics', 'style' => 'solid', 'keywords' => 'meta tag seo search ranking'],
-        ['class' => 'fa-solid fa-tags', 'label' => 'Meta Tags', 'style' => 'solid', 'keywords' => 'meta tag generator seo keywords'],
-        ['class' => 'fa-solid fa-key', 'label' => 'Key / Password', 'style' => 'solid', 'keywords' => 'password generator security token'],
-        ['class' => 'fa-solid fa-lock', 'label' => 'Lock / Encrypt', 'style' => 'solid', 'keywords' => 'protect pdf password security'],
-        ['class' => 'fa-solid fa-shield-halved', 'label' => 'Security Shield', 'style' => 'solid', 'keywords' => 'privacy security password protect'],
-        ['class' => 'fa-solid fa-fingerprint', 'label' => 'Fingerprint / Auth', 'style' => 'solid', 'keywords' => 'security identity unique'],
-        ['class' => 'fa-solid fa-globe', 'label' => 'Globe / Web', 'style' => 'solid', 'keywords' => 'website domain url'],
-        ['class' => 'fa-solid fa-screwdriver-wrench', 'label' => 'Wrench & Screwdriver', 'style' => 'solid', 'keywords' => 'tool utility settings general'],
-        ['class' => 'fa-solid fa-gears', 'label' => 'Gears / Generator', 'style' => 'solid', 'keywords' => 'generator automation config'],
-        ['class' => 'fa-solid fa-bolt', 'label' => 'Bolt / Fast Tool', 'style' => 'solid', 'keywords' => 'instant speed quick'],
-        ['class' => 'fa-solid fa-sliders', 'label' => 'Sliders / Controls', 'style' => 'solid', 'keywords' => 'settings customize filter'],
-
-        // Brands & Social Platforms
-        ['class' => 'fa-brands fa-whatsapp', 'label' => 'WhatsApp', 'style' => 'brands', 'keywords' => 'whatsapp link generator chat social'],
-        ['class' => 'fa-brands fa-facebook', 'label' => 'Facebook', 'style' => 'brands', 'keywords' => 'facebook social post ad'],
-        ['class' => 'fa-brands fa-instagram', 'label' => 'Instagram', 'style' => 'brands', 'keywords' => 'instagram photo social'],
-        ['class' => 'fa-brands fa-youtube', 'label' => 'YouTube', 'style' => 'brands', 'keywords' => 'youtube video thumbnail'],
-        ['class' => 'fa-brands fa-linkedin', 'label' => 'LinkedIn', 'style' => 'brands', 'keywords' => 'linkedin cv job social'],
-        ['class' => 'fa-brands fa-x-twitter', 'label' => 'X / Twitter', 'style' => 'brands', 'keywords' => 'twitter card social'],
-        ['class' => 'fa-brands fa-google', 'label' => 'Google', 'style' => 'brands', 'keywords' => 'google seo ga4 analytics'],
-        ['class' => 'fa-brands fa-wordpress', 'label' => 'WordPress', 'style' => 'brands', 'keywords' => 'wordpress cms blog'],
-        ['class' => 'fa-brands fa-github', 'label' => 'GitHub', 'style' => 'brands', 'keywords' => 'github code developer'],
+        // Brands
+        ['class' => 'fa-brands fa-whatsapp', 'label' => 'WhatsApp', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-facebook', 'label' => 'Facebook', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-instagram', 'label' => 'Instagram', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-youtube', 'label' => 'YouTube', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-linkedin', 'label' => 'LinkedIn', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-x-twitter', 'label' => 'X / Twitter', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-tiktok', 'label' => 'TikTok', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-telegram', 'label' => 'Telegram', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-discord', 'label' => 'Discord', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-google', 'label' => 'Google', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-github', 'label' => 'GitHub', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-wordpress', 'label' => 'WordPress', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-html5', 'label' => 'HTML5', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-css3-alt', 'label' => 'CSS3', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-js', 'label' => 'JavaScript', 'style' => 'brands'],
+        ['class' => 'fa-brands fa-markdown', 'label' => 'Markdown', 'style' => 'brands'],
     ];
 }
 
-/**
- * Enqueue Font Awesome 6 in WP Admin for the `tool` post type editor and list screen.
- */
 function toolnest_admin_enqueue_tool_icon_assets($hook)
 {
-    if (!in_array($hook, ['post.php', 'post-new.php', 'edit.php'], true)) {
+    if (!in_array($hook, ['post.php', 'post-new.php'], true)) {
         return;
     }
 
@@ -287,10 +307,7 @@ function toolnest_admin_enqueue_tool_icon_assets($hook)
 }
 add_action('admin_enqueue_scripts', 'toolnest_admin_enqueue_tool_icon_assets');
 
-/**
- * Register the Tool Icon meta box on the `tool` post type.
- */
-function toolnest_register_tool_icon_meta_box()
+function toolnest_add_tool_icon_meta_box()
 {
     add_meta_box(
         'toolnest_tool_icon_metabox',
@@ -301,11 +318,8 @@ function toolnest_register_tool_icon_meta_box()
         'default'
     );
 }
-add_action('add_meta_boxes', 'toolnest_register_tool_icon_meta_box');
+add_action('add_meta_boxes', 'toolnest_add_tool_icon_meta_box');
 
-/**
- * Render the Tool Icon selector box and visual icon picker panel.
- */
 function toolnest_render_tool_icon_meta_box($post)
 {
     wp_nonce_field('toolnest_save_tool_icon', 'toolnest_tool_icon_nonce');
@@ -315,10 +329,12 @@ function toolnest_render_tool_icon_meta_box($post)
     $icons = toolnest_get_fontawesome_icons();
     ?>
     <style>
-      .tn-icon-box-wrap {
-        padding-top: 4px;
+      .tn-admin-icon-box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
       }
-      .tn-icon-selected-card {
+      .tn-admin-icon-preview-wrap {
         display: flex;
         align-items: center;
         gap: 12px;
@@ -326,9 +342,8 @@ function toolnest_render_tool_icon_meta_box($post)
         background: #f8fafc;
         border: 1px solid #cbd5e1;
         border-radius: 8px;
-        margin-bottom: 10px;
       }
-      .tn-icon-selected-preview {
+      .tn-admin-icon-preview {
         width: 44px;
         height: 44px;
         border-radius: 10px;
@@ -337,42 +352,43 @@ function toolnest_render_tool_icon_meta_box($post)
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-size: 20px;
+        font-size: 22px;
         flex-shrink: 0;
         border: 1px solid #bfdbfe;
       }
-      .tn-icon-selected-meta {
+      .tn-admin-icon-meta {
         min-width: 0;
         flex: 1;
       }
-      .tn-icon-selected-label {
-        font-weight: 600;
-        font-size: 13px;
-        color: #1e293b;
+      .tn-admin-icon-meta strong {
         display: block;
+        font-size: 12px;
+        color: #0f172a;
         margin-bottom: 2px;
       }
-      .tn-icon-selected-code {
-        font-family: Consolas, Monaco, monospace;
+      .tn-admin-icon-code {
+        display: block;
+        font-family: monospace;
         font-size: 11px;
-        color: #64748b;
+        color: #475569;
         word-break: break-all;
       }
-      .tn-icon-actions {
+      .tn-admin-icon-actions {
         display: flex;
         gap: 8px;
-        align-items: center;
+        flex-wrap: wrap;
       }
-      .tn-icon-actions .button-primary {
+      .tn-admin-icon-actions .button {
         display: inline-flex;
         align-items: center;
         gap: 6px;
       }
-      /* Visual Icon Picker Modal Panel */
+      /* Visual Icon Picker Modal */
       .tn-icon-modal-backdrop {
         position: fixed;
         inset: 0;
         background: rgba(15, 23, 42, 0.55);
+        backdrop-filter: blur(2px);
         z-index: 100000;
         display: none;
         align-items: center;
@@ -384,15 +400,25 @@ function toolnest_render_tool_icon_meta_box($post)
       }
       .tn-icon-modal {
         background: #ffffff;
-        width: 100%;
-        max-width: 720px;
-        max-height: 82vh;
+        width: min(760px, 100%);
+        max-height: 84vh;
         border-radius: 12px;
-        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 20px 45px rgba(15, 23, 42, 0.25);
         display: flex;
         flex-direction: column;
         overflow: hidden;
         border: 1px solid #e2e8f0;
+        animation: tnIconModalIn 0.18s ease-out;
+      }
+      @keyframes tnIconModalIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px) scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
       }
       .tn-icon-modal__header {
         display: flex;
@@ -411,39 +437,47 @@ function toolnest_render_tool_icon_meta_box($post)
         align-items: center;
         gap: 8px;
       }
+      .tn-icon-modal__title i {
+        color: #2563eb;
+      }
       .tn-icon-modal__close {
         background: transparent;
-        border: none;
-        font-size: 20px;
-        line-height: 1;
-        color: #64748b;
-        cursor: pointer;
-        padding: 4px 8px;
+        border: 1px solid #cbd5e1;
         border-radius: 6px;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        color: #475569;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
       }
       .tn-icon-modal__close:hover {
-        background: #e2e8f0;
-        color: #0f172a;
+        background: #fee2e2;
+        color: #dc2626;
+        border-color: #fca5a5;
       }
       .tn-icon-modal__toolbar {
-        padding: 12px 20px;
-        border-bottom: 1px solid #e2e8f0;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        align-items: center;
+        padding: 14px 20px;
+        border-bottom: 1px solid #e2e8f0;
         background: #ffffff;
+        align-items: center;
       }
       .tn-icon-modal__search {
         flex: 1 1 240px;
-        padding: 7px 12px;
+        min-height: 36px;
+        padding: 6px 12px;
         border: 1px solid #cbd5e1;
         border-radius: 6px;
         font-size: 13px;
       }
       .tn-icon-modal__tabs {
         display: flex;
-        gap: 4px;
+        gap: 6px;
       }
       .tn-icon-modal__tab {
         padding: 6px 12px;
@@ -452,7 +486,7 @@ function toolnest_render_tool_icon_meta_box($post)
         border-radius: 6px;
         font-size: 12px;
         font-weight: 600;
-        color: #475569;
+        color: #334155;
         cursor: pointer;
       }
       .tn-icon-modal__tab.is-active {
@@ -461,16 +495,16 @@ function toolnest_render_tool_icon_meta_box($post)
         color: #ffffff;
       }
       .tn-icon-modal__body {
-        padding: 16px 20px;
+        padding: 18px 20px;
         overflow-y: auto;
         flex: 1;
       }
-      .tn-icon-grid {
+      .tn-icon-modal__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
         gap: 10px;
       }
-      .tn-icon-grid__item {
+      .tn-icon-modal__item {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -484,29 +518,33 @@ function toolnest_render_tool_icon_meta_box($post)
         text-align: center;
         transition: all 0.15s ease;
       }
-      .tn-icon-grid__item:hover {
-        border-color: #2563eb;
-        background: #eff6ff;
-        transform: translateY(-1px);
-      }
-      .tn-icon-grid__item.is-selected {
-        border-color: #2563eb;
-        background: #dbeafe;
-        box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
-      }
-      .tn-icon-grid__item i {
+      .tn-icon-modal__item i {
         font-size: 22px;
         color: #1e293b;
+        transition: transform 0.15s ease, color 0.15s ease;
       }
-      .tn-icon-grid__item:hover i,
-      .tn-icon-grid__item.is-selected i {
-        color: #2563eb;
-      }
-      .tn-icon-grid__name {
+      .tn-icon-modal__item span {
         font-size: 11px;
         color: #475569;
         line-height: 1.25;
         word-break: break-word;
+      }
+      .tn-icon-modal__item:hover {
+        border-color: #2563eb;
+        background: #eff6ff;
+        transform: translateY(-2px);
+      }
+      .tn-icon-modal__item:hover i {
+        color: #2563eb;
+        transform: scale(1.12);
+      }
+      .tn-icon-modal__item.is-selected {
+        border-color: #2563eb;
+        background: #dbeafe;
+        box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+      }
+      .tn-icon-modal__item.is-selected i {
+        color: #1d4ed8;
       }
       .tn-icon-modal__empty {
         text-align: center;
@@ -514,117 +552,95 @@ function toolnest_render_tool_icon_meta_box($post)
         color: #64748b;
         display: none;
       }
-      .tn-icon-modal__footer {
-        padding: 12px 20px;
-        border-top: 1px solid #e2e8f0;
-        background: #f8fafc;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        font-size: 12px;
-        color: #64748b;
-      }
     </style>
 
-    <div class="tn-icon-box-wrap" id="tn-tool-icon-metabox">
-      <div class="tn-icon-selected-card">
-        <div class="tn-icon-selected-preview" id="tn-tool-icon-preview">
+    <div class="tn-admin-icon-box">
+      <div class="tn-admin-icon-preview-wrap">
+        <div class="tn-admin-icon-preview" id="tn-admin-icon-preview">
           <?php if ($resolved_icon) : ?>
             <i class="<?php echo esc_attr($resolved_icon); ?>" aria-hidden="true"></i>
           <?php else : ?>
-            <i class="fa-solid fa-screwdriver-wrench" style="opacity: 0.35;" aria-hidden="true"></i>
+            <i class="fa-solid fa-screwdriver-wrench" style="opacity:0.35;" aria-hidden="true"></i>
           <?php endif; ?>
         </div>
-        <div class="tn-icon-selected-meta">
-          <span class="tn-icon-selected-label" id="tn-tool-icon-status">
-            <?php echo $saved_icon ? esc_html__('Selected Icon', 'toolnest') : esc_html__('No Icon Selected', 'toolnest'); ?>
+        <div class="tn-admin-icon-meta">
+          <strong><?php esc_html_e('Selected Icon', 'toolnest'); ?></strong>
+          <span class="tn-admin-icon-code" id="tn-admin-icon-code">
+            <?php echo $saved_icon ? esc_html($saved_icon) : esc_html__('None selected (using default)', 'toolnest'); ?>
           </span>
-          <code class="tn-icon-selected-code" id="tn-tool-icon-code">
-            <?php echo $saved_icon ? esc_html($saved_icon) : esc_html__('Default icon will be used', 'toolnest'); ?>
-          </code>
         </div>
       </div>
 
-      <p style="margin: 0 0 10px;">
-        <label for="tn-tool-icon-input" class="screen-reader-text"><?php esc_html_e('Font Awesome Icon Class', 'toolnest'); ?></label>
-        <input
-          type="text"
-          id="tn-tool-icon-input"
-          name="toolnest_tool_icon"
-          value="<?php echo esc_attr($saved_icon); ?>"
-          class="widefat"
-          placeholder="e.g. fa-solid fa-calculator">
-      </p>
+      <input
+        type="text"
+        name="toolnest_tool_icon"
+        id="tn-tool-icon-input"
+        class="widefat"
+        value="<?php echo esc_attr($saved_icon); ?>"
+        placeholder="e.g. fa-solid fa-calculator">
 
-      <div class="tn-icon-actions">
-        <button type="button" class="button button-primary" id="tn-open-icon-panel-btn">
+      <div class="tn-admin-icon-actions">
+        <button type="button" class="button button-primary" id="tn-open-icon-picker-btn">
           <i class="fa-solid fa-icons" aria-hidden="true"></i>
           <?php esc_html_e('Select Icon', 'toolnest'); ?>
         </button>
         <button
           type="button"
           class="button"
-          id="tn-clear-icon-btn"
+          id="tn-clear-icon-picker-btn"
           <?php echo $saved_icon ? '' : 'style="display:none;"'; ?>>
-          <?php esc_html_e('Remove', 'toolnest'); ?>
+          <?php esc_html_e('Clear', 'toolnest'); ?>
         </button>
       </div>
+    </div>
 
-      <!-- Visual Font Awesome Icon Picker Panel -->
-      <div class="tn-icon-modal-backdrop" id="tn-icon-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="tn-icon-modal-title">
-        <div class="tn-icon-modal">
-          <div class="tn-icon-modal__header">
-            <h2 class="tn-icon-modal__title" id="tn-icon-modal-title">
-              <i class="fa-solid fa-icons" style="color:#2563eb;" aria-hidden="true"></i>
-              <?php esc_html_e('Select Tool Icon (Font Awesome)', 'toolnest'); ?>
-            </h2>
-            <button type="button" class="tn-icon-modal__close" id="tn-close-icon-panel-btn" aria-label="<?php esc_attr_e('Close icon panel', 'toolnest'); ?>">&times;</button>
+    <!-- Visual Font Awesome Icon Picker Panel -->
+    <div class="tn-icon-modal-backdrop" id="tn-icon-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="tn-icon-modal-title">
+      <div class="tn-icon-modal">
+        <div class="tn-icon-modal__header">
+          <h2 class="tn-icon-modal__title" id="tn-icon-modal-title">
+            <i class="fa-solid fa-icons" aria-hidden="true"></i>
+            <?php esc_html_e('Select Tool Icon (Font Awesome)', 'toolnest'); ?>
+          </h2>
+          <button type="button" class="tn-icon-modal__close" id="tn-close-icon-picker-btn" aria-label="<?php esc_attr_e('Close icon panel', 'toolnest'); ?>">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="tn-icon-modal__toolbar">
+          <input
+            type="search"
+            id="tn-icon-picker-search"
+            class="tn-icon-modal__search"
+            placeholder="<?php esc_attr_e('Search icons (e.g. pdf, image, calculator, qr, lock, whatsapp)...', 'toolnest'); ?>">
+          <div class="tn-icon-modal__tabs" role="tablist">
+            <button type="button" class="tn-icon-modal__tab is-active" data-tn-icon-style="all"><?php esc_html_e('All', 'toolnest'); ?></button>
+            <button type="button" class="tn-icon-modal__tab" data-tn-icon-style="solid"><?php esc_html_e('Solid', 'toolnest'); ?></button>
+            <button type="button" class="tn-icon-modal__tab" data-tn-icon-style="regular"><?php esc_html_e('Regular', 'toolnest'); ?></button>
+            <button type="button" class="tn-icon-modal__tab" data-tn-icon-style="brands"><?php esc_html_e('Brands', 'toolnest'); ?></button>
           </div>
+        </div>
 
-          <div class="tn-icon-modal__toolbar">
-            <input
-              type="search"
-              id="tn-icon-search-input"
-              class="tn-icon-modal__search"
-              placeholder="<?php esc_attr_e('Search icons (e.g. pdf, image, calculator, bangla, code, qr)...', 'toolnest'); ?>"
-              autocomplete="off">
-            <div class="tn-icon-modal__tabs" role="tablist">
-              <button type="button" class="tn-icon-modal__tab is-active" data-tn-icon-style="all"><?php esc_html_e('All', 'toolnest'); ?></button>
-              <button type="button" class="tn-icon-modal__tab" data-tn-icon-style="solid"><?php esc_html_e('Solid', 'toolnest'); ?></button>
-              <button type="button" class="tn-icon-modal__tab" data-tn-icon-style="regular"><?php esc_html_e('Regular', 'toolnest'); ?></button>
-              <button type="button" class="tn-icon-modal__tab" data-tn-icon-style="brands"><?php esc_html_e('Brands', 'toolnest'); ?></button>
-            </div>
-          </div>
-
-          <div class="tn-icon-modal__body">
-            <div class="tn-icon-grid" id="tn-icon-grid">
-              <?php foreach ($icons as $icon_item) : ?>
-                <?php
-                $is_selected = ($saved_icon === $icon_item['class']);
-                $search_blob = strtolower($icon_item['label'] . ' ' . $icon_item['class'] . ' ' . $icon_item['keywords']);
+        <div class="tn-icon-modal__body">
+          <div class="tn-icon-modal__grid" id="tn-icon-picker-grid">
+            <?php foreach ($icons as $icon_item) :
+                $icon_class = strtolower($icon_item['class']);
+                $is_selected = ($saved_icon === $icon_class);
                 ?>
-                <button
-                  type="button"
-                  class="tn-icon-grid__item<?php echo $is_selected ? ' is-selected' : ''; ?>"
-                  data-icon-class="<?php echo esc_attr($icon_item['class']); ?>"
-                  data-icon-label="<?php echo esc_attr($icon_item['label']); ?>"
-                  data-icon-style="<?php echo esc_attr($icon_item['style']); ?>"
-                  data-icon-search="<?php echo esc_attr($search_blob); ?>"
-                  title="<?php echo esc_attr($icon_item['label'] . ' (' . $icon_item['class'] . ')'); ?>">
-                  <i class="<?php echo esc_attr($icon_item['class']); ?>" aria-hidden="true"></i>
-                  <span class="tn-icon-grid__name"><?php echo esc_html($icon_item['label']); ?></span>
-                </button>
-              <?php endforeach; ?>
-            </div>
-            <div class="tn-icon-modal__empty" id="tn-icon-modal-empty">
-              <?php esc_html_e('No matching Font Awesome icons found. Try another keyword or paste any Font Awesome class into the input box.', 'toolnest'); ?>
-            </div>
+              <button
+                type="button"
+                class="tn-icon-modal__item<?php echo $is_selected ? ' is-selected' : ''; ?>"
+                data-icon-class="<?php echo esc_attr($icon_class); ?>"
+                data-icon-label="<?php echo esc_attr(strtolower($icon_item['label'] . ' ' . $icon_class)); ?>"
+                data-icon-style="<?php echo esc_attr($icon_item['style']); ?>"
+                title="<?php echo esc_attr($icon_item['label'] . ' (' . $icon_class . ')'); ?>">
+                <i class="<?php echo esc_attr($icon_class); ?>" aria-hidden="true"></i>
+                <span><?php echo esc_html($icon_item['label']); ?></span>
+              </button>
+            <?php endforeach; ?>
           </div>
-
-          <div class="tn-icon-modal__footer">
-            <span><?php esc_html_e('Click any icon to select it, or enter a custom Font Awesome class directly.', 'toolnest'); ?></span>
-            <button type="button" class="button" id="tn-cancel-icon-panel-btn"><?php esc_html_e('Close', 'toolnest'); ?></button>
+          <div class="tn-icon-modal__empty" id="tn-icon-picker-empty">
+            <?php esc_html_e('No matching Font Awesome icons found. Try another keyword.', 'toolnest'); ?>
           </div>
         </div>
       </div>
@@ -632,162 +648,138 @@ function toolnest_render_tool_icon_meta_box($post)
 
     <script>
       (function () {
-        const openBtn = document.getElementById('tn-open-icon-panel-btn');
-        const closeBtn = document.getElementById('tn-close-icon-panel-btn');
-        const cancelBtn = document.getElementById('tn-cancel-icon-panel-btn');
-        const clearBtn = document.getElementById('tn-clear-icon-btn');
+        const input = document.getElementById('tn-tool-icon-input');
+        const preview = document.getElementById('tn-admin-icon-preview');
+        const codeLabel = document.getElementById('tn-admin-icon-code');
+        const openBtn = document.getElementById('tn-open-icon-picker-btn');
+        const closeBtn = document.getElementById('tn-close-icon-picker-btn');
+        const clearBtn = document.getElementById('tn-clear-icon-picker-btn');
         const backdrop = document.getElementById('tn-icon-modal-backdrop');
-        const searchInput = document.getElementById('tn-icon-search-input');
-        const iconInput = document.getElementById('tn-tool-icon-input');
-        const previewBox = document.getElementById('tn-tool-icon-preview');
-        const statusText = document.getElementById('tn-tool-icon-status');
-        const codeText = document.getElementById('tn-tool-icon-code');
-        const emptyState = document.getElementById('tn-icon-modal-empty');
-        const gridItems = Array.prototype.slice.call(document.querySelectorAll('#tn-icon-grid .tn-icon-grid__item'));
-        const styleTabs = Array.prototype.slice.call(document.querySelectorAll('[data-tn-icon-style]'));
+        const searchInput = document.getElementById('tn-icon-picker-search');
+        const styleTabs = document.querySelectorAll('[data-tn-icon-style]');
+        const items = document.querySelectorAll('.tn-icon-modal__item');
+        const emptyMsg = document.getElementById('tn-icon-picker-empty');
 
-        if (!openBtn || !backdrop || !iconInput) {
-          return;
-        }
+        if (!input || !openBtn || !backdrop) return;
 
-        // Move modal backdrop to document.body so it isn't clipped by WP sidebar containers
-        if (backdrop.parentNode !== document.body) {
-          document.body.appendChild(backdrop);
-        }
+        // Move modal backdrop to document.body so it isn't clipped by sidebar containers
+        document.body.appendChild(backdrop);
 
         let activeStyle = 'all';
 
-        function resolvePreviewClass(raw) {
-          const val = (raw || '').trim();
-          if (!val) return '';
-          if (val.indexOf('bi ') === 0 || val.indexOf('bi-') === 0) {
-            return val.indexOf('bi ') === 0 ? val : 'bi ' + val;
-          }
-          if (/\b(fa-solid|fa-regular|fa-brands|fas|far|fab)\b/.test(val)) {
-            return val;
-          }
-          if (val.indexOf('fa-') === 0) {
-            return 'fa-solid ' + val;
-          }
-          return val;
+        function resolvePreviewClass(val) {
+          const v = (val || '').trim();
+          if (!v) return '';
+          if (/\b(fa-solid|fa-regular|fa-brands|fas|far|fab)\b/.test(v)) return v;
+          if (v.indexOf('fa-') === 0) return 'fa-solid ' + v;
+          if (v.indexOf('bi-') === 0) return 'bi ' + v;
+          return v;
         }
 
-        function updateSelectedUI(iconValue) {
-          const clean = (iconValue || '').trim();
-          iconInput.value = clean;
-
+        function updateUI(val) {
+          const clean = (val || '').trim();
+          input.value = clean;
           const resolved = resolvePreviewClass(clean);
           if (resolved) {
-            previewBox.innerHTML = '<i class="' + resolved.replace(/"/g, '') + '" aria-hidden="true"></i>';
-            statusText.textContent = 'Selected Icon';
-            codeText.textContent = clean;
-            if (clearBtn) clearBtn.style.display = '';
+            preview.innerHTML = '<i class="' + resolved.replace(/"/g, '') + '" aria-hidden="true"></i>';
+            codeLabel.textContent = clean;
+            clearBtn.style.display = '';
           } else {
-            previewBox.innerHTML = '<i class="fa-solid fa-screwdriver-wrench" style="opacity:0.35;" aria-hidden="true"></i>';
-            statusText.textContent = 'No Icon Selected';
-            codeText.textContent = 'Default icon will be used';
-            if (clearBtn) clearBtn.style.display = 'none';
+            preview.innerHTML = '<i class="fa-solid fa-screwdriver-wrench" style="opacity:0.35;" aria-hidden="true"></i>';
+            codeLabel.textContent = 'None selected (using default)';
+            clearBtn.style.display = 'none';
           }
 
-          gridItems.forEach(function (btn) {
-            btn.classList.toggle('is-selected', btn.getAttribute('data-icon-class') === clean);
+          items.forEach(function (item) {
+            item.classList.toggle('is-selected', item.getAttribute('data-icon-class') === clean);
           });
         }
 
         function filterIcons() {
-          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
-          let visibleCount = 0;
-
-          gridItems.forEach(function (btn) {
-            const itemStyle = btn.getAttribute('data-icon-style') || 'solid';
-            const searchBlob = btn.getAttribute('data-icon-search') || '';
-            const matchesStyle = activeStyle === 'all' || itemStyle === activeStyle;
-            const matchesQuery = !query || searchBlob.indexOf(query) !== -1;
-            const show = matchesStyle && matchesQuery;
-
-            btn.style.display = show ? '' : 'none';
-            if (show) visibleCount++;
+          const q = (searchInput.value || '').trim().toLowerCase();
+          let visible = 0;
+          items.forEach(function (item) {
+            const label = item.getAttribute('data-icon-label') || '';
+            const style = item.getAttribute('data-icon-style') || '';
+            const matchStyle = activeStyle === 'all' || style === activeStyle;
+            const matchQuery = !q || label.indexOf(q) !== -1;
+            if (matchStyle && matchQuery) {
+              item.style.display = '';
+              visible++;
+            } else {
+              item.style.display = 'none';
+            }
           });
-
-          if (emptyState) {
-            emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+          if (emptyMsg) {
+            emptyMsg.style.display = visible === 0 ? 'block' : 'none';
           }
         }
 
-        function openPanel() {
+        function openModal() {
           backdrop.classList.add('is-open');
-          if (searchInput) {
-            searchInput.value = '';
-            filterIcons();
-            setTimeout(function () {
-              searchInput.focus();
-            }, 50);
-          }
+          setTimeout(function () {
+            if (searchInput) searchInput.focus();
+          }, 50);
         }
 
-        function closePanel() {
+        function closeModal() {
           backdrop.classList.remove('is-open');
+          openBtn.focus();
         }
 
-        openBtn.addEventListener('click', openPanel);
-        if (closeBtn) closeBtn.addEventListener('click', closePanel);
-        if (cancelBtn) cancelBtn.addEventListener('click', closePanel);
+        openBtn.addEventListener('click', openModal);
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
         backdrop.addEventListener('click', function (e) {
           if (e.target === backdrop) {
-            closePanel();
+            closeModal();
           }
         });
 
         document.addEventListener('keydown', function (e) {
           if (e.key === 'Escape' && backdrop.classList.contains('is-open')) {
-            closePanel();
+            closeModal();
           }
         });
 
-        gridItems.forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            const chosen = btn.getAttribute('data-icon-class') || '';
-            updateSelectedUI(chosen);
-            closePanel();
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            updateUI('');
           });
-        });
+        }
 
-        styleTabs.forEach(function (tab) {
-          tab.addEventListener('click', function () {
-            activeStyle = tab.getAttribute('data-tn-icon-style') || 'all';
-            styleTabs.forEach(function (t) {
-              t.classList.toggle('is-active', t === tab);
-            });
-            filterIcons();
-          });
+        input.addEventListener('input', function () {
+          updateUI(input.value);
         });
 
         if (searchInput) {
           searchInput.addEventListener('input', filterIcons);
         }
 
-        iconInput.addEventListener('input', function () {
-          updateSelectedUI(iconInput.value);
+        styleTabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            styleTabs.forEach(function (t) { t.classList.remove('is-active'); });
+            tab.classList.add('is-active');
+            activeStyle = tab.getAttribute('data-tn-icon-style') || 'all';
+            filterIcons();
+          });
         });
 
-        if (clearBtn) {
-          clearBtn.addEventListener('click', function () {
-            updateSelectedUI('');
+        items.forEach(function (item) {
+          item.addEventListener('click', function () {
+            const selectedClass = item.getAttribute('data-icon-class') || '';
+            updateUI(selectedClass);
+            closeModal();
           });
-        }
+        });
       })();
     </script>
     <?php
 }
 
-/**
- * Save the selected Font Awesome icon class when a `tool` post is saved.
- */
 function toolnest_save_tool_icon_meta($post_id)
 {
-    if (!isset($_POST['toolnest_tool_icon_nonce']) ||
-        !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['toolnest_tool_icon_nonce'])), 'toolnest_save_tool_icon')) {
+    if (!isset($_POST['toolnest_tool_icon_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['toolnest_tool_icon_nonce'])), 'toolnest_save_tool_icon')) {
         return;
     }
 
@@ -795,7 +787,7 @@ function toolnest_save_tool_icon_meta($post_id)
         return;
     }
 
-    if (wp_is_post_revision($post_id) || 'tool' !== get_post_type($post_id)) {
+    if (wp_is_post_revision($post_id)) {
         return;
     }
 

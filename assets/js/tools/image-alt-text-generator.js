@@ -1,5 +1,5 @@
 /**
- * ToolNest - AI Image Alt-Text & Caption Generator (/assets/js/tools/image-alt-text-generator.js)
+ * ToolZebra - AI Image Alt-Text & Caption Generator (/assets/js/tools/image-alt-text-generator.js)
  * 100% Client-Side Vision-to-Text AI powered by Transformers.js (Xenova/vit-gpt2-image-captioning),
  * with automatic Web Worker + main-thread fallback (for file:// protocol) and instant pixel/scene analysis.
  */
@@ -389,8 +389,8 @@
         lastRawAiCaption = aiCaption;
         buildFormattedOutputs(lastRawAiCaption);
         setStatus('AI Vision alt-text and captions generated!');
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('AI alt-text & captions generated!', 'success');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('AI alt-text & captions generated!', 'success');
         }
       } catch (_) {
         // Offline or CDN restricted: use visual & semantic scene analyzer so tool always succeeds
@@ -399,8 +399,8 @@
         lastRawAiCaption = buildHeuristicCaption(selectedFile ? selectedFile.name : '', kw, currentVisualMeta);
         buildFormattedOutputs(lastRawAiCaption);
         setStatus('Generated alt-text and captions using local visual scene & color analysis.');
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Alt-text & captions generated!', 'success');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Alt-text & captions generated!', 'success');
         }
       }
     }
@@ -439,8 +439,8 @@
               lastRawAiCaption = message.caption || '';
               buildFormattedOutputs(lastRawAiCaption);
               setStatus('AI Vision alt-text and captions generated! You can copy any format below.');
-              if (window.ToolNest && window.ToolNest.showToast) {
-                window.ToolNest.showToast('AI alt-text & captions generated!', 'success');
+              if (window.ToolZebra && window.ToolZebra.showToast) {
+                window.ToolZebra.showToast('AI alt-text & captions generated!', 'success');
               }
               return;
             }
@@ -659,8 +659,8 @@
     function bindCopyButton(btn, inputEl) {
       if (!btn || !inputEl) return;
       btn.addEventListener('click', function () {
-        if (window.ToolNest && window.ToolNest.copyToClipboard) {
-          window.ToolNest.copyToClipboard(inputEl.value, btn);
+        if (window.ToolZebra && window.ToolZebra.copyToClipboard) {
+          window.ToolZebra.copyToClipboard(inputEl.value, btn);
         } else if (navigator.clipboard) {
           navigator.clipboard.writeText(inputEl.value);
         }

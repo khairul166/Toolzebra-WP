@@ -1,5 +1,5 @@
 /**
- * ToolNest - Permanent QR Code Generator (/assets/js/tools/qr-code-generator.js)
+ * ToolZebra - Permanent QR Code Generator (/assets/js/tools/qr-code-generator.js)
  * Supports URL, Text, and WiFi QR codes with custom colors, optional center logo,
  * and both PNG and vector SVG export. Powered by qrcode-generator 1.4.4.
  */
@@ -55,7 +55,7 @@
     function getPayloadString() {
       const mode = getActiveMode();
       if (mode === 'text') {
-        return textInput.value.trim() || 'ToolNest Free Online Tools';
+        return textInput.value.trim() || 'ToolZebra Free Online Tools';
       }
       if (mode === 'wifi') {
         const ssid = escapeWifiField(wifiSsid.value.trim() || 'MyHomeWiFi');
@@ -180,7 +180,7 @@
           svgLogoMarkup +
           '</svg>';
       } catch (err) {
-        window.ToolNest.showToast('Text is too long for a single QR code.', 'danger');
+        window.ToolZebra.showToast('Text is too long for a single QR code.', 'danger');
       }
     }
 
@@ -214,7 +214,7 @@
             logoDataUrl = dataUrl;
             eccSelect.value = 'H';
             renderQrCode();
-            window.ToolNest.showToast('Center logo added to QR code!', 'success');
+            window.ToolZebra.showToast('Center logo added to QR code!', 'success');
           };
           img.src = dataUrl;
         };
@@ -235,7 +235,7 @@
           logoImage = img;
           eccSelect.value = 'H';
           renderQrCode();
-          window.ToolNest.showToast('Sample icon added to center of QR code!', 'success');
+          window.ToolZebra.showToast('Sample icon added to center of QR code!', 'success');
         };
         img.src = '/assets/img/favicon.svg';
       });
@@ -254,8 +254,8 @@
       btnDownloadPng.addEventListener('click', function () {
         qrCanvas.toBlob(function (blob) {
           if (blob) {
-            window.ToolNest.downloadBlob(blob, 'toolnest-qrcode.png');
-            window.ToolNest.showToast('QR Code PNG downloaded!', 'success');
+            window.ToolZebra.downloadBlob(blob, 'toolnest-qrcode.png');
+            window.ToolZebra.showToast('QR Code PNG downloaded!', 'success');
           }
         }, 'image/png');
       });
@@ -265,8 +265,8 @@
       btnDownloadSvg.addEventListener('click', function () {
         if (!lastSvgMarkup) renderQrCode();
         const blob = new Blob([lastSvgMarkup], { type: 'image/svg+xml;charset=utf-8' });
-        window.ToolNest.downloadBlob(blob, 'toolnest-qrcode.svg');
-        window.ToolNest.showToast('QR Code Vector SVG downloaded!', 'success');
+        window.ToolZebra.downloadBlob(blob, 'toolnest-qrcode.svg');
+        window.ToolZebra.showToast('QR Code Vector SVG downloaded!', 'success');
       });
     }
 

@@ -1,5 +1,5 @@
 /**
- * ToolNest - Currency Converter (/assets/js/tools/currency-converter.js)
+ * ToolZebra - Currency Converter (/assets/js/tools/currency-converter.js)
  * 100% Client-Side Global & Bangladesh Remittance Currency Converter.
  * Supports 25+ currencies (BDT, USD, EUR, GBP, SAR, AED, MYR, INR, etc.),
  * Live API refresh with offline fallback, Custom Bank Rate override,
@@ -124,7 +124,7 @@
 
   // Expose pure calculation helpers for automated testing
   if (typeof window !== 'undefined') {
-    window.ToolNestCurrencyConverter = {
+    window.ToolZebraCurrencyConverter = {
       config: DEFAULT_CURRENCY_CONFIG,
       getPairRate: getPairRate,
       convertCurrency: convertCurrency,
@@ -324,7 +324,7 @@
               '<td><span class="fw-semibold">' +
               code +
               '</span> <span class="text-muted small">— ' +
-              window.ToolNest.escapeHtml(m.name) +
+              window.ToolZebra.escapeHtml(m.name) +
               '</span></td>' +
               '<td class="text-end fw-bold">' +
               m.symbol +
@@ -369,7 +369,7 @@
             syncDefaultRateIntoCustomInput();
             updateConverterUI();
             if (showFeedback) {
-              window.ToolNest.showToast('Updated with latest live market exchange rates!', 'success');
+              window.ToolZebra.showToast('Updated with latest live market exchange rates!', 'success');
             }
           }
         })
@@ -380,7 +380,7 @@
               '<i class="bi bi-database-check me-1" aria-hidden="true"></i> Offline Reference Rates (Custom Rate Editable)';
           }
           if (showFeedback) {
-            window.ToolNest.showToast('Using built-in offline rates. You can also enter a custom rate.', 'warning');
+            window.ToolZebra.showToast('Using built-in offline rates. You can also enter a custom rate.', 'warning');
           }
         })
         .finally(function () {
@@ -438,7 +438,7 @@
           ' (' +
           resultRateLineEl.textContent +
           ')';
-        window.ToolNest.copyToClipboard(text, copyBtn);
+        window.ToolZebra.copyToClipboard(text, copyBtn);
       });
     }
 
@@ -451,7 +451,7 @@
             lines.push(cols[0].textContent.trim() + ': ' + cols[1].textContent.trim());
           }
         });
-        window.ToolNest.copyToClipboard(lines.join('\n'), copyTableBtn);
+        window.ToolZebra.copyToClipboard(lines.join('\n'), copyTableBtn);
       });
     }
 

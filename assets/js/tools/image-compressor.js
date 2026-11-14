@@ -1,5 +1,5 @@
 /**
- * ToolNest - Batch Image Compressor (/assets/js/tools/image-compressor.js)
+ * ToolZebra - Batch Image Compressor (/assets/js/tools/image-compressor.js)
  * 100% Client-Side Multi-File Image Compression with Quality Slider & Before/After Stats
  */
 (function () {
@@ -102,7 +102,7 @@
       ctx.fillStyle = '#FFFFFF';
       ctx.font = 'bold 54px Inter, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('ToolNest Sample High-Res Photo', 600, 380);
+      ctx.fillText('ToolZebra Sample High-Res Photo', 600, 380);
       ctx.font = '30px Inter, sans-serif';
       ctx.fillText('1200 x 800 px • Ready for Client-Side Compression', 600, 440);
 
@@ -187,21 +187,21 @@
             '<img src="' +
             item.previewUrl +
             '" alt="Compressed preview of ' +
-            window.ToolNest.escapeHtml(item.originalName) +
+            window.ToolZebra.escapeHtml(item.originalName) +
             '" width="72" height="72" class="rounded border object-fit-cover" loading="lazy">' +
             '</div>' +
             '<div class="col">' +
             '<div class="fw-bold text-break">' +
-            window.ToolNest.escapeHtml(item.outputName) +
+            window.ToolZebra.escapeHtml(item.outputName) +
             '</div>' +
             '<div class="small text-muted">' +
             item.width +
             ' &times; ' +
             item.height +
             ' px &bull; Before: <strong>' +
-            window.ToolNest.formatBytes(item.originalSize) +
+            window.ToolZebra.formatBytes(item.originalSize) +
             '</strong> &rarr; After: <strong class="text-success">' +
-            window.ToolNest.formatBytes(item.compressedSize) +
+            window.ToolZebra.formatBytes(item.compressedSize) +
             '</strong></div>' +
             '</div>' +
             '<div class="col-12 col-sm-auto d-flex align-items-center gap-2 justify-content-end">' +
@@ -228,11 +228,11 @@
         'Processed <strong>' +
         compressedItems.length +
         ' file(s)</strong>: Total Before <strong>' +
-        window.ToolNest.formatBytes(totalBefore) +
+        window.ToolZebra.formatBytes(totalBefore) +
         '</strong> &rarr; Total After <strong class="text-success">' +
-        window.ToolNest.formatBytes(totalAfter) +
+        window.ToolZebra.formatBytes(totalAfter) +
         '</strong> (Saved <strong>' +
-        window.ToolNest.formatBytes(totalSaved) +
+        window.ToolZebra.formatBytes(totalSaved) +
         ' / ' +
         totalPct +
         '%</strong>)';
@@ -241,7 +241,7 @@
         btn.addEventListener('click', function () {
           const i = Number(btn.getAttribute('data-dl-idx'));
           if (compressedItems[i]) {
-            window.ToolNest.downloadBlob(compressedItems[i].blob, compressedItems[i].outputName);
+            window.ToolZebra.downloadBlob(compressedItems[i].blob, compressedItems[i].outputName);
           }
         });
       });
@@ -249,7 +249,7 @@
 
     function processBatch() {
       if (uploadedFiles.length === 0) {
-        window.ToolNest.showToast('Please select or drop at least one image first.', 'warning');
+        window.ToolZebra.showToast('Please select or drop at least one image first.', 'warning');
         return;
       }
 
@@ -280,20 +280,20 @@
             progressWrap.classList.add('d-none');
           }, 350);
           renderResults();
-          window.ToolNest.showToast('Compressed ' + compressedItems.length + ' image(s) successfully!', 'success');
+          window.ToolZebra.showToast('Compressed ' + compressedItems.length + ' image(s) successfully!', 'success');
         })
         .catch(function (err) {
           progressWrap.classList.add('d-none');
-          window.ToolNest.showToast(err.message || 'Could not compress image.', 'danger');
+          window.ToolZebra.showToast(err.message || 'Could not compress image.', 'danger');
         });
     }
 
-    window.ToolNest.setupDropzone(dropzone, fileInput, function (files) {
+    window.ToolZebra.setupDropzone(dropzone, fileInput, function (files) {
       const valid = files.filter(function (f) {
         return f.type.startsWith('image/');
       });
       if (valid.length === 0) {
-        window.ToolNest.showToast('Please select valid JPG, PNG, or WebP image files.', 'danger');
+        window.ToolZebra.showToast('Please select valid JPG, PNG, or WebP image files.', 'danger');
         return;
       }
       uploadedFiles = valid;
@@ -317,7 +317,7 @@
       btnDownloadAll.addEventListener('click', function () {
         compressedItems.forEach(function (item, idx) {
           setTimeout(function () {
-            window.ToolNest.downloadBlob(item.blob, item.outputName);
+            window.ToolZebra.downloadBlob(item.blob, item.outputName);
           }, idx * 220);
         });
       });

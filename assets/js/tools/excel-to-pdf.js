@@ -1,5 +1,5 @@
 /**
- * ToolNest — MS Excel to PDF Converter (.XLSX & .CSV to PDF)
+ * ToolZebra — MS Excel to PDF Converter (.XLSX & .CSV to PDF)
  * Automatically parses Excel (.xlsx) OpenXML workbooks via JSZip and CSV/TSV files 100% client-side,
  * converts the spreadsheet into a matching multi-page vector PDF table on upload via pdf-lib,
  * and lets the user download the converted PDF with one click.
@@ -428,7 +428,7 @@
   }
 
   // Expose helper API for automated testing
-  window.ToolNestExcelToPdf = {
+  window.ToolZebraExcelToPdf = {
     parseSharedStringsXml: parseSharedStringsXml,
     parseWorksheetXml: parseWorksheetXml,
     parseCsvText: parseCsvText,
@@ -592,8 +592,8 @@
 
         if (fileNameLabel) fileNameLabel.textContent = convertedPdfFilename;
         if (fileMetaLabel) {
-          var sizeStr = window.ToolNest && window.ToolNest.formatBytes
-            ? window.ToolNest.formatBytes(convertedPdfBlob.size)
+          var sizeStr = window.ToolZebra && window.ToolZebra.formatBytes
+            ? window.ToolZebra.formatBytes(convertedPdfBlob.size)
             : Math.round(convertedPdfBlob.size / 1024) + ' KB';
           fileMetaLabel.textContent =
             'Converted from ' + file.name + ' • ' + result.pageCount + (result.pageCount === 1 ? ' Page' : ' Pages') + ' • ' + sizeStr;
@@ -603,8 +603,8 @@
         if (progressBox) progressBox.classList.add('d-none');
         if (workspace) workspace.classList.remove('d-none');
 
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Excel spreadsheet converted to PDF! Click Download PDF to save.', 'success');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Excel spreadsheet converted to PDF! Click Download PDF to save.', 'success');
         }
       } catch (err) {
         if (progressBox) progressBox.classList.add('d-none');
@@ -662,9 +662,9 @@
     if (convertBtn) {
       convertBtn.addEventListener('click', function () {
         if (!convertedPdfBlob) return;
-        if (window.ToolNest && window.ToolNest.downloadBlob) {
-          window.ToolNest.downloadBlob(convertedPdfBlob, convertedPdfFilename);
-          window.ToolNest.showToast('Downloading ' + convertedPdfFilename, 'success');
+        if (window.ToolZebra && window.ToolZebra.downloadBlob) {
+          window.ToolZebra.downloadBlob(convertedPdfBlob, convertedPdfFilename);
+          window.ToolZebra.showToast('Downloading ' + convertedPdfFilename, 'success');
         }
       });
     }

@@ -1,5 +1,5 @@
 /**
- * ToolNest - Protect PDF (/assets/js/tools/protect-pdf.js)
+ * ToolZebra - Protect PDF (/assets/js/tools/protect-pdf.js)
  * 100% Client-Side 128-bit Standard PDF Encryption (ISO 32000-1 /Filter /Standard /V 2 /R 3 /Length 128).
  * Encrypts all PDF streams and strings locally in the browser using MD5 + RC4-128 key derivation,
  * supports Document Open Password, Owner Permissions Password, and granular permission flags (/P).
@@ -175,7 +175,7 @@
    * Algorithm 3: Compute /O (32-byte Owner value) for Revision 3 (128-bit)
    */
   function computeOwnerValue(userPwd, ownerPwd) {
-    const effOwner = ownerPwd ? ownerPwd : userPwd + '#ToolNestOwnerKey';
+    const effOwner = ownerPwd ? ownerPwd : userPwd + '#ToolZebraOwnerKey';
     const paddedOwner = padPassword(effOwner);
     let digest = md5Bytes(paddedOwner);
     for (let i = 0; i < 50; i++) {
@@ -342,7 +342,7 @@
     doc.flush = function () {};
 
     const permissionsInt = buildPermissionsBitmask(permOpts);
-    const idSeed = new TextEncoder().encode('ToolNest-' + Date.now() + '-' + cleanBytes.length);
+    const idSeed = new TextEncoder().encode('ToolZebra-' + Date.now() + '-' + cleanBytes.length);
     const fileIdBytes = md5Bytes(idSeed);
     const fileIdHex = bytesToHex(fileIdBytes);
 
@@ -457,7 +457,7 @@
     const p2 = doc.addPage([595.28, 841.89]);
     p2.drawRectangle({ x: 36, y: 715, width: 523, height: 85, color: rgb(0.1, 0.45, 0.35) });
     p2.drawText('APPENDIX — ANNUAL BREAKDOWN (PAGE 2)', { x: 54, y: 760, size: 18, font: fontBold, color: rgb(1, 1, 1) });
-    p2.drawText('Protected locally in your browser with ToolNest Protect PDF', { x: 54, y: 734, size: 12, font: fontReg, color: rgb(0.88, 1, 0.95) });
+    p2.drawText('Protected locally in your browser with ToolZebra Protect PDF', { x: 54, y: 734, size: 12, font: fontReg, color: rgb(0.88, 1, 0.95) });
 
     const bytes = await doc.save();
     return new File([bytes], 'confidential-statement-sample.pdf', { type: 'application/pdf' });
@@ -548,7 +548,7 @@
   }
 
   if (typeof window !== 'undefined') {
-    window.ToolNestProtectPdf = {
+    window.ToolZebraProtectPdf = {
       md5Bytes: md5Bytes,
       rc4Bytes: rc4Bytes,
       buildPermissionsBitmask: buildPermissionsBitmask,
@@ -651,13 +651,13 @@
     if (copyUserPwdBtn && userPwdInput) {
       copyUserPwdBtn.addEventListener('click', function () {
         if (!userPwdInput.value) {
-          if (window.ToolNest && window.ToolNest.showToast) {
-            window.ToolNest.showToast('Enter or generate a password first.', 'warning');
+          if (window.ToolZebra && window.ToolZebra.showToast) {
+            window.ToolZebra.showToast('Enter or generate a password first.', 'warning');
           }
           return;
         }
-        if (window.ToolNest && window.ToolNest.copyToClipboard) {
-          window.ToolNest.copyToClipboard(userPwdInput.value, copyUserPwdBtn);
+        if (window.ToolZebra && window.ToolZebra.copyToClipboard) {
+          window.ToolZebra.copyToClipboard(userPwdInput.value, copyUserPwdBtn);
         }
       });
     }
@@ -673,8 +673,8 @@
           toggleUserPwdBtn.innerHTML = '<i class="bi bi-eye-slash" aria-hidden="true"></i>';
         }
         updatePasswordUi();
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Generated strong password! Copy and save it safely.', 'success');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Generated strong password! Copy and save it safely.', 'success');
         }
       });
     }
@@ -722,8 +722,8 @@
     async function handleSelectedFile(file) {
       if (!file) return;
       if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Please select a valid PDF file.', 'warning');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Please select a valid PDF file.', 'warning');
         }
         return;
       }
@@ -740,8 +740,8 @@
         if (fileNameEl) fileNameEl.textContent = file.name;
         if (pageBadge) pageBadge.textContent = info.pageCount + (info.pageCount === 1 ? ' Page' : ' Pages');
         if (sizeBadge) {
-          sizeBadge.textContent = window.ToolNest && window.ToolNest.formatBytes
-            ? window.ToolNest.formatBytes(file.size)
+          sizeBadge.textContent = window.ToolZebra && window.ToolZebra.formatBytes
+            ? window.ToolZebra.formatBytes(file.size)
             : Math.round(file.size / 1024) + ' KB';
         }
         if (statusBadge) {
@@ -760,12 +760,12 @@
 
         if (fileCard) fileCard.classList.remove('d-none');
         if (resultCard) resultCard.classList.add('d-none');
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Loaded ' + file.name + ' (' + info.pageCount + ' pages).', 'success');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Loaded ' + file.name + ' (' + info.pageCount + ' pages).', 'success');
         }
       } catch (err) {
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast(err.message || 'Could not read PDF file.', 'danger');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast(err.message || 'Could not read PDF file.', 'danger');
         }
       }
     }
@@ -783,15 +783,15 @@
           const sampleFile = await generateSamplePdfFile();
           await handleSelectedFile(sampleFile);
           if (userPwdInput && !userPwdInput.value) {
-            userPwdInput.value = 'ToolNest2026!';
-            if (confirmPwdInput) confirmPwdInput.value = 'ToolNest2026!';
+            userPwdInput.value = 'ToolZebra2026!';
+            if (confirmPwdInput) confirmPwdInput.value = 'ToolZebra2026!';
             userPwdInput.type = 'text';
             if (confirmPwdInput) confirmPwdInput.type = 'text';
             updatePasswordUi();
           }
         } catch (err) {
-          if (window.ToolNest && window.ToolNest.showToast) {
-            window.ToolNest.showToast(err.message || 'Could not generate sample PDF.', 'danger');
+          if (window.ToolZebra && window.ToolZebra.showToast) {
+            window.ToolZebra.showToast(err.message || 'Could not generate sample PDF.', 'danger');
           }
         }
       });
@@ -799,8 +799,8 @@
 
     protectBtn.addEventListener('click', async function () {
       if (!currentPdfBytes) {
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Please select a PDF file first (or click Load Sample PDF).', 'warning');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Please select a PDF file first (or click Load Sample PDF).', 'warning');
         }
         return;
       }
@@ -808,16 +808,16 @@
       const userPwd = userPwdInput ? userPwdInput.value : '';
       const confirmPwd = confirmPwdInput ? confirmPwdInput.value : '';
       if (!userPwd) {
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Please enter a Document Open Password.', 'warning');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Please enter a Document Open Password.', 'warning');
         }
         if (userPwdInput) userPwdInput.focus();
         return;
       }
 
       if (userPwd !== confirmPwd) {
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Passwords do not match. Please re-enter.', 'danger');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Passwords do not match. Please re-enter.', 'danger');
         }
         if (confirmPwdInput) confirmPwdInput.focus();
         return;
@@ -857,11 +857,11 @@
         protectedFilename = outName;
 
         if (resultCard && resultSummary) {
-          const sizeStr = window.ToolNest && window.ToolNest.formatBytes
-            ? window.ToolNest.formatBytes(protectedPdfBlob.size)
+          const sizeStr = window.ToolZebra && window.ToolZebra.formatBytes
+            ? window.ToolZebra.formatBytes(protectedPdfBlob.size)
             : Math.round(protectedPdfBlob.size / 1024) + ' KB';
-          const esc = window.ToolNest && window.ToolNest.escapeHtml
-            ? window.ToolNest.escapeHtml
+          const esc = window.ToolZebra && window.ToolZebra.escapeHtml
+            ? window.ToolZebra.escapeHtml
             : function (s) { return String(s); };
           resultSummary.innerHTML =
             '<i class="bi bi-shield-lock-fill text-success me-1" aria-hidden="true"></i> ' +
@@ -870,15 +870,15 @@
           resultCard.classList.remove('d-none');
         }
 
-        if (window.ToolNest && window.ToolNest.downloadBlob) {
-          window.ToolNest.downloadBlob(protectedPdfBlob, protectedFilename);
+        if (window.ToolZebra && window.ToolZebra.downloadBlob) {
+          window.ToolZebra.downloadBlob(protectedPdfBlob, protectedFilename);
         }
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('PDF encrypted and downloaded!', 'success');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('PDF encrypted and downloaded!', 'success');
         }
       } catch (err) {
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast(err.message || 'Encryption failed.', 'danger');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast(err.message || 'Encryption failed.', 'danger');
         }
       } finally {
         protectBtn.disabled = false;
@@ -888,8 +888,8 @@
 
     if (downloadBtn) {
       downloadBtn.addEventListener('click', function () {
-        if (protectedPdfBlob && window.ToolNest && window.ToolNest.downloadBlob) {
-          window.ToolNest.downloadBlob(protectedPdfBlob, protectedFilename);
+        if (protectedPdfBlob && window.ToolZebra && window.ToolZebra.downloadBlob) {
+          window.ToolZebra.downloadBlob(protectedPdfBlob, protectedFilename);
         }
       });
     }
@@ -910,8 +910,8 @@
       });
     }
 
-    if (window.ToolNest && window.ToolNest.setupDropzone) {
-      window.ToolNest.setupDropzone(dropzone, fileInput, function (files) {
+    if (window.ToolZebra && window.ToolZebra.setupDropzone) {
+      window.ToolZebra.setupDropzone(dropzone, fileInput, function (files) {
         if (files && files.length > 0) handleSelectedFile(files[0]);
       });
     }

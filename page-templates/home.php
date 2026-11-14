@@ -19,14 +19,14 @@ get_header(); ?>
             </span>
             <h1 class="tn-page-title">Free Online Tools That Just Work</h1>
             <p class="lead text-secondary mb-3">
-              Welcome to <strong>ToolNest</strong>, your all-in-one collection of fast, privacy-first web utilities
+              Welcome to <strong>ToolZebra</strong>, your all-in-one collection of fast, privacy-first web utilities
               built for everyday productivity. Whether you are converting <strong>Bijoy ANSI to Unicode Bangla</strong>,
               spelling out <strong>BDT Taka &amp; Lakh/Crore amounts in words</strong> for bank cheques, preparing
               official <strong>passport and visa photos</strong>, merging multi-page PDF documents, resizing social
               media graphics, or printing cash-on-delivery courier slips, every tool runs directly inside your browser.
             </p>
             <p class="text-muted mb-4">
-              Unlike traditional cloud converters that queue your files on remote servers, ToolNest processes your
+              Unlike traditional cloud converters that queue your files on remote servers, ToolZebra processes your
               images, PDFs, and text locally on your phone or computer. That means zero upload wait times, zero
               watermarks, no sign-up walls, and complete privacy for freelancers, students, government job applicants,
               and small business owners in Bangladesh and around the world.
@@ -210,7 +210,7 @@ get_header(); ?>
       </div>
     </section>
 
-    <!-- Why ToolNest Section -->
+    <!-- Why ToolZebra Section -->
     <section class="py-5" aria-labelledby="why-toolnest-heading">
       <div class="container">
         <div class="tn-card p-4 p-lg-5">
@@ -218,9 +218,9 @@ get_header(); ?>
             <div class="col-lg-5">
               <span class="badge bg-primary-subtle text-primary fw-semibold px-3 py-2 rounded-pill mb-2">Built for Speed
                 &amp; Trust</span>
-              <h2 id="why-toolnest-heading" class="tn-section-title">Why Thousands Choose ToolNest</h2>
+              <h2 id="why-toolnest-heading" class="tn-section-title">Why Thousands Choose ToolZebra</h2>
               <p class="text-muted mb-0">
-                We engineered ToolNest around a simple promise: every tool works in 3 effortless steps—input, action,
+                We engineered ToolZebra around a simple promise: every tool works in 3 effortless steps—input, action,
                 and result—without forcing you to create an account or risk your confidential files on unknown cloud
                 servers.
               </p>
@@ -317,13 +317,13 @@ get_header(); ?>
                 <h3 class="accordion-header" id="faqHeadingOne">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse"
                     data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
-                    1. Are all tools on ToolNest completely free to use?
+                    1. Are all tools on ToolZebra completely free to use?
                   </button>
                 </h3>
                 <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne"
                   data-bs-parent="#homeFaqAccordion">
                   <div class="accordion-body text-muted">
-                    Yes. Every single utility on ToolNest is 100% free. There are no hidden subscriptions, no daily
+                    Yes. Every single utility on ToolZebra is 100% free. There are no hidden subscriptions, no daily
                     conversion limits, no watermarks added to your images or PDFs, and no sign-up required.
                   </div>
                 </div>
@@ -350,13 +350,13 @@ get_header(); ?>
                 <h3 class="accordion-header" id="faqHeadingThree">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
-                    3. Does ToolNest support Bengali (Bangla) fonts and Bangladesh formats?
+                    3. Does ToolZebra support Bengali (Bangla) fonts and Bangladesh formats?
                   </button>
                 </h3>
                 <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree"
                   data-bs-parent="#homeFaqAccordion">
                   <div class="accordion-body text-muted">
-                    Yes! While ToolNest serves global English users, we provide dedicated support for Bangladesh
+                    Yes! While ToolZebra serves global English users, we provide dedicated support for Bangladesh
                     workflows—including two-way Bijoy ANSI to Unicode conversion, BDT Taka/Paisa Lakh and Crore wording,
                     Bangladesh passport photo presets, and F-commerce COD courier slips.
                   </div>
@@ -367,7 +367,7 @@ get_header(); ?>
                 <h3 class="accordion-header" id="faqHeadingFour">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
-                    4. Do the QR codes generated on ToolNest ever expire?
+                    4. Do the QR codes generated on ToolZebra ever expire?
                   </button>
                 </h3>
                 <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour"
@@ -384,7 +384,7 @@ get_header(); ?>
                 <h3 class="accordion-header" id="faqHeadingFive">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
-                    5. Can I use ToolNest on my smartphone or low-bandwidth connection?
+                    5. Can I use ToolZebra on my smartphone or low-bandwidth connection?
                   </button>
                 </h3>
                 <div id="faqCollapseFive" class="accordion-collapse collapse" aria-labelledby="faqHeadingFive"

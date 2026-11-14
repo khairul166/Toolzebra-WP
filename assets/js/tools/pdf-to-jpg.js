@@ -1,5 +1,5 @@
 /**
- * ToolNest - PDF to JPG / PNG Converter (/assets/js/tools/pdf-to-jpg.js)
+ * ToolZebra - PDF to JPG / PNG Converter (/assets/js/tools/pdf-to-jpg.js)
  * 100% Client-Side PDF Page Renderer powered by Mozilla pdf.js 3.11.174 and JSZip 3.10.1.
  * Renders pages sequentially one at a time with 1x/2x/3x scale, page range filtering,
  * password-protected PDF detection, thumbnail grid, and single/ZIP export.
@@ -67,9 +67,9 @@
       '4 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 6 0 R >> >> /Contents 8 0 R >> endobj',
       '5 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 6 0 R >> >> /Contents 9 0 R >> endobj',
       '6 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> endobj',
-      '7 0 obj << /Length 138 >> stream\n0.14 0.39 0.92 rg 40 640 532 100 re f 1 1 1 rg BT /F1 26 Tf 75 680 Td (ToolNest Sample PDF - Page 1) Tj ET 0.1 0.15 0.25 rg BT /F1 18 Tf 75 560 Td (100% Client-Side PDF to JPG Conversion) Tj ET\nendstream endobj',
-      '8 0 obj << /Length 138 >> stream\n0.08 0.64 0.29 rg 40 640 532 100 re f 1 1 1 rg BT /F1 26 Tf 75 680 Td (ToolNest Sample PDF - Page 2) Tj ET 0.1 0.15 0.25 rg BT /F1 18 Tf 75 560 Td (High-Resolution 1x, 2x, 3x Scale Export) Tj ET\nendstream endobj',
-      '9 0 obj << /Length 138 >> stream\n0.96 0.62 0.04 rg 40 640 532 100 re f 1 1 1 rg BT /F1 26 Tf 75 680 Td (ToolNest Sample PDF - Page 3) Tj ET 0.1 0.15 0.25 rg BT /F1 18 Tf 75 560 Td (Download Single Pages or Full ZIP Archive) Tj ET\nendstream endobj'
+      '7 0 obj << /Length 138 >> stream\n0.14 0.39 0.92 rg 40 640 532 100 re f 1 1 1 rg BT /F1 26 Tf 75 680 Td (ToolZebra Sample PDF - Page 1) Tj ET 0.1 0.15 0.25 rg BT /F1 18 Tf 75 560 Td (100% Client-Side PDF to JPG Conversion) Tj ET\nendstream endobj',
+      '8 0 obj << /Length 138 >> stream\n0.08 0.64 0.29 rg 40 640 532 100 re f 1 1 1 rg BT /F1 26 Tf 75 680 Td (ToolZebra Sample PDF - Page 2) Tj ET 0.1 0.15 0.25 rg BT /F1 18 Tf 75 560 Td (High-Resolution 1x, 2x, 3x Scale Export) Tj ET\nendstream endobj',
+      '9 0 obj << /Length 138 >> stream\n0.96 0.62 0.04 rg 40 640 532 100 re f 1 1 1 rg BT /F1 26 Tf 75 680 Td (ToolZebra Sample PDF - Page 3) Tj ET 0.1 0.15 0.25 rg BT /F1 18 Tf 75 560 Td (Download Single Pages or Full ZIP Archive) Tj ET\nendstream endobj'
     ];
 
     let body = '';
@@ -98,7 +98,7 @@
 
   // Expose helper for automated verification
   if (typeof window !== 'undefined') {
-    window.ToolNestPdfToJpg = {
+    window.ToolZebraPdfToJpg = {
       parsePageRange: parsePageRange,
       createSampleThreePagePdfFile: createSampleThreePagePdfFile
     };
@@ -148,7 +148,7 @@
         errorAlert.textContent = '';
       } else {
         errorAlert.classList.remove('d-none');
-        errorAlert.innerHTML = '<i class="bi bi-shield-exclamation me-1" aria-hidden="true"></i> ' + window.ToolNest.escapeHtml(msg);
+        errorAlert.innerHTML = '<i class="bi bi-shield-exclamation me-1" aria-hidden="true"></i> ' + window.ToolZebra.escapeHtml(msg);
       }
     }
 
@@ -190,7 +190,7 @@
         totalPageCount = pdfDoc.numPages;
 
         fileInfoBar.classList.remove('d-none');
-        fileNameLabel.textContent = file.name + ' (' + window.ToolNest.formatBytes(file.size) + ')';
+        fileNameLabel.textContent = file.name + ' (' + window.ToolZebra.formatBytes(file.size) + ')';
         pageCountBadge.textContent = totalPageCount + ' Page(s) Detected';
         if (rangeInput) {
           rangeInput.placeholder = 'e.g. 1-' + totalPageCount;
@@ -272,7 +272,7 @@
             item.pageNumber +
             '</span>' +
             '<span class="small text-muted">' +
-            window.ToolNest.formatBytes(item.size) +
+            window.ToolZebra.formatBytes(item.size) +
             '</span>' +
             '</div>' +
             '<div class="text-center p-2 bg-light rounded border mb-2">' +
@@ -305,14 +305,14 @@
         'Rendered <strong>' +
         renderedPages.length +
         ' page(s)</strong> &bull; Total Image Output: <strong>' +
-        window.ToolNest.formatBytes(totalBytes) +
+        window.ToolZebra.formatBytes(totalBytes) +
         '</strong>';
 
       pagesGrid.querySelectorAll('[data-dl-page]').forEach(function (btn) {
         btn.addEventListener('click', function () {
           const i = Number(btn.getAttribute('data-dl-page'));
           if (renderedPages[i]) {
-            window.ToolNest.downloadBlob(renderedPages[i].blob, renderedPages[i].outputName);
+            window.ToolZebra.downloadBlob(renderedPages[i].blob, renderedPages[i].outputName);
           }
         });
       });
@@ -321,7 +321,7 @@
     async function renderSelectedPages() {
       showError('');
       if (!currentPdfDoc || !currentPdfFile) {
-        window.ToolNest.showToast('Please upload a PDF file first.', 'warning');
+        window.ToolZebra.showToast('Please upload a PDF file first.', 'warning');
         return;
       }
 
@@ -363,14 +363,14 @@
         }, 300);
 
         renderThumbnailsGrid();
-        window.ToolNest.showToast('Converted ' + renderedPages.length + ' PDF page(s) to images!', 'success');
+        window.ToolZebra.showToast('Converted ' + renderedPages.length + ' PDF page(s) to images!', 'success');
       } catch (err) {
         progressWrap.classList.add('d-none');
         showError(err.message || 'Error while rendering PDF pages.');
       }
     }
 
-    window.ToolNest.setupDropzone(dropzone, fileInput, function (files) {
+    window.ToolZebra.setupDropzone(dropzone, fileInput, function (files) {
       if (files && files[0]) {
         loadSelectedPdf(files[0]);
       }
@@ -410,13 +410,13 @@
           });
           zip.generateAsync({ type: 'blob' }).then(function (zipBlob) {
             const zipName = (currentPdfFile ? currentPdfFile.name.replace(/\.pdf$/i, '') : 'pdf') + '-pages.zip';
-            window.ToolNest.downloadBlob(zipBlob, zipName);
-            window.ToolNest.showToast('Downloaded ZIP with ' + renderedPages.length + ' page images!', 'success');
+            window.ToolZebra.downloadBlob(zipBlob, zipName);
+            window.ToolZebra.showToast('Downloaded ZIP with ' + renderedPages.length + ' page images!', 'success');
           });
         } else {
           renderedPages.forEach(function (p, idx) {
             setTimeout(function () {
-              window.ToolNest.downloadBlob(p.blob, p.outputName);
+              window.ToolZebra.downloadBlob(p.blob, p.outputName);
             }, idx * 220);
           });
         }

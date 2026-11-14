@@ -1,5 +1,5 @@
 /**
- * ToolNest - RedKetchup-Style Bulk Image Resizer (/assets/js/tools/bulk-image-resizer.js)
+ * ToolZebra - RedKetchup-Style Bulk Image Resizer (/assets/js/tools/bulk-image-resizer.js)
  * 100% Client-Side Batch Image Resizer with 6 Resize Modes (Exact Dimensions,
  * Target File Size KB/MB, Percentage, Longest Side, Fixed Width, Fixed Height),
  * 9-Point Crop Anchor, Rotation/Flip, Custom Naming Patterns, and One-Click ZIP Export.
@@ -617,14 +617,14 @@
             '<div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill border bg-white small">' +
             '<i class="bi bi-file-earmark-image text-primary" aria-hidden="true"></i>' +
             '<span class="fw-semibold text-truncate" style="max-width: 160px;">' +
-            window.ToolNest.escapeHtml(it.name) +
+            window.ToolZebra.escapeHtml(it.name) +
             '</span>' +
             '<span class="text-muted">(' +
             it.origW +
             '&times;' +
             it.origH +
             ' &bull; ' +
-            window.ToolNest.formatBytes(it.origSize) +
+            window.ToolZebra.formatBytes(it.origSize) +
             ')</span>' +
             '<button type="button" class="btn-close" style="font-size: 0.65rem;" data-rm-q="' +
             idx +
@@ -692,12 +692,12 @@
             '<img src="' +
             item.previewUrl +
             '" alt="Resized preview of ' +
-            window.ToolNest.escapeHtml(item.outputName) +
+            window.ToolZebra.escapeHtml(item.outputName) +
             '" width="68" height="68" class="rounded border object-fit-cover" loading="lazy">' +
             '</div>' +
             '<div class="col">' +
             '<div class="fw-bold text-break">' +
-            window.ToolNest.escapeHtml(item.outputName) +
+            window.ToolZebra.escapeHtml(item.outputName) +
             '</div>' +
             '<div class="small text-muted">' +
             'Dimensions: <strong>' +
@@ -709,9 +709,9 @@
             ' &times; ' +
             item.outH +
             ' px</strong> &bull; File Size: ' +
-            window.ToolNest.formatBytes(item.origSize) +
+            window.ToolZebra.formatBytes(item.origSize) +
             ' &rarr; <strong class="text-success">' +
-            window.ToolNest.formatBytes(item.outSize) +
+            window.ToolZebra.formatBytes(item.outSize) +
             '</strong>' +
             '</div>' +
             '</div>' +
@@ -732,16 +732,16 @@
         'Resized <strong>' +
         processedBatch.length +
         ' image(s)</strong> &bull; Total Batch Size: <strong>' +
-        window.ToolNest.formatBytes(totalOrigBytes) +
+        window.ToolZebra.formatBytes(totalOrigBytes) +
         '</strong> &rarr; <strong class="text-success">' +
-        window.ToolNest.formatBytes(totalOutBytes) +
+        window.ToolZebra.formatBytes(totalOutBytes) +
         '</strong>';
 
       resultsList.querySelectorAll('[data-dl-single]').forEach(function (btn) {
         btn.addEventListener('click', function () {
           const i = Number(btn.getAttribute('data-dl-single'));
           if (processedBatch[i]) {
-            window.ToolNest.downloadBlob(processedBatch[i].blob, processedBatch[i].outputName);
+            window.ToolZebra.downloadBlob(processedBatch[i].blob, processedBatch[i].outputName);
           }
         });
       });
@@ -749,7 +749,7 @@
 
     function runBulkResize() {
       if (sourceQueue.length === 0) {
-        window.ToolNest.showToast('Please drop or select images to resize first.', 'warning');
+        window.ToolZebra.showToast('Please drop or select images to resize first.', 'warning');
         return;
       }
 
@@ -778,11 +778,11 @@
             progressWrap.classList.add('d-none');
           }, 300);
           renderBatchResults();
-          window.ToolNest.showToast('Bulk resized ' + processedBatch.length + ' image(s)!', 'success');
+          window.ToolZebra.showToast('Bulk resized ' + processedBatch.length + ' image(s)!', 'success');
         })
         .catch(function (err) {
           progressWrap.classList.add('d-none');
-          window.ToolNest.showToast(err.message || 'Error during bulk resize.', 'danger');
+          window.ToolZebra.showToast(err.message || 'Error during bulk resize.', 'danger');
         });
     }
 
@@ -791,7 +791,7 @@
         return f.type.startsWith('image/');
       });
       if (valid.length === 0) {
-        window.ToolNest.showToast('Please select valid image files (JPG, PNG, WebP, GIF, BMP).', 'danger');
+        window.ToolZebra.showToast('Please select valid image files (JPG, PNG, WebP, GIF, BMP).', 'danger');
         return;
       }
 
@@ -799,17 +799,17 @@
         .then(function (loadedItems) {
           sourceQueue = sourceQueue.concat(loadedItems);
           renderSourceQueue();
-          window.ToolNest.showToast(
+          window.ToolZebra.showToast(
             loadedItems.length + ' image(s) queued. Choose your settings and click "Resize Images".',
             'success'
           );
         })
         .catch(function (err) {
-          window.ToolNest.showToast(err.message, 'danger');
+          window.ToolZebra.showToast(err.message, 'danger');
         });
     }
 
-    window.ToolNest.setupDropzone(dropzone, fileInput, addFilesToQueue);
+    window.ToolZebra.setupDropzone(dropzone, fileInput, addFilesToQueue);
 
     if (btnProcess) {
       btnProcess.addEventListener('click', runBulkResize);
@@ -843,14 +843,14 @@
             zip.file(item.outputName, item.blob);
           });
           zip.generateAsync({ type: 'blob' }).then(function (zipBlob) {
-            window.ToolNest.downloadBlob(zipBlob, 'toolnest-bulk-resized-images.zip');
-            window.ToolNest.showToast('Downloaded ZIP archive with ' + processedBatch.length + ' images!', 'success');
+            window.ToolZebra.downloadBlob(zipBlob, 'toolnest-bulk-resized-images.zip');
+            window.ToolZebra.showToast('Downloaded ZIP archive with ' + processedBatch.length + ' images!', 'success');
           });
         } else {
           // Fallback sequential download if offline
           processedBatch.forEach(function (item, idx) {
             setTimeout(function () {
-              window.ToolNest.downloadBlob(item.blob, item.outputName);
+              window.ToolZebra.downloadBlob(item.blob, item.outputName);
             }, idx * 200);
           });
         }
@@ -861,7 +861,7 @@
       btnDownloadEach.addEventListener('click', function () {
         processedBatch.forEach(function (item, idx) {
           setTimeout(function () {
-            window.ToolNest.downloadBlob(item.blob, item.outputName);
+            window.ToolZebra.downloadBlob(item.blob, item.outputName);
           }, idx * 220);
         });
       });

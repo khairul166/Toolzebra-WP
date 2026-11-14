@@ -1,5 +1,5 @@
 /**
- * ToolNest - Image to PDF Converter (/assets/js/tools/image-to-pdf.js)
+ * ToolZebra - Image to PDF Converter (/assets/js/tools/image-to-pdf.js)
  * 100% Client-Side Image to PDF Builder powered by pdf-lib 1.17.1.
  * Supports multi-image upload (JPG, PNG, WebP), drag-and-drop + button reordering,
  * per-image rotation, A4/Letter/Fit-to-Image page sizes, orientation, margins, and custom filename.
@@ -13,7 +13,7 @@
   };
 
   if (typeof window !== 'undefined') {
-    window.ToolNestImageToPdf = {
+    window.ToolZebraImageToPdf = {
       PAGE_SIZES_PT: PAGE_SIZES_PT
     };
   }
@@ -205,16 +205,16 @@
             '<img src="' +
             it.previewUrl +
             '" alt="Preview of ' +
-            window.ToolNest.escapeHtml(it.name) +
+            window.ToolZebra.escapeHtml(it.name) +
             '" style="max-height: 130px; max-width: 100%; transform: rotate(' +
             rot +
             'deg); transition: transform 150ms ease;" loading="lazy">' +
             '</div>' +
             '<div>' +
             '<div class="small fw-bold text-truncate mb-1" title="' +
-            window.ToolNest.escapeHtml(it.name) +
+            window.ToolZebra.escapeHtml(it.name) +
             '">' +
-            window.ToolNest.escapeHtml(it.name) +
+            window.ToolZebra.escapeHtml(it.name) +
             '</div>' +
             '<div class="small text-muted mb-2">' +
             it.origW +
@@ -322,11 +322,11 @@
 
     async function buildPdfDocument() {
       if (imageItems.length === 0) {
-        window.ToolNest.showToast('Please add at least one image first.', 'warning');
+        window.ToolZebra.showToast('Please add at least one image first.', 'warning');
         return;
       }
       if (!window.PDFLib || !window.PDFLib.PDFDocument) {
-        window.ToolNest.showToast('PDF library (pdf-lib) is still loading. Please try again.', 'danger');
+        window.ToolZebra.showToast('PDF library (pdf-lib) is still loading. Please try again.', 'danger');
         return;
       }
 
@@ -397,17 +397,17 @@
         resultCard.classList.remove('d-none');
         resultSummary.innerHTML =
           'Created <strong>' +
-          window.ToolNest.escapeHtml(getCleanOutputFilename()) +
+          window.ToolZebra.escapeHtml(getCleanOutputFilename()) +
           '</strong> with <strong>' +
           imageItems.length +
           ' page(s)</strong> (' +
-          window.ToolNest.formatBytes(generatedPdfBlob.size) +
+          window.ToolZebra.formatBytes(generatedPdfBlob.size) +
           ')';
 
-        window.ToolNest.showToast('PDF generated with ' + imageItems.length + ' page(s)!', 'success');
+        window.ToolZebra.showToast('PDF generated with ' + imageItems.length + ' page(s)!', 'success');
       } catch (err) {
         progressWrap.classList.add('d-none');
-        window.ToolNest.showToast(err.message || 'Failed to build PDF.', 'danger');
+        window.ToolZebra.showToast(err.message || 'Failed to build PDF.', 'danger');
       }
     }
 
@@ -416,7 +416,7 @@
         return f.type === 'image/jpeg' || f.type === 'image/png' || f.type === 'image/webp' || /\.(jpe?g|png|webp)$/i.test(f.name);
       });
       if (valid.length === 0) {
-        window.ToolNest.showToast('Please select valid JPG, PNG, or WebP images.', 'danger');
+        window.ToolZebra.showToast('Please select valid JPG, PNG, or WebP images.', 'danger');
         return;
       }
 
@@ -424,14 +424,14 @@
         .then(function (loaded) {
           imageItems = imageItems.concat(loaded);
           renderImageGrid();
-          window.ToolNest.showToast('Added ' + loaded.length + ' image(s). Reorder or rotate, then click Create PDF.', 'success');
+          window.ToolZebra.showToast('Added ' + loaded.length + ' image(s). Reorder or rotate, then click Create PDF.', 'success');
         })
         .catch(function (err) {
-          window.ToolNest.showToast(err.message, 'danger');
+          window.ToolZebra.showToast(err.message, 'danger');
         });
     }
 
-    window.ToolNest.setupDropzone(dropzone, fileInput, addFiles);
+    window.ToolZebra.setupDropzone(dropzone, fileInput, addFiles);
 
     if (buildBtn) {
       buildBtn.addEventListener('click', buildPdfDocument);
@@ -440,7 +440,7 @@
     if (downloadBtn) {
       downloadBtn.addEventListener('click', function () {
         if (!generatedPdfBlob) return;
-        window.ToolNest.downloadBlob(generatedPdfBlob, getCleanOutputFilename());
+        window.ToolZebra.downloadBlob(generatedPdfBlob, getCleanOutputFilename());
       });
     }
 

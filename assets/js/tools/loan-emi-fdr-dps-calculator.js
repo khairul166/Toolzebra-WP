@@ -1,5 +1,5 @@
 /**
- * ToolNest - Loan EMI, FDR & DPS Calculator (/assets/js/tools/loan-emi-fdr-dps-calculator.js)
+ * ToolZebra - Loan EMI, FDR & DPS Calculator (/assets/js/tools/loan-emi-fdr-dps-calculator.js)
  * 100% Client-Side 3-Tab Financial Calculator:
  * 1) Loan EMI Calculator (Monthly installment, total interest, amortization schedule)
  * 2) FDR Calculator (Fixed Deposit Receipt maturity, quarterly/yearly compounding)
@@ -290,8 +290,8 @@
           'Monthly EMI: ' + document.getElementById('tn-emi-monthly').textContent + '\n' +
           'Total Interest: ' + document.getElementById('tn-emi-total-interest').textContent + '\n' +
           'Total Payable: ' + document.getElementById('tn-emi-total-payment').textContent;
-        if (window.ToolNest && window.ToolNest.copyToClipboard) {
-          window.ToolNest.copyToClipboard(text, emiCopyBtn);
+        if (window.ToolZebra && window.ToolZebra.copyToClipboard) {
+          window.ToolZebra.copyToClipboard(text, emiCopyBtn);
         }
       });
     }
@@ -335,8 +335,8 @@
           'Maturity Amount: ' + document.getElementById('tn-fdr-maturity').textContent + '\n' +
           'Total Interest: ' + document.getElementById('tn-fdr-interest').textContent + '\n' +
           'Effective Annual Rate: ' + document.getElementById('tn-fdr-effective-rate').textContent;
-        if (window.ToolNest && window.ToolNest.copyToClipboard) {
-          window.ToolNest.copyToClipboard(text, fdrCopyBtn);
+        if (window.ToolZebra && window.ToolZebra.copyToClipboard) {
+          window.ToolZebra.copyToClipboard(text, fdrCopyBtn);
         }
       });
     }
@@ -381,8 +381,8 @@
           'Maturity Amount: ' + document.getElementById('tn-dps-maturity').textContent + '\n' +
           'Total Deposited: ' + document.getElementById('tn-dps-total-deposit').textContent + '\n' +
           'Total Interest: ' + document.getElementById('tn-dps-interest').textContent;
-        if (window.ToolNest && window.ToolNest.copyToClipboard) {
-          window.ToolNest.copyToClipboard(text, dpsCopyBtn);
+        if (window.ToolZebra && window.ToolZebra.copyToClipboard) {
+          window.ToolZebra.copyToClipboard(text, dpsCopyBtn);
         }
       });
     }

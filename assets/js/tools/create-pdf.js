@@ -1,5 +1,5 @@
 /**
- * ToolNest - Create PDF & Organize Pages (/assets/js/tools/create-pdf.js)
+ * ToolZebra - Create PDF & Organize Pages (/assets/js/tools/create-pdf.js)
  * 100% Client-Side Adobe Acrobat-Style PDF Creator & Visual Page Organizer.
  * Combines multiple Images (JPG, PNG, WebP) and PDF files with live page thumbnails (pdf.js),
  * drag-and-drop reordering, per-page & batch rotation, insertion, duplication, zoom modal,
@@ -303,7 +303,7 @@
     const p1 = doc.addPage([595.28, 841.89]);
     p1.drawRectangle({ x: 36, y: 715, width: 523, height: 85, color: rgb(0.145, 0.388, 0.921) });
     p1.drawText('PROJECT PROPOSAL & CONTRACT (PDF p.1)', { x: 54, y: 760, size: 18, font: fontBold, color: rgb(1, 1, 1) });
-    p1.drawText('Prepared with ToolNest Create PDF & Organize Pages', { x: 54, y: 734, size: 12, font: fontReg, color: rgb(0.9, 0.95, 1) });
+    p1.drawText('Prepared with ToolZebra Create PDF & Organize Pages', { x: 54, y: 734, size: 12, font: fontReg, color: rgb(0.9, 0.95, 1) });
     p1.drawText('1. Executive Summary', { x: 45, y: 655, size: 15, font: fontBold, color: rgb(0.1, 0.15, 0.25) });
     p1.drawText('Drag and drop this PDF page anywhere, rotate it, or interleave image scans.', { x: 45, y: 630, size: 11, font: fontReg, color: rgb(0.3, 0.35, 0.45) });
 
@@ -356,7 +356,7 @@
   }
 
   if (typeof window !== 'undefined') {
-    window.ToolNestCreatePdf = {
+    window.ToolZebraCreatePdf = {
       PAGE_SIZES_PT: PAGE_SIZES_PT,
       normalizeRotation: normalizeRotation
     };
@@ -464,8 +464,8 @@
       organizerWrap.classList.remove('d-none');
       updateCountersAndButtons();
 
-      const esc = window.ToolNest && window.ToolNest.escapeHtml
-        ? window.ToolNest.escapeHtml
+      const esc = window.ToolZebra && window.ToolZebra.escapeHtml
+        ? window.ToolZebra.escapeHtml
         : function (s) { return String(s); };
 
       pageItems.forEach(function (item, idx) {
@@ -590,8 +590,8 @@
       });
 
       if (validFiles.length === 0) {
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Please select PDF files or JPG, PNG, or WebP images.', 'warning');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Please select PDF files or JPG, PNG, or WebP images.', 'warning');
         }
         return;
       }
@@ -625,12 +625,12 @@
 
         if (resultCard) resultCard.classList.add('d-none');
         renderGrid();
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Added ' + newlyLoaded.length + (newlyLoaded.length === 1 ? ' page' : ' pages') + ' to organizer.', 'success');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Added ' + newlyLoaded.length + (newlyLoaded.length === 1 ? ' page' : ' pages') + ' to organizer.', 'success');
         }
       } catch (err) {
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast(err.message || 'Could not load one or more files.', 'danger');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast(err.message || 'Could not load one or more files.', 'danger');
         }
       } finally {
         hideProgress();
@@ -855,8 +855,8 @@
       btnDuplicate.addEventListener('click', function () {
         const selected = pageItems.filter(function (p) { return p.selected; });
         if (selected.length === 0) {
-          if (window.ToolNest && window.ToolNest.showToast) {
-            window.ToolNest.showToast('Select one or more pages first to duplicate them.', 'warning');
+          if (window.ToolZebra && window.ToolZebra.showToast) {
+            window.ToolZebra.showToast('Select one or more pages first to duplicate them.', 'warning');
           }
           return;
         }
@@ -869,8 +869,8 @@
         });
         pageItems = nextList;
         renderGrid();
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Duplicated ' + selected.length + (selected.length === 1 ? ' page.' : ' pages.'), 'success');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Duplicated ' + selected.length + (selected.length === 1 ? ' page.' : ' pages.'), 'success');
         }
       });
     }
@@ -879,8 +879,8 @@
       btnReverse.addEventListener('click', function () {
         pageItems.reverse();
         renderGrid();
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Page order reversed.', 'success');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Page order reversed.', 'success');
         }
       });
     }
@@ -889,15 +889,15 @@
       btnDeleteSelected.addEventListener('click', function () {
         const selectedCount = pageItems.filter(function (p) { return p.selected; }).length;
         if (selectedCount === 0) {
-          if (window.ToolNest && window.ToolNest.showToast) {
-            window.ToolNest.showToast('Check the pages you want to delete first.', 'warning');
+          if (window.ToolZebra && window.ToolZebra.showToast) {
+            window.ToolZebra.showToast('Check the pages you want to delete first.', 'warning');
           }
           return;
         }
         pageItems = pageItems.filter(function (p) { return !p.selected; });
         renderGrid();
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Deleted ' + selectedCount + (selectedCount === 1 ? ' page.' : ' pages.'), 'success');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Deleted ' + selectedCount + (selectedCount === 1 ? ' page.' : ' pages.'), 'success');
         }
       });
     }
@@ -923,8 +923,8 @@
           selected: false
         });
         renderGrid();
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Blank page added. Drag it to any position.', 'success');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Blank page added. Drag it to any position.', 'success');
         }
       });
     }
@@ -942,15 +942,15 @@
      */
     async function buildAndExportPdf(targetPages, suffixLabel) {
       if (!targetPages || targetPages.length === 0) {
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Please add at least one image or PDF page first.', 'warning');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Please add at least one image or PDF page first.', 'warning');
         }
         return;
       }
 
       if (!window.PDFLib) {
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('PDF engine is still loading. Please try again in a moment.', 'danger');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('PDF engine is still loading. Please try again in a moment.', 'danger');
         }
         return;
       }
@@ -1086,11 +1086,11 @@
         generatedPdfFilename = rawName;
 
         if (resultCard && resultSummary) {
-          const sizeStr = window.ToolNest && window.ToolNest.formatBytes
-            ? window.ToolNest.formatBytes(generatedPdfBlob.size)
+          const sizeStr = window.ToolZebra && window.ToolZebra.formatBytes
+            ? window.ToolZebra.formatBytes(generatedPdfBlob.size)
             : Math.round(generatedPdfBlob.size / 1024) + ' KB';
-          const esc = window.ToolNest && window.ToolNest.escapeHtml
-            ? window.ToolNest.escapeHtml
+          const esc = window.ToolZebra && window.ToolZebra.escapeHtml
+            ? window.ToolZebra.escapeHtml
             : function (s) { return String(s); };
           resultSummary.innerHTML =
             '<i class="bi bi-check-circle-fill text-success me-1" aria-hidden="true"></i> ' +
@@ -1099,15 +1099,15 @@
           resultCard.classList.remove('d-none');
         }
 
-        if (window.ToolNest && window.ToolNest.downloadBlob) {
-          window.ToolNest.downloadBlob(generatedPdfBlob, generatedPdfFilename);
+        if (window.ToolZebra && window.ToolZebra.downloadBlob) {
+          window.ToolZebra.downloadBlob(generatedPdfBlob, generatedPdfFilename);
         }
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('PDF created with ' + targetPages.length + ' pages!', 'success');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('PDF created with ' + targetPages.length + ' pages!', 'success');
         }
       } catch (err) {
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast(err.message || 'Failed to build PDF.', 'danger');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast(err.message || 'Failed to build PDF.', 'danger');
         }
       } finally {
         hideProgress();
@@ -1131,8 +1131,8 @@
 
     if (btnDownloadAgain) {
       btnDownloadAgain.addEventListener('click', function () {
-        if (generatedPdfBlob && window.ToolNest && window.ToolNest.downloadBlob) {
-          window.ToolNest.downloadBlob(generatedPdfBlob, generatedPdfFilename);
+        if (generatedPdfBlob && window.ToolZebra && window.ToolZebra.downloadBlob) {
+          window.ToolZebra.downloadBlob(generatedPdfBlob, generatedPdfFilename);
         }
       });
     }
@@ -1145,8 +1145,8 @@
           await handleFiles(sampleFiles, null);
         } catch (err) {
           hideProgress();
-          if (window.ToolNest && window.ToolNest.showToast) {
-            window.ToolNest.showToast(err.message || 'Could not generate sample files.', 'danger');
+          if (window.ToolZebra && window.ToolZebra.showToast) {
+            window.ToolZebra.showToast(err.message || 'Could not generate sample files.', 'danger');
           }
         }
       });
@@ -1164,8 +1164,8 @@
       });
     }
 
-    if (window.ToolNest && window.ToolNest.setupDropzone) {
-      window.ToolNest.setupDropzone(dropzone, fileInput, function (files) {
+    if (window.ToolZebra && window.ToolZebra.setupDropzone) {
+      window.ToolZebra.setupDropzone(dropzone, fileInput, function (files) {
         handleFiles(files, null);
       });
     }

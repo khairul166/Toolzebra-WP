@@ -5,6 +5,7 @@ require_once get_theme_file_path('/inc/tools-enqueue.php');
 require_once get_theme_file_path('/inc/tool-post-type.php');
 require_once get_theme_file_path('/inc/shortcodes.php');
 require_once get_theme_file_path('/inc/widgets.php');
+require_once get_theme_file_path('/inc/youtube-downloader.php');
 
 function toolnest_page_breadcrumb()
 {

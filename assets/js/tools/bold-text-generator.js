@@ -1,5 +1,5 @@
 /**
- * ToolNest - Advanced Bold & Fancy Text Generator (/assets/js/tools/bold-text-generator.js)
+ * ToolZebra - Advanced Bold & Fancy Text Generator (/assets/js/tools/bold-text-generator.js)
  * 100% Client-Side Unicode Text Transformer with 35+ LingoJam-style options.
  */
 (function () {
@@ -279,8 +279,8 @@
         btn.addEventListener('click', function () {
           const targetId = btn.getAttribute('data-target');
           const targetEl = document.getElementById(targetId);
-          if (targetEl && window.ToolNest && window.ToolNest.copyToClipboard) {
-            window.ToolNest.copyToClipboard(targetEl.textContent, btn);
+          if (targetEl && window.ToolZebra && window.ToolZebra.copyToClipboard) {
+            window.ToolZebra.copyToClipboard(targetEl.textContent, btn);
           }
         });
       });
@@ -306,8 +306,8 @@
       btnSample.addEventListener('click', function () {
         inputArea.value = 'Bold Text Generator';
         renderResults();
-        if (window.ToolNest && window.ToolNest.showToast) {
-          window.ToolNest.showToast('Sample text loaded!', 'success');
+        if (window.ToolZebra && window.ToolZebra.showToast) {
+          window.ToolZebra.showToast('Sample text loaded!', 'success');
         }
       });
     }

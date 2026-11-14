@@ -1,5 +1,5 @@
 /**
- * ToolNest - Invoice & COD Courier Slip Generator (/assets/js/tools/invoice-generator.js)
+ * ToolZebra - Invoice & COD Courier Slip Generator (/assets/js/tools/invoice-generator.js)
  * Dynamic line items, tax/discount/delivery/advance calculations, live printable sheet,
  * Print/PDF export, and high-res PNG receipt image export.
  */
@@ -65,7 +65,7 @@
             '<td><input type="text" class="form-control form-control-sm" data-item-field="name" data-idx="' +
             idx +
             '" value="' +
-            window.ToolNest.escapeHtml(it.name) +
+            window.ToolZebra.escapeHtml(it.name) +
             '" placeholder="Item description"></td>' +
             '<td style="width:95px;"><input type="number" class="form-control form-control-sm text-center" data-item-field="qty" data-idx="' +
             idx +
@@ -179,7 +179,7 @@
             (i + 1) +
             '</td>' +
             '<td>' +
-            window.ToolNest.escapeHtml(it.name || 'Item') +
+            window.ToolZebra.escapeHtml(it.name || 'Item') +
             '</td>' +
             '<td class="text-center">' +
             it.qty +
@@ -298,8 +298,8 @@
 
       canvas.toBlob(function (blob) {
         if (blob) {
-          window.ToolNest.downloadBlob(blob, (invNoInput.value || 'invoice') + '.png');
-          window.ToolNest.showToast('Receipt PNG downloaded!', 'success');
+          window.ToolZebra.downloadBlob(blob, (invNoInput.value || 'invoice') + '.png');
+          window.ToolZebra.showToast('Receipt PNG downloaded!', 'success');
         }
       }, 'image/png');
     }
@@ -366,7 +366,7 @@
         ];
         renderItemsEditor();
         updatePreview();
-        window.ToolNest.showToast('Sample F-Commerce COD order loaded!', 'success');
+        window.ToolZebra.showToast('Sample F-Commerce COD order loaded!', 'success');
       });
     }
 

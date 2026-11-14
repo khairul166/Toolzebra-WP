@@ -1,5 +1,5 @@
 /**
- * ToolNest - WhatsApp Link Generator
+ * ToolZebra - WhatsApp Link Generator
  * Creates wa.me links locally in the browser.
  */
 (function () {
@@ -62,8 +62,8 @@
 
     el('tn-wa-copy').addEventListener('click', function () {
       var link = buildLink();
-      if (link && window.ToolNest && window.ToolNest.copyToClipboard) {
-        window.ToolNest.copyToClipboard(link, this);
+      if (link && window.ToolZebra && window.ToolZebra.copyToClipboard) {
+        window.ToolZebra.copyToClipboard(link, this);
       }
     });
 

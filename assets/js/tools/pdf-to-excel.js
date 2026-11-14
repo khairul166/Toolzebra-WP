@@ -1,5 +1,5 @@
 /**
- * ToolNest - PDF to MS Excel (.XLSX & .CSV) Converter (/assets/js/tools/pdf-to-excel.js)
+ * ToolZebra - PDF to MS Excel (.XLSX & .CSV) Converter (/assets/js/tools/pdf-to-excel.js)
  * 100% Client-Side PDF Table Extractor powered by Mozilla pdf.js 3.11.174 and JSZip 3.10.1.
  * Uses X/Y coordinate clustering to reconstruct rows and columns, builds a genuine
  * Office Open XML (.xlsx) workbook in memory (single sheet or multi-sheet per page),
@@ -387,7 +387,7 @@
 
   // Expose helpers for automated testing
   if (typeof window !== 'undefined') {
-    window.ToolNestPdfToExcel = {
+    window.ToolZebraPdfToExcel = {
       parsePageRange: parsePageRange,
       colIndexToLetter: colIndexToLetter,
       extractTableRowsFromItems: extractTableRowsFromItems,
@@ -443,7 +443,7 @@
         errorBox.classList.remove('d-none');
         errorBox.innerHTML =
           '<i class="bi bi-exclamation-octagon-fill me-1" aria-hidden="true"></i> ' +
-          window.ToolNest.escapeHtml(msg);
+          window.ToolZebra.escapeHtml(msg);
       }
     }
 
@@ -494,7 +494,7 @@
           for (let c = 0; c < maxCols; c++) {
             const val = row[c] != null ? row[c] : '';
             const isFirstRow = rIdx === 0 ? ' class="fw-bold bg-primary-subtle"' : '';
-            cellsHtml.push('<td' + isFirstRow + '>' + window.ToolNest.escapeHtml(val) + '</td>');
+            cellsHtml.push('<td' + isFirstRow + '>' + window.ToolZebra.escapeHtml(val) + '</td>');
           }
           return '<tr>' + cellsHtml.join('') + '</tr>';
         })
@@ -528,7 +528,7 @@
           totalPages = pdfDoc.numPages;
 
           fileInfoBar.classList.remove('d-none');
-          fileNameEl.textContent = file.name + ' (' + window.ToolNest.formatBytes(file.size) + ')';
+          fileNameEl.textContent = file.name + ' (' + window.ToolZebra.formatBytes(file.size) + ')';
           pageCountBadge.textContent = totalPages + (totalPages === 1 ? ' Page' : ' Pages');
           rangeInput.placeholder = 'e.g. 1-' + totalPages;
           if (!rangeInput.value) {
@@ -602,7 +602,7 @@
             'Note: No selectable text rows were found in this PDF. Scanned image PDFs require OCR before spreadsheet extraction.'
           );
         } else {
-          window.ToolNest.showToast('Extracted ' + totalRowsCount + ' row(s) into Excel preview!', 'success');
+          window.ToolZebra.showToast('Extracted ' + totalRowsCount + ' row(s) into Excel preview!', 'success');
         }
       } catch (e) {
         showError(e && e.message ? e.message : 'An error occurred while extracting tables from the PDF.');
@@ -612,7 +612,7 @@
       }
     }
 
-    window.ToolNest.setupDropzone(dropzone, fileInput, function (files) {
+    window.ToolZebra.setupDropzone(dropzone, fileInput, function (files) {
       const pdfFile = files.find(function (f) {
         return f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf');
       });
@@ -633,7 +633,7 @@
       const baseName = currentPdfFile ? currentPdfFile.name.replace(/\.pdf$/i, '') : 'toolnest-table';
       buildXlsxBlob(extractedSheetPages, sheetModeSelect.value)
         .then(function (blob) {
-          window.ToolNest.downloadBlob(blob, baseName + '.xlsx');
+          window.ToolZebra.downloadBlob(blob, baseName + '.xlsx');
         })
         .catch(function (err) {
           showError(err.message || 'Could not generate .xlsx workbook.');
@@ -646,7 +646,7 @@
       const baseName = currentPdfFile ? currentPdfFile.name.replace(/\.pdf$/i, '') : 'toolnest-table';
       const csvText = rowsToCsv(rows);
       const blob = new Blob(['\ufeff', csvText], { type: 'text/csv;charset=utf-8' });
-      window.ToolNest.downloadBlob(blob, baseName + '.csv');
+      window.ToolZebra.downloadBlob(blob, baseName + '.csv');
     });
 
     copyTsvBtn.addEventListener('click', function () {
@@ -657,7 +657,7 @@
           return r.join('\t');
         })
         .join('\n');
-      window.ToolNest.copyToClipboard(tsv, copyTsvBtn);
+      window.ToolZebra.copyToClipboard(tsv, copyTsvBtn);
     });
 
     if (sampleBtn) {

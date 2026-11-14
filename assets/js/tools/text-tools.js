@@ -1,5 +1,5 @@
 /**
- * ToolNest - Text Tools & Word Counter (/assets/js/tools/text-tools.js)
+ * ToolZebra - Text Tools & Word Counter (/assets/js/tools/text-tools.js)
  * Live word/character/line/reading-time counter, case converter,
  * duplicate line remover, and alphabetical line sorter.
  */
@@ -78,7 +78,7 @@
         feedbackBanner.textContent = msg;
         feedbackBanner.classList.remove('d-none');
       }
-      window.ToolNest.showToast(msg, 'success');
+      window.ToolZebra.showToast(msg, 'success');
     }
 
     textarea.addEventListener('input', updateStats);
@@ -88,7 +88,7 @@
         const action = btn.getAttribute('data-tn-text-action');
         const current = textarea.value;
         if (!current.trim()) {
-          window.ToolNest.showToast('Please enter or load some text first.', 'warning');
+          window.ToolZebra.showToast('Please enter or load some text first.', 'warning');
           return;
         }
 
@@ -170,7 +170,7 @@
           textarea.value = historyStack.pop();
           btnUndo.disabled = historyStack.length === 0;
           updateStats();
-          window.ToolNest.showToast('Undid last transformation.', 'success');
+          window.ToolZebra.showToast('Undid last transformation.', 'success');
         }
       });
     }
@@ -197,19 +197,19 @@
 
     if (btnCopy) {
       btnCopy.addEventListener('click', function () {
-        window.ToolNest.copyToClipboard(textarea.value, btnCopy);
+        window.ToolZebra.copyToClipboard(textarea.value, btnCopy);
       });
     }
 
     if (btnDownload) {
       btnDownload.addEventListener('click', function () {
         if (!textarea.value) {
-          window.ToolNest.showToast('Nothing to download yet.', 'warning');
+          window.ToolZebra.showToast('Nothing to download yet.', 'warning');
           return;
         }
         const blob = new Blob([textarea.value], { type: 'text/plain;charset=utf-8' });
-        window.ToolNest.downloadBlob(blob, 'toolnest-cleaned-text.txt');
-        window.ToolNest.showToast('Downloaded .txt file!', 'success');
+        window.ToolZebra.downloadBlob(blob, 'toolnest-cleaned-text.txt');
+        window.ToolZebra.showToast('Downloaded .txt file!', 'success');
       });
     }
 

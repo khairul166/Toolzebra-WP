@@ -1,5 +1,5 @@
 /**
- * ToolNest - Image Format Converter (/assets/js/tools/image-format-converter.js)
+ * ToolZebra - Image Format Converter (/assets/js/tools/image-format-converter.js)
  * 100% Client-Side Batch Converter between JPG, PNG, WebP, and HEIC/HEIF (input).
  * Lazily loads heic2any@0.0.4 from jsDelivr ONLY when a .heic/.heif file is selected.
  * Supports quality slider, transparent-to-white fill for JPG, and ZIP export via JSZip 3.10.1.
@@ -213,7 +213,7 @@
 
   // Expose helper functions for automated verification
   if (typeof window !== 'undefined') {
-    window.ToolNestImageFormatConverter = {
+    window.ToolZebraImageFormatConverter = {
       HEIC2ANY_CDN_URL: HEIC2ANY_CDN_URL,
       isHeicFile: isHeicFile,
       isSupportedImageFile: isSupportedImageFile,
@@ -275,7 +275,7 @@
         errorBox.textContent = '';
       } else {
         errorBox.classList.remove('d-none');
-        errorBox.innerHTML = '<i class="bi bi-exclamation-octagon-fill me-1" aria-hidden="true"></i> ' + window.ToolNest.escapeHtml(msg);
+        errorBox.innerHTML = '<i class="bi bi-exclamation-octagon-fill me-1" aria-hidden="true"></i> ' + window.ToolZebra.escapeHtml(msg);
       }
     }
 
@@ -293,11 +293,11 @@
             '<div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill border bg-white small">' +
             '<i class="bi bi-file-earmark-image text-primary" aria-hidden="true"></i>' +
             '<span class="fw-semibold text-truncate" style="max-width: 170px;">' +
-            window.ToolNest.escapeHtml(f.name) +
+            window.ToolZebra.escapeHtml(f.name) +
             '</span>' +
             badge +
             '<span class="text-muted">(' +
-            window.ToolNest.formatBytes(f.size) +
+            window.ToolZebra.formatBytes(f.size) +
             ')</span>' +
             '<button type="button" class="btn-close" style="font-size: 0.65rem;" data-rm-idx="' +
             i +
@@ -336,12 +336,12 @@
             '<img src="' +
             it.previewUrl +
             '" alt="Converted preview of ' +
-            window.ToolNest.escapeHtml(it.outputName) +
+            window.ToolZebra.escapeHtml(it.outputName) +
             '" width="68" height="68" class="rounded border object-fit-cover" loading="lazy">' +
             '</div>' +
             '<div class="col">' +
             '<div class="fw-bold text-break">' +
-            window.ToolNest.escapeHtml(it.outputName) +
+            window.ToolZebra.escapeHtml(it.outputName) +
             ' <span class="badge bg-primary-subtle text-primary ms-1">' +
             it.origFormat +
             ' &rarr; ' +
@@ -352,9 +352,9 @@
             ' &times; ' +
             it.height +
             ' px &bull; Original: <strong>' +
-            window.ToolNest.formatBytes(it.origSize) +
+            window.ToolZebra.formatBytes(it.origSize) +
             '</strong> &rarr; New Size: <strong class="text-success">' +
-            window.ToolNest.formatBytes(it.outSize) +
+            window.ToolZebra.formatBytes(it.outSize) +
             '</strong>' +
             '</div>' +
             '</div>' +
@@ -375,16 +375,16 @@
         'Converted <strong>' +
         convertedItems.length +
         ' image(s)</strong> &bull; Total Original Size: <strong>' +
-        window.ToolNest.formatBytes(totalOrig) +
+        window.ToolZebra.formatBytes(totalOrig) +
         '</strong> &rarr; Total New Size: <strong class="text-success">' +
-        window.ToolNest.formatBytes(totalOut) +
+        window.ToolZebra.formatBytes(totalOut) +
         '</strong>';
 
       resultsList.querySelectorAll('[data-dl-conv]').forEach(function (btn) {
         btn.addEventListener('click', function () {
           const i = Number(btn.getAttribute('data-dl-conv'));
           if (convertedItems[i]) {
-            window.ToolNest.downloadBlob(convertedItems[i].blob, convertedItems[i].outputName);
+            window.ToolZebra.downloadBlob(convertedItems[i].blob, convertedItems[i].outputName);
           }
         });
       });
@@ -393,7 +393,7 @@
     function runBatchConversion() {
       showError('');
       if (queuedFiles.length === 0) {
-        window.ToolNest.showToast('Please select or drop image files first.', 'warning');
+        window.ToolZebra.showToast('Please select or drop image files first.', 'warning');
         return;
       }
 
@@ -444,7 +444,7 @@
 
         renderConvertedResults();
         if (convertedItems.length > 0) {
-          window.ToolNest.showToast('Converted ' + convertedItems.length + ' image(s) successfully!', 'success');
+          window.ToolZebra.showToast('Converted ' + convertedItems.length + ' image(s) successfully!', 'success');
         }
       });
     }
@@ -473,7 +473,7 @@
       runBatchConversion();
     }
 
-    window.ToolNest.setupDropzone(dropzone, fileInput, addFiles);
+    window.ToolZebra.setupDropzone(dropzone, fileInput, addFiles);
 
     if (convertBtn) {
       convertBtn.addEventListener('click', runBatchConversion);
@@ -508,13 +508,13 @@
             zip.file(it.outputName, it.blob);
           });
           zip.generateAsync({ type: 'blob' }).then(function (zipBlob) {
-            window.ToolNest.downloadBlob(zipBlob, 'toolnest-converted-images.zip');
-            window.ToolNest.showToast('Downloaded ZIP archive with ' + convertedItems.length + ' converted images!', 'success');
+            window.ToolZebra.downloadBlob(zipBlob, 'toolnest-converted-images.zip');
+            window.ToolZebra.showToast('Downloaded ZIP archive with ' + convertedItems.length + ' converted images!', 'success');
           });
         } else {
           convertedItems.forEach(function (it, i) {
             setTimeout(function () {
-              window.ToolNest.downloadBlob(it.blob, it.outputName);
+              window.ToolZebra.downloadBlob(it.blob, it.outputName);
             }, i * 220);
           });
         }
@@ -525,7 +525,7 @@
       dlEachBtn.addEventListener('click', function () {
         convertedItems.forEach(function (it, i) {
           setTimeout(function () {
-            window.ToolNest.downloadBlob(it.blob, it.outputName);
+            window.ToolZebra.downloadBlob(it.blob, it.outputName);
           }, i * 220);
         });
       });

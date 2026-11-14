@@ -1,5 +1,5 @@
 /**
- * ToolNest - Bangla Typing Test (/assets/js/tools/bangla-typing-test.js)
+ * ToolZebra - Bangla Typing Test (/assets/js/tools/bangla-typing-test.js)
  * 100% Client-Side Bangla Unicode Typing Speed & Accuracy Tester.
  * Features 12 Original Bangla Passages across 3 difficulty levels (Easy, Medium, Hard with Conjuncts),
  * 1/2/5 minute timers, NFC Unicode normalization + nukta unification, conjunct-safe character highlighting,
@@ -10,7 +10,7 @@
 
   /**
    * 12 Original Bangla Passages (4 Easy, 4 Medium, 4 Hard with rich Juktoborno / Conjuncts)
-   * Written originally for ToolNest typing practice.
+   * Written originally for ToolZebra typing practice.
    */
   const BANGLA_PASSAGES = {
     easy: [
@@ -189,7 +189,7 @@
 
   // Expose for automated verification
   if (typeof window !== 'undefined') {
-    window.ToolNestBanglaTyping = {
+    window.ToolZebraBanglaTyping = {
       passages: BANGLA_PASSAGES,
       normalizeBanglaUnicode: normalizeBanglaUnicode,
       evaluateBanglaTyping: evaluateBanglaTyping
@@ -252,7 +252,7 @@
       passageBoxEl.innerHTML = chars
         .map(function (ch, idx) {
           const st = states[idx];
-          const safeCh = window.ToolNest.escapeHtml(ch);
+          const safeCh = window.ToolZebra.escapeHtml(ch);
           if (st === 'correct') {
             return '<span class="tn-btt-char tn-btt-char--correct">' + safeCh + '</span>';
           }
@@ -294,7 +294,7 @@
       finalErr.textContent = evalResult.errorChars + ' (' + toBnNum(evalResult.errorChars) + 'টি ভুল)';
       finalChars.textContent = evalResult.correctChars + ' / ' + evalResult.totalTypedChars;
 
-      window.ToolNest.showToast('Bangla Typing Test Completed! WPM: ' + wpm + ', Accuracy: ' + evalResult.accuracyPct + '%', 'success');
+      window.ToolZebra.showToast('Bangla Typing Test Completed! WPM: ' + wpm + ', Accuracy: ' + evalResult.accuracyPct + '%', 'success');
     }
 
     function resetCurrentTest(loadNewPassage) {
@@ -349,7 +349,7 @@
     // Disable paste inside typing textarea
     typingInput.addEventListener('paste', function (e) {
       e.preventDefault();
-      window.ToolNest.showToast('Pasting is disabled during the Bangla Typing Test.', 'warning');
+      window.ToolZebra.showToast('Pasting is disabled during the Bangla Typing Test.', 'warning');
     });
 
     typingInput.addEventListener('input', function () {
@@ -401,13 +401,13 @@
     if (copyScoreBtn) {
       copyScoreBtn.addEventListener('click', function () {
         const summary =
-          'ToolNest Bangla Typing Test Result — Speed: ' +
+          'ToolZebra Bangla Typing Test Result — Speed: ' +
           finalWpm.textContent +
           ', Accuracy: ' +
           finalAcc.textContent +
           ', Errors: ' +
           finalErr.textContent;
-        window.ToolNest.copyToClipboard(summary, copyScoreBtn);
+        window.ToolZebra.copyToClipboard(summary, copyScoreBtn);
       });
     }
 

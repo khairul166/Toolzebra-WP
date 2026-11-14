@@ -1,5 +1,5 @@
 /**
- * ToolNest - PDF to MS Word (.DOCX) Converter (/assets/js/tools/pdf-to-word.js)
+ * ToolZebra - PDF to MS Word (.DOCX) Converter (/assets/js/tools/pdf-to-word.js)
  * 100% Client-Side PDF to Word Converter powered by Mozilla pdf.js 3.11.174 and JSZip 3.10.1.
  * Extracts text with Y/X coordinate line reconstruction, builds a genuine Office Open XML (.docx)
  * document package in memory, and also supports .doc and .txt export plus live editing preview.
@@ -322,8 +322,8 @@
       '3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R >> >> /Contents 6 0 R >> endobj',
       '4 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R >> >> /Contents 7 0 R >> endobj',
       '5 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj',
-      '6 0 obj << /Length 310 >> stream\nBT /F1 20 Tf 60 720 Td (ToolNest Business Proposal - Page 1) Tj /F1 12 Tf 0 -36 Td (1. Executive Summary) Tj 0 -22 Td (This sample PDF document demonstrates 100% browser-based PDF to MS Word conversion.) Tj 0 -18 Td (All headings and paragraphs are extracted locally and packaged into a clean DOCX file.) Tj 0 -30 Td (2. Key Project Deliverables) Tj 0 -20 Td (- Client-side privacy with zero server uploads.) Tj 0 -18 Td (- Editable Word paragraphs and page break preservation.) Tj ET\nendstream endobj',
-      '7 0 obj << /Length 245 >> stream\nBT /F1 20 Tf 60 720 Td (Financial & Timeline Overview - Page 2) Tj /F1 12 Tf 0 -36 Td (3. Implementation Schedule) Tj 0 -22 Td (Phase 1: Requirements discovery and UI design completed in Week 1.) Tj 0 -18 Td (Phase 2: Client-side OpenXML DOCX generator deployed in Week 2.) Tj 0 -30 Td (Approved by: ToolNest Engineering Team, Dhaka.) Tj ET\nendstream endobj'
+      '6 0 obj << /Length 310 >> stream\nBT /F1 20 Tf 60 720 Td (ToolZebra Business Proposal - Page 1) Tj /F1 12 Tf 0 -36 Td (1. Executive Summary) Tj 0 -22 Td (This sample PDF document demonstrates 100% browser-based PDF to MS Word conversion.) Tj 0 -18 Td (All headings and paragraphs are extracted locally and packaged into a clean DOCX file.) Tj 0 -30 Td (2. Key Project Deliverables) Tj 0 -20 Td (- Client-side privacy with zero server uploads.) Tj 0 -18 Td (- Editable Word paragraphs and page break preservation.) Tj ET\nendstream endobj',
+      '7 0 obj << /Length 245 >> stream\nBT /F1 20 Tf 60 720 Td (Financial & Timeline Overview - Page 2) Tj /F1 12 Tf 0 -36 Td (3. Implementation Schedule) Tj 0 -22 Td (Phase 1: Requirements discovery and UI design completed in Week 1.) Tj 0 -18 Td (Phase 2: Client-side OpenXML DOCX generator deployed in Week 2.) Tj 0 -30 Td (Approved by: ToolZebra Engineering Team, Dhaka.) Tj ET\nendstream endobj'
     ];
 
     let body = '';
@@ -345,7 +345,7 @@
 
   // Expose helpers for automated testing
   if (typeof window !== 'undefined') {
-    window.ToolNestPdfToWord = {
+    window.ToolZebraPdfToWord = {
       parsePageRange: parsePageRange,
       reconstructLinesAndParagraphs: reconstructLinesAndParagraphs,
       buildDocxBlob: buildDocxBlob,
@@ -398,7 +398,7 @@
         errorBox.classList.remove('d-none');
         errorBox.innerHTML =
           '<i class="bi bi-exclamation-octagon-fill me-1" aria-hidden="true"></i> ' +
-          window.ToolNest.escapeHtml(msg);
+          window.ToolZebra.escapeHtml(msg);
       }
     }
 
@@ -431,7 +431,7 @@
           totalPages = pdfDoc.numPages;
 
           fileInfoBar.classList.remove('d-none');
-          fileNameEl.textContent = file.name + ' (' + window.ToolNest.formatBytes(file.size) + ')';
+          fileNameEl.textContent = file.name + ' (' + window.ToolZebra.formatBytes(file.size) + ')';
           pageCountBadge.textContent = totalPages + (totalPages === 1 ? ' Page' : ' Pages');
           rangeInput.placeholder = 'e.g. 1-' + totalPages;
           if (!rangeInput.value) {
@@ -530,7 +530,7 @@
             'Note: This PDF appears to contain scanned images without selectable text layers. The generated Word file will note that no selectable text was found.'
           );
         } else {
-          window.ToolNest.showToast('Converted ' + extractedPages.length + ' PDF page(s) to Word!', 'success');
+          window.ToolZebra.showToast('Converted ' + extractedPages.length + ' PDF page(s) to Word!', 'success');
         }
       } catch (e) {
         showError(e && e.message ? e.message : 'An error occurred while extracting text from the PDF.');
@@ -540,7 +540,7 @@
       }
     }
 
-    window.ToolNest.setupDropzone(dropzone, fileInput, function (files) {
+    window.ToolZebra.setupDropzone(dropzone, fileInput, function (files) {
       const pdfFile = files.find(function (f) {
         return f.type === 'application/pdf' || f.name.toLowerCase().endsWith('.pdf');
       });
@@ -584,7 +584,7 @@
 
       buildDocxBlob(pagesForDocx, pageBreakCheck.checked, '')
         .then(function (blob) {
-          window.ToolNest.downloadBlob(blob, baseName + '.docx');
+          window.ToolZebra.downloadBlob(blob, baseName + '.docx');
         })
         .catch(function (err) {
           showError(err.message || 'Could not generate .docx file.');
@@ -598,18 +598,18 @@
         const parasHtml = previewTextarea.value
           .split(/\n{2,}/)
           .map(function (p) {
-            return '<p style="font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.5;">' + window.ToolNest.escapeHtml(p.trim()).replace(/\n/g, '<br>') + '</p>';
+            return '<p style="font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.5;">' + window.ToolZebra.escapeHtml(p.trim()).replace(/\n/g, '<br>') + '</p>';
           })
           .join('');
         const wordHtml =
           '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">' +
           '<head><meta charset="utf-8"><title>' +
-          window.ToolNest.escapeHtml(baseName) +
+          window.ToolZebra.escapeHtml(baseName) +
           '</title></head><body>' +
           parasHtml +
           '</body></html>';
         const blob = new Blob(['\ufeff', wordHtml], { type: 'application/msword;charset=utf-8' });
-        window.ToolNest.downloadBlob(blob, baseName + '.doc');
+        window.ToolZebra.downloadBlob(blob, baseName + '.doc');
       });
     }
 
@@ -618,13 +618,13 @@
         if (!previewTextarea.value.trim()) return;
         const baseName = currentPdfFile ? currentPdfFile.name.replace(/\.pdf$/i, '') : 'toolnest-document';
         const blob = new Blob([previewTextarea.value], { type: 'text/plain;charset=utf-8' });
-        window.ToolNest.downloadBlob(blob, baseName + '.txt');
+        window.ToolZebra.downloadBlob(blob, baseName + '.txt');
       });
     }
 
     if (copyTextBtn) {
       copyTextBtn.addEventListener('click', function () {
-        window.ToolNest.copyToClipboard(previewTextarea.value, copyTextBtn);
+        window.ToolZebra.copyToClipboard(previewTextarea.value, copyTextBtn);
       });
     }
 

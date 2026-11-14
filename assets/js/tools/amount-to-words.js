@@ -1,5 +1,5 @@
 /**
- * ToolNest - Amount to Words Converter (/assets/js/tools/amount-to-words.js)
+ * ToolZebra - Amount to Words Converter (/assets/js/tools/amount-to-words.js)
  * Converts numeric amounts into English (Lakh/Crore & International) and
  * authentic Bangla words (কথায়) with BDT Taka & Paisa support.
  */
@@ -253,7 +253,7 @@
       btnSample.addEventListener('click', function () {
         amountInput.value = '125750.50';
         updateOutputs();
-        window.ToolNest.showToast('Sample cheque amount loaded!', 'success');
+        window.ToolZebra.showToast('Sample cheque amount loaded!', 'success');
       });
     }
 
@@ -270,7 +270,7 @@
         const targetId = btn.getAttribute('data-copy-target');
         const targetEl = document.getElementById(targetId);
         if (targetEl) {
-          window.ToolNest.copyToClipboard(targetEl.textContent, btn);
+          window.ToolZebra.copyToClipboard(targetEl.textContent, btn);
         }
       });
     });
